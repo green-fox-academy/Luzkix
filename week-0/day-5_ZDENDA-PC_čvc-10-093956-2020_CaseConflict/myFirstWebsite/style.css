@@ -1,0 +1,49 @@
+html {
+    font-family: 'Courier Prime', monospace;
+    
+}
+
+header {
+    display: flex;
+    padding: 0 10vw;
+    margin: 0px;
+    background-color: #333333;
+    color: #ff1fa8;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li  {
+    padding-left: 40px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(assets/topography.png);
+}
+
+main {
+padding: 10%;
+
+}
+
+#separator {
+    margin: 50px 0px;
+    padding: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+h1, h2, h3 {
+    margin: 0px;
+}
+
+h2 {
+    text-align: center;
+
+}
