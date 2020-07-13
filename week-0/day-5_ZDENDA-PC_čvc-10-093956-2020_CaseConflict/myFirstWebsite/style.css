@@ -1,15 +1,18 @@
 html {
     font-family: 'Courier Prime', monospace;
-    
 }
 
 header {
     display: flex;
-    padding: 0 10vw;
+    padding: 0 10%;
     margin: 0px;
     background-color: #333333;
-    color: #ff1fa8;
+    color: white;
     justify-content: space-between;
+}
+
+a {
+    color: #ff0099;
 }
 
 ul {
@@ -22,14 +25,14 @@ li  {
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     background-image: url(assets/topography.png);
 }
 
 main {
 padding: 10%;
-
+margin: 0px;
 }
 
 #separator {
@@ -39,11 +42,32 @@ padding: 10%;
     font-weight: bold;
 }
 
-h1, h2, h3 {
-    margin: 0px;
+h1 {
+   font-size: 60px;
+   margin-top: 0px;
+   margin-bottom: 60px;
+   padding-top: 0px;
+   line-height: 0px;
+}
+#subtitle {
+    color: #ff0099;
 }
 
 h2 {
     text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
 
+h3 {
+    font-size: 30px;
+}
+
+.introductionText {
+    font-size: 20px;
+    line-height: 1.5rem;
+}
+
+p {
+    line-height: 2rem;
 }
