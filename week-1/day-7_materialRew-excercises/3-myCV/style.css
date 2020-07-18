@@ -1,0 +1,62 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+}
+
+header {
+    background-image: url(assets/anakin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    margin: 0px;
+}
+
+main {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -150px;
+}
+
+h1 {
+    margin-top: 0;
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 3em;
+    color: #3c3c3c;
+}
+
+#anakin {
+    font-size: 2em;
+}
+
+ul {
+    list-style: square;
+}
+
+blockquote {
+    width: 780px;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 50px;
+    background-color: #3c3c3c;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    margin-left: -50px;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+blockquote::before {
+    content: '\201C';
+    top: -15px;
+    left: -5px;
+    line-height: 1;
+    font-size: 150px;
+    position: absolute;
+}
