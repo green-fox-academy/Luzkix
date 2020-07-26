@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DrawSquare {
+public class DrawDiagonal {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -9,15 +9,20 @@ public class DrawSquare {
 
         //V podstatě vytvářím 3 lopy: pro první řádek, pro prostředek a pro poslední řádek
 
-       for (int percentageNumber = 1; percentageNumber <= predefinedSize; percentageNumber++) {
-           System.out.print("%");
-       }
+        for (int percentageNumber = 1; percentageNumber <= predefinedSize; percentageNumber++) {
+            System.out.print("%");
+        }
 
         for (int rowNumber = 1; rowNumber <= predefinedSize-2; rowNumber++) {
             System.out.println();
             System.out.print("%");
 
-            for (int percentageNumber = 1; percentageNumber <= predefinedSize-2; percentageNumber++ ) {
+            for (int emptyfieldNumber = 1; emptyfieldNumber < rowNumber; emptyfieldNumber++ ) {
+                System.out.print(" ");
+            };
+            System.out.print("%");
+
+            for (int emptyfieldNumber = (predefinedSize - rowNumber -2); emptyfieldNumber > 0; emptyfieldNumber--) {
                 System.out.print(" ");
             };
 
