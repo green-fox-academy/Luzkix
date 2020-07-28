@@ -7,6 +7,6 @@ public class CodingHours {
         int standardHours = 52 * semesterOfStudent;
 
         System.out.println("Coding hours of student during semester: " + studentHours);
-        System.out.println("Average % of coding hours in the semester is: " + ((float)studentHours / standardHours * 100) + "%");
+        System.out.println("Average % of coding hours in the semester is: " + ((float) studentHours / standardHours * 100) + "%");
     }
 }
