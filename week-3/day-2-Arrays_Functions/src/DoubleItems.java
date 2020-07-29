@@ -7,5 +7,6 @@ public class DoubleItems {
             row = row*2;
             System.out.print(row + " ");
         }
+
     }
 }
