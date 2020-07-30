@@ -15,8 +15,7 @@ public class SubInt {
     //for each value of originalArray we are doing checking if it matches with numberToBeFound
     for (int initialArrayValue : initialArray) {
 
-      //note: this while condition effectively skips elements with "0" value, so it is not possible to apply this formula if we wanted to found elements with 0.
-      while (initialArrayValue > 0) {
+      while (numberToBeFound <= initialArrayValue) {
 
         //we need to check if modulo % 10 == numberToBeFound.
         // If so we have a match and we can increase the lengthOfFinalArray + 1 and then we need to break the loop (or it runs indefinitely)
@@ -41,8 +40,7 @@ public class SubInt {
     for (int indexOfInitialArray = 0; indexOfInitialArray < initialArray.length;
          indexOfInitialArray++) {
 
-      //note: this while condition effectively skips elements with "0" value, so it is not possible to apply this formula if we wanted to found elements with 0.
-      while (initialArray[indexOfInitialArray] > 0) {
+      while (numberToBeFound <= initialArray[indexOfInitialArray]) {
         if (initialArray[indexOfInitialArray] % 10 == numberToBeFound) {
           finalArray[indexOfFinalArray] = indexOfInitialArray;
           indexOfFinalArray++;
