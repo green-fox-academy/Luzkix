@@ -1,13 +1,19 @@
 
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Arrays;
+
+import java.util.Scanner;
 import javax.swing.*;
 import java.lang.reflect.Array;
-import java.util.Arrays;
+
+
 
 public class JustForTestingPusposes {
   public static void main(String[] args) {
     System.out.println(Arrays.toString(subInt(0, new int[]{1, 11, 34, 0, 52, 61})));
   }
-
+Scanner
   public static int[] subInt(int testNumber, int[] testArray) {
     int[] validValue = new int[testArray.length];
     int[] resultArray = new int[testArray.length];
