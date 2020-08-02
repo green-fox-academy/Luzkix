@@ -10,21 +10,38 @@ public class MapIntroduction2 {
     myMap.put("978-1-60309-444-3", "Red Panda and Moon Bear");
     myMap.put("978-1-60309-461-0", "The Lab");
 
-    for (Map.Entry<String , String> entry : myMap.entrySet()) {
+    for (Map.Entry<String, String> entry : myMap.entrySet()) {
       System.out.println(entry.getValue() + " (" + entry.getKey() + ")");
     }
 
     myMap.remove("978-1-60309-444-3");
     System.out.println(myMap);
 
-    //Finding and deleting according to the value is difficult syntax - found this approach:
-    String valueToBeRemoved = "The Lab";
-    myMap.entrySet().removeIf(entry -> (valueToBeRemoved.equals(entry.getValue())));
+    //Finding and deleting according to the value is difficult - found these 2 approaches:
+    // Var1 - using for loop
+    String valueToRemove = "The Lab";
+    String removalKey = null;
 
+    for (Map.Entry<String, String> entry : myMap.entrySet()) {
+      if (valueToRemove.equals(entry.getValue())) {
+        removalKey = entry.getKey();
+        break;
+      }
+    }
+
+    if (removalKey != null) {
+      myMap.remove(removalKey);
+    }
     System.out.println(myMap);
 
-    myMap.put("978-1-60309-450-4","They Called Us Enemy");
-    myMap.put("978-1-60309-453-5","Why Did We Trust Him?");
+    /* Var2:
+    String valueToBeRemoved = "The Lab";
+    myMap.entrySet().removeIf(entry -> (valueToBeRemoved.equals(entry.getValue())));
+    System.out.println(myMap);
+    */
+
+    myMap.put("978-1-60309-450-4", "They Called Us Enemy");
+    myMap.put("978-1-60309-453-5", "Why Did We Trust Him?");
     System.out.println(myMap);
 
     String keyToBeFound = "478-0-61159-424-8";
