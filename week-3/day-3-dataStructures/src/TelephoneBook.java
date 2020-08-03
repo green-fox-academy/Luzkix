@@ -30,12 +30,12 @@ public class TelephoneBook {
 
 
   }
-
+  //1.
   private static String extractPhoneNumber(HashMap<String, String> phoneBook, String friendsName) {
     String phonenumber = "Number of " + friendsName + " is " + phoneBook.get(friendsName);
     return phonenumber;
   }
-
+  //2.
   private static String extractOwnersName(HashMap<String, String> phoneBook, String phoneNumber) {
     String indexOfPhoneNumber = null;
     for (Map.Entry<String, String> entry : phoneBook.entrySet()) {
@@ -46,7 +46,7 @@ public class TelephoneBook {
     }
     return "The name of phone number holder is: " + indexOfPhoneNumber;
   }
-
+  //3.
   private static String doWeKnowHim(HashMap<String, String> phonebook, String friendsName) {
     String finalSentence = null;
     for (String key : phonebook.keySet()) {
@@ -59,6 +59,4 @@ public class TelephoneBook {
     }
     return finalSentence;
   }
-
-
 }
