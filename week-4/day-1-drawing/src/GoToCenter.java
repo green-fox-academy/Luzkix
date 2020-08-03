@@ -1,33 +1,38 @@
-import javax.swing.*;
-import java.awt.*;
-
+import java.util.HashMap;
+import java.util.Scanner;
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class _ForTestingPurposes {
+public class GoToCenter {
   public static void mainDraw(Graphics graphics) {
     // Create a function that draws a single line and takes 3 parameters:
     // The x and y coordinates of the line's starting point and the graphics
     // and draws a line from that point to the center of the canvas.
     // Draw at least 3 lines with that function using a loop.
-    int xCord = 0;
-    int yCord = 0;
-    muffin(xCord, yCord, graphics);
 
+    goToTheCenter(25, 35, Color.GREEN, graphics);
   }
-  public static void muffin (int xCord, int yCord, Graphics graphics) {
-    for (xCord = 0; xCord < 120; xCord +=8) {
 
-      for (yCord = 0;yCord < 12; yCord += 8) {
-        xCord += 4;
-        graphics.setColor(Color.RED);
-        graphics.drawLine(xCord,yCord,160, 160);
+  public static void goToTheCenter (int xCord, int yCord, Color myColor, Graphics graphics) {
+    int centerWidth = WIDTH/2;
+    int centerHeight = HEIGHT/2;
+    graphics.setColor(myColor);
+
+    for (int x = xCord; x < WIDTH; x += 50 + Math.random()*100) {
+      for (int y = yCord; y < HEIGHT; y += 50 + Math.random()*100) {
+        graphics.drawLine(x, y, centerWidth, centerHeight);
       }
     }
+
+
+
   }
+
+
+
 
   // Don't touch the code below
   static int WIDTH = 320;
