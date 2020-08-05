@@ -15,18 +15,15 @@ public class RainbowBoxFunction {
   }
 
   public static void  squareBow (int size, Color fillColor, Graphics graphics) {
+    Color INDIGO = new Color(75, 0, 130);
+    Color VIOLET = new Color(128, 0, 128);
+    Color[] rainbow = {Color.RED, Color.ORANGE, Color.YELLOW, Color.GREEN, Color.BLUE, INDIGO, VIOLET};
+    int sizeEnlargeCoeficient = (WIDTH-size/2)/rainbow.length/2;
 
-    int numberOfColors = 7;
-    int sizeEnlargeCoeficient = (WIDTH-size/2)/numberOfColors/2;
-
-    for (int i=0; i < numberOfColors; i++) {
-      graphics.setColor(new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)));
+    for (int i=0; i < rainbow.length; i++) {
+      graphics.setColor(rainbow[i]);
       graphics.fillRect(i*sizeEnlargeCoeficient,i*sizeEnlargeCoeficient, WIDTH - i*2*sizeEnlargeCoeficient,HEIGHT - i*2*sizeEnlargeCoeficient);
     }
-
-
-
-
 
   }
 
