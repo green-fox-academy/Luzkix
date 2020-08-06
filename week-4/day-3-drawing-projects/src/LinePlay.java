@@ -10,7 +10,7 @@ public class LinePlay {
     //a "few" variables for begenning :-)
     int numberOfLines = 15;
     int startingX = 4;
-    float endingX = WIDTH - (float) 1/12*WIDTH; //float necessary because of rounding
+    float endingX = WIDTH - (float) 1/12*WIDTH; //float necessary because of rounding - otherwise 1/12 is considered to be 0.
     float startingY = (float) 1/5*HEIGHT;
     int endingXint = (int) endingX; //transformed back to int for drawing function
     int startingYint = (int) startingY;
@@ -18,16 +18,16 @@ public class LinePlay {
     int constantX = (int)(endingX - startingX)/numberOfLines; //changed back to int so it does not create problems during drawings
     int constantY = (int)(endingY - startingY)/numberOfLines;
 
-
-    int toBeSubstractedFromEndingX = constantX*(numberOfLines-1);
+    //Following i create the necessary for loop
+    int toBeSubstractedFromEndingX = endingXint - constantX;
     int toBeAddedToStartingY = 0;
 
     for (int lineIndex = 0; lineIndex < numberOfLines; lineIndex++) {
-      //GREEN
+      //GREEN part
       graphics.setColor(Color.GREEN);
       graphics.drawLine(startingX, startingYint + toBeAddedToStartingY,endingXint - toBeSubstractedFromEndingX, endingY);
 
-      //MAGNETA - just reversed x and y coordinates from the drawLine function above
+      //MAGNETA part - just reversed x and y coordinates from the drawLine function above
       graphics.setColor(Color.MAGENTA);
       graphics.drawLine(startingYint + toBeAddedToStartingY, startingX, endingY, endingXint - toBeSubstractedFromEndingX);
 
