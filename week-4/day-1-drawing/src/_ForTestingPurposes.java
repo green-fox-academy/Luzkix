@@ -5,18 +5,26 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class _ForTestingPurposes {
   public static void mainDraw(Graphics graphics) {
+    // Fill the canvas with a checkerboard pattern.
 
-    int numberOfSquares = 15;
-    int startingXPosition = 10;
-    int startingYPosition = 15;
-    int initialSquareSize = 35;
-    int squareSizeJump = 5;
+    int numberOfSquares = 25;
+    int boxsize = (WIDTH / numberOfSquares);
 
-    for (int i = 0; i < numberOfSquares; i++) {
-      drawSingleSquare(startingXPosition, startingYPosition, initialSquareSize, graphics);
-      startingXPosition += initialSquareSize;
-      startingYPosition += initialSquareSize;
-      initialSquareSize += squareSizeJump;
+    for (int j = 0; j < numberOfSquares; j++) {
+      for (int i = 0; i < numberOfSquares; i++) {
+        if (j % 2 == 0) {
+          if (i % 2 != 0) {
+            graphics.setColor(Color.BLACK);
+            graphics.fillRect(i * boxsize, j * boxsize, boxsize, boxsize);
+          }
+        }
+        if (j % 2 != 0) {
+          if (i % 2 == 0) {
+            graphics.setColor(Color.BLACK);
+            graphics.fillRect(i * boxsize, j * boxsize, boxsize, boxsize);
+          }
+        }
+      }
     }
   }
 
@@ -26,8 +34,8 @@ public class _ForTestingPurposes {
   }
 
   // Don't touch the code below
-  static int WIDTH = 720;
-  static int HEIGHT = 720;
+  static int WIDTH = 320;
+  static int HEIGHT = 320;
 
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

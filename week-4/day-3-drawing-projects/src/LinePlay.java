@@ -6,7 +6,6 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class LinePlay {
   public static void mainDraw(Graphics graphics) {
-
     //a "few" variables for begenning :-)
     int numberOfLines = 15;
     int startingX = 4;
@@ -18,7 +17,8 @@ public class LinePlay {
     int constantX = (int)(endingX - startingX)/numberOfLines; //changed back to int so it does not create problems during drawings
     int constantY = (int)(endingY - startingY)/numberOfLines;
 
-    //Following i create the necessary for loop
+    //Following i create the necessary for loop function
+
     int toBeSubstractedFromEndingX = endingXint - constantX;
     int toBeAddedToStartingY = 0;
 

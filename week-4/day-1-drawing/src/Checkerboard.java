@@ -9,21 +9,21 @@ public class Checkerboard {
   public static void mainDraw(Graphics graphics) {
     // Fill the canvas with a checkerboard pattern.
 
-    int numberOfSquares = 8;
-    int boxsize = WIDTH / numberOfSquares;
+    double numberOfSquares = 25;
+    double boxsize =  (WIDTH / numberOfSquares);
 
     for (int j = 0; j < numberOfSquares; j++) {
       for (int i = 0; i < numberOfSquares; i++) {
         if (j % 2 == 0) {
           if (i % 2 != 0) {
             graphics.setColor(Color.BLACK);
-            graphics.fillRect(i * boxsize, j * boxsize, boxsize, boxsize);
+            graphics.fillRect((int)(i * boxsize), (int)(j * boxsize), (int)boxsize, (int)boxsize);
           }
         }
         if (j % 2 != 0) {
           if (i % 2 == 0) {
             graphics.setColor(Color.BLACK);
-            graphics.fillRect(i * boxsize, j * boxsize, boxsize, boxsize);
+            graphics.fillRect((int)(i * boxsize), (int)(j * boxsize), (int)boxsize, (int)boxsize);
           }
         }
       }
