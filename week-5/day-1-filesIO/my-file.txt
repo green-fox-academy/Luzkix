@@ -1,0 +1,4 @@
+Ahoj tady Zdenek
+Jojo jsem Zdenek
+Je to testovaci soubor
+nebo spíše testovací?
