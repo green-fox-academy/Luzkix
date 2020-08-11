@@ -4,6 +4,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WriteSingleLine {
   public static void main(String[] args) {
@@ -15,7 +17,10 @@ public class WriteSingleLine {
 
     String fileName = "my-file2.txt";
     Path path = Paths.get(fileName);
-    String myName = "Zdenek Luzar ";
+    ArrayList<String> myName = new ArrayList<>();
+    myName.add("Zdeněk Luzar ");
+    System.out.println(myName);
+
     try {
       Files.createFile(path);
     } catch (IOException e) {
@@ -23,7 +28,7 @@ public class WriteSingleLine {
           " already exist - not creating new one, just adding content into it");
     }
     try {
-      Files.write(path, myName.getBytes(), StandardOpenOption.APPEND);
+      Files.write(path, myName, StandardOpenOption.APPEND);
     } catch (IOException e) {
       System.out.println("Unable to write file: " + fileName);
     }
