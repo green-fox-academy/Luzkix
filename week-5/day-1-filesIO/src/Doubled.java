@@ -30,14 +30,14 @@ public class Doubled {
     Path destinationFile = Paths.get(sourceFilePath.concat(".decoded.txt"));
     try {
       List<String> originalText = Files.readAllLines(sourceFile);
-      List<String> finalText = new ArrayList<String>();
+      List<String> finalText = new ArrayList<>();
 
       for (int line = 0; line < originalText.size(); line++) {
         String temporaryFinalLine = "";
                                           //.get(line) stands for particular line of text within the ArrayList originalText
-        for (int character = 0; character <originalText.get(line).length(); character++ ) {
-          if (character%2 == 0) {
-            temporaryFinalLine += originalText.get(line).charAt(character);
+        for (int characterIndex = 0; characterIndex <originalText.get(line).length(); characterIndex++ ) {
+          if (characterIndex%2 == 0) {
+            temporaryFinalLine += originalText.get(line).charAt(characterIndex);
           }
         }
         finalText.add(temporaryFinalLine);
