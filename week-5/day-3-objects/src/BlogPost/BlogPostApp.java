@@ -1,6 +1,6 @@
 package BlogPost;
 
-public class App {
+public class BlogPostApp {
   public static void main(String[] args) {
     BlogPost blog1 = new BlogPost();
     blog1.setTitle("Lorem Ipsum");

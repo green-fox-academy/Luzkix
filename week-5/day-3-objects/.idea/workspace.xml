@@ -21,6 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0c6ee70c-8ab5-435b-8958-1d5b6db7cb19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day-3-objects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day-3-objects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Animal/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BlogPost/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PostIt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostIt/PostItApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +50,28 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Application.SharpieApp">
+  <component name="RunManager" selected="JUnit.CounterTest (1)">
+    <configuration name="AnimalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Animal.AnimalApp" />
+      <module name="day-3-objects" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Animal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Animal.App" />
       <module name="day-3-objects" />
@@ -64,8 +85,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BlogPost.App" />
+    <configuration name="BlogPostApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BlogPost.BlogPostApp" />
       <module name="day-3-objects" />
       <extension name="coverage">
         <pattern>
@@ -77,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PostIt.Main" />
+    <configuration name="CounterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Counter.CounterApp" />
       <module name="day-3-objects" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="PostIt.*" />
+          <option name="PATTERN" value="Counter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,41 +111,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+    <configuration name="CounterTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day-3-objects" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Counter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Counter" />
+      <option name="MAIN_CLASS_NAME" value="Counter.CounterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SharpieApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Sharpie.SharpieApp" />
+    <configuration name="CounterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="day-3-objects" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Sharpie.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="Counter" />
+      <option name="MAIN_CLASS_NAME" value="CounterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.App (1)" />
-      <item itemvalue="Application.App" />
-      <item itemvalue="Application.Main (1)" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.SharpieApp" />
+      <item itemvalue="Application.BlogPostApp" />
+      <item itemvalue="Application.AnimalApp" />
+      <item itemvalue="Application.CounterApp" />
+      <item itemvalue="JUnit.CounterTest" />
+      <item itemvalue="JUnit.CounterTest (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SharpieApp" />
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="JUnit.CounterTest (1)" />
+        <item itemvalue="Application.CounterApp" />
+        <item itemvalue="JUnit.CounterTest" />
+        <item itemvalue="Application.AnimalApp" />
+        <item itemvalue="Application.BlogPostApp" />
       </list>
     </recent_temporary>
   </component>
@@ -138,7 +163,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597494776343</updated>
-      <workItem from="1597494778026" duration="5946000" />
+      <workItem from="1597494778026" duration="9525000" />
     </task>
     <servers />
   </component>
@@ -157,50 +182,59 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1597500822997">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1597504457676">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597500822997" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597502261765">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597504457676" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597506426192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597502261765" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1597502261764">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1597506426192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597502261764" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1597502261764">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1597506426192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597502261764" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1597502261764">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1597506426192">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597502261764" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597501998945">
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597504851288">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597501998945" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1597501998944">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1597504851288">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597501998944" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1597501998944">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1597504851288">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597501998944" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1597501998945">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1597504851288">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597501998945" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
+    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1597505174547">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1597505174547" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Animal/App.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/Sharpie/SharpieApp.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Counter/CounterApp.java</url>
+          <line>3</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

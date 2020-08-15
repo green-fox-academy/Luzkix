@@ -1,6 +1,6 @@
 package PostIt;
 
-public class Main {
+public class PostItApp {
   public static void main(String[] args) {
 
     PostIt post1 = new PostIt();
