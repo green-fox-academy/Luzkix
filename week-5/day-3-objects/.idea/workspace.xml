@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0c6ee70c-8ab5-435b-8958-1d5b6db7cb19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/day-3-objects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/day-3-objects.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animal/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BlogPost/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PostIt/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PostIt/PostItApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="JUnit.CounterTest (1)">
+  <component name="RunManager" selected="Application.PokemonsMain">
     <configuration name="AnimalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Animal.AnimalApp" />
       <module name="day-3-objects" />
@@ -85,12 +81,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BlogPostApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BlogPost.BlogPostApp" />
+    <configuration name="CounterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Counter.CounterApp" />
       <module name="day-3-objects" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BlogPost.*" />
+          <option name="PATTERN" value="Counter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CounterApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Counter.CounterApp" />
+    <configuration name="PokemonsMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Pokemons.PokemonsMain" />
       <module name="day-3-objects" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Counter.*" />
+          <option name="PATTERN" value="Pokemons.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -137,19 +133,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.App (1)" />
-      <item itemvalue="Application.BlogPostApp" />
       <item itemvalue="Application.AnimalApp" />
       <item itemvalue="Application.CounterApp" />
       <item itemvalue="JUnit.CounterTest" />
       <item itemvalue="JUnit.CounterTest (1)" />
+      <item itemvalue="Application.PokemonsMain" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PokemonsMain" />
         <item itemvalue="JUnit.CounterTest (1)" />
         <item itemvalue="Application.CounterApp" />
         <item itemvalue="JUnit.CounterTest" />
         <item itemvalue="Application.AnimalApp" />
-        <item itemvalue="Application.BlogPostApp" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +159,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597494776343</updated>
-      <workItem from="1597494778026" duration="9525000" />
+      <workItem from="1597494778026" duration="13015000" />
     </task>
     <servers />
   </component>
@@ -186,38 +182,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597504457676" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597506426192">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1597506858649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1597506426192">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597506858649" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1597506858648">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1597506426192">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597506858648" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1597506858648">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1597506426192">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597506858648" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1597506858649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597506426192" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597504851288">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597506858649" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597506858649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1597504851288">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597506858649" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1597506858649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1597504851288">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597506858649" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1597506858649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1597504851288">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597506858649" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1597506858649">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597504851288" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597506858649" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1597505174547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -235,6 +231,11 @@
           <url>file://$PROJECT_DIR$/src/Counter/CounterApp.java</url>
           <line>3</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Counter/CounterTest.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
