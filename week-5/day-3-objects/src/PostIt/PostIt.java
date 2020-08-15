@@ -1,23 +1,21 @@
 package PostIt;
 
-import java.awt.Color;
-
 public class PostIt {
 
-  private Color backgroundColor;
+  private String backgroundColor;
   private String text;
-  private Color textColor;
+  private String textColor;
 
   public PostIt () {
   }
 
-  public PostIt (Color backgroundColor, String text, Color textColor) {
+  public PostIt (String backgroundColor, String text, String textColor) {
     this.backgroundColor = backgroundColor;
     this.text = text;
     this.textColor = textColor;
   }
 
-  public void setBackgroundColor(Color backgroundColor) {
+  public void setBackgroundColor(String backgroundColor) {
     this.backgroundColor = backgroundColor;
   }
 
@@ -25,7 +23,7 @@ public class PostIt {
     this.text = text;
   }
 
-  public void setTextColor(Color textColor) {
+  public void setTextColor(String textColor) {
     this.textColor = textColor;
   }
 }
