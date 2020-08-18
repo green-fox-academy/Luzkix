@@ -16,6 +16,7 @@ public class Dominoes {
     3. while + inner loop: now when we know the first domino we performs multiple looping comparing the value on the right from the last domino in dominoesOrdered
     with the value on the left from all dominoes stored in array list "dominoes". If match, the domino is added to dominoesOrdered Array list.
      */
+
     System.out.println(dominoes);
 
     List<Integer> rightDomino = new ArrayList<>();
