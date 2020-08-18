@@ -54,7 +54,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Application.Dominoes">
+  <component name="RunManager" selected="Application.TeacherStudentApp">
     <configuration name="App (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Animal.App" />
       <module name="day-3-objects" />
@@ -120,17 +120,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CounterTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TeacherStudentApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TeacherStudent.TeacherStudentApp" />
       <module name="day-3-objects" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Counter.*" />
+          <option name="PATTERN" value="TeacherStudent.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Counter" />
-      <option name="MAIN_CLASS_NAME" value="Counter.CounterTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,15 +139,15 @@
       <item itemvalue="Application.FleetOfThings" />
       <item itemvalue="Application.DiceSet" />
       <item itemvalue="Application.Dominoes" />
-      <item itemvalue="JUnit.CounterTest (1)" />
+      <item itemvalue="Application.TeacherStudentApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TeacherStudentApp" />
         <item itemvalue="Application.Dominoes" />
         <item itemvalue="Application.DiceSet" />
         <item itemvalue="Application.FleetOfThings" />
         <item itemvalue="Application.PokemonsMain" />
-        <item itemvalue="JUnit.CounterTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +163,8 @@
       <updated>1597494776343</updated>
       <workItem from="1597494778026" duration="13280000" />
       <workItem from="1597579467590" duration="7888000" />
-      <workItem from="1597746457647" duration="4719000" />
+      <workItem from="1597746457647" duration="5395000" />
+      <workItem from="1597755787476" duration="2080000" />
     </task>
     <servers />
   </component>
@@ -189,42 +188,46 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597504457676" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597751139802">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1597757753108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597751139802" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1597751139802">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597757753108" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1597757753108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597751139802" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1597751139802">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1597757753108" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1597757753108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597751139802" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1597751139802">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1597757753108" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1597757753108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597751139802" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597750761329">
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1597757753108" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1597753590068">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597750761329" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1597750761329">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1597753590068" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1597753590067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597750761329" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1597750761329">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1597753590067" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1597753590067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597750761329" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1597750761329">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1597753590067" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1597753590067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597750761329" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1597753590067" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1597505174547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1597505174547" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597756348967">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597756348967" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
