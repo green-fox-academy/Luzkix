@@ -1,4 +1,4 @@
-package Animal;
+package Farm;
 
 public class Animal {
 
