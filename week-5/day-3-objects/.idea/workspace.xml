@@ -66,7 +66,7 @@
       <recent name="D:\Greenfox\Luzkix\week-5\day-3-objects\src\Farm" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BlogPostApp">
+  <component name="RunManager" selected="Application.TreeApp">
     <configuration name="AnimalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Farm.AnimalApp" />
       <module name="day-3-objects" />
@@ -106,19 +106,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Dominoes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Dominoes.Dominoes" />
-      <module name="day-3-objects" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Dominoes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PetrolStationApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PetrolStation.PetrolStationApp" />
       <module name="day-3-objects" />
@@ -145,6 +132,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Trees.TreeApp" />
+      <module name="day-3-objects" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Trees.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -158,19 +158,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.App (1)" />
-      <item itemvalue="Application.Dominoes" />
       <item itemvalue="Application.PetrolStationApp" />
       <item itemvalue="Application.SharpieApp2" />
       <item itemvalue="Application.AnimalApp" />
       <item itemvalue="Application.BlogPostApp" />
+      <item itemvalue="Application.TreeApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TreeApp" />
         <item itemvalue="Application.BlogPostApp" />
         <item itemvalue="Application.AnimalApp" />
         <item itemvalue="Application.SharpieApp2" />
         <item itemvalue="Application.PetrolStationApp" />
-        <item itemvalue="Application.Dominoes" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +192,7 @@
       <workItem from="1598193806544" duration="9077000" />
       <workItem from="1598269978584" duration="9549000" />
       <workItem from="1598347355845" duration="48000" />
-      <workItem from="1598347480238" duration="4891000" />
+      <workItem from="1598347480238" duration="7639000" />
     </task>
     <servers />
   </component>
@@ -212,30 +212,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1598350116764">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1598353669543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598350116764" />
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598353669543" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598347377843">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598347377843" />
-    <state width="1493" height="340" key="GridCell.Tab.0.bottom" timestamp="1598352013686">
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom" timestamp="1598355070548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598352013686" />
-    <state width="1493" height="340" key="GridCell.Tab.0.center" timestamp="1598352013686">
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598355070548" />
+    <state width="1493" height="340" key="GridCell.Tab.0.center" timestamp="1598355070548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="340" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598352013686" />
-    <state width="1493" height="340" key="GridCell.Tab.0.left" timestamp="1598352013685">
+    <state width="1493" height="340" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598355070548" />
+    <state width="1493" height="340" key="GridCell.Tab.0.left" timestamp="1598355070547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="340" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598352013685" />
-    <state width="1493" height="340" key="GridCell.Tab.0.right" timestamp="1598352013686">
+    <state width="1493" height="340" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598355070547" />
+    <state width="1493" height="340" key="GridCell.Tab.0.right" timestamp="1598355070548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="340" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598352013686" />
+    <state width="1493" height="340" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598355070548" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1598280196955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
