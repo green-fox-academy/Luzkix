@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0c6ee70c-8ab5-435b-8958-1d5b6db7cb19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Animal/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Animal/Animal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Farm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Blog" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -63,10 +62,11 @@
       <recent name="SharpieSet" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Greenfox\Luzkix\week-5\day-3-objects\src\Blog" />
       <recent name="D:\Greenfox\Luzkix\week-5\day-3-objects\src\Farm" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AnimalApp">
+  <component name="RunManager" selected="Application.BlogPostApp">
     <configuration name="AnimalApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Farm.AnimalApp" />
       <module name="day-3-objects" />
@@ -86,6 +86,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Animal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogPostApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Blog.BlogPostApp" />
+      <module name="day-3-objects" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Blog.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,15 +145,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeacherStudentApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TeacherStudent.TeacherStudentApp" />
-      <module name="day-3-objects" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TeacherStudent.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,21 +159,22 @@
     <list>
       <item itemvalue="Application.App (1)" />
       <item itemvalue="Application.Dominoes" />
-      <item itemvalue="Application.TeacherStudentApp" />
       <item itemvalue="Application.PetrolStationApp" />
       <item itemvalue="Application.SharpieApp2" />
       <item itemvalue="Application.AnimalApp" />
+      <item itemvalue="Application.BlogPostApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BlogPostApp" />
         <item itemvalue="Application.AnimalApp" />
         <item itemvalue="Application.SharpieApp2" />
         <item itemvalue="Application.PetrolStationApp" />
         <item itemvalue="Application.Dominoes" />
-        <item itemvalue="Application.TeacherStudentApp" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -178,12 +190,14 @@
       <workItem from="1597746457647" duration="5395000" />
       <workItem from="1597755787476" duration="8621000" />
       <workItem from="1598193806544" duration="9077000" />
-      <workItem from="1598269978584" duration="9427000" />
+      <workItem from="1598269978584" duration="9549000" />
+      <workItem from="1598347355845" duration="48000" />
+      <workItem from="1598347480238" duration="4891000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -198,50 +212,54 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1597504457676">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1598350116764">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1597504457676" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1598280049236">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598350116764" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598347377843">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598280049236" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1598280049236">
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598347377843" />
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom" timestamp="1598352013686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598280049236" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1598280049236">
+    <state width="1493" height="340" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598352013686" />
+    <state width="1493" height="340" key="GridCell.Tab.0.center" timestamp="1598352013686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598280049236" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1598280049236">
+    <state width="1493" height="340" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598352013686" />
+    <state width="1493" height="340" key="GridCell.Tab.0.left" timestamp="1598352013685">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598280049236" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1598279199138">
+    <state width="1493" height="340" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598352013685" />
+    <state width="1493" height="340" key="GridCell.Tab.0.right" timestamp="1598352013686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598279199138" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1598279199138">
+    <state width="1493" height="340" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598352013686" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1598280196955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598279199138" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1598279199138">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598280196955" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1598280196955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598279199138" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1598279199138">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598280196955" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1598280196955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598279199138" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598280196955" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1598280196955">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598280196955" />
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1597505174547">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1597505174547" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597756348967">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598350583672">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597756348967" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598350583672" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
