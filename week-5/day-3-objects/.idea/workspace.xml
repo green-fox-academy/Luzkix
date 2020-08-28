@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0c6ee70c-8ab5-435b-8958-1d5b6db7cb19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pirates/Armada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pirates/Armada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pirates/PiratesApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pirates/PiratesApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pirates/Ship.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pirates/Ship.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pirates/WarApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pirates/WarApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,17 +146,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.App (1)" />
       <item itemvalue="Application.BlogPostApp" />
@@ -201,7 +186,9 @@
       <workItem from="1598389126727" duration="27000" />
       <workItem from="1598436367243" duration="49976000" />
       <workItem from="1598572552928" duration="85000" />
-      <workItem from="1598607810632" duration="8712000" />
+      <workItem from="1598607810632" duration="9016000" />
+      <workItem from="1598635476885" duration="187000" />
+      <workItem from="1598635683346" duration="26000" />
     </task>
     <servers />
   </component>
@@ -229,22 +216,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598347377843" />
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom" timestamp="1598633121458">
+    <state x="549" y="153" key="FileChooserDialogImpl" timestamp="1598635543398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598633121458" />
-    <state width="1493" height="239" key="GridCell.Tab.0.center" timestamp="1598633121458">
+    <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598635543398" />
+    <state width="1493" height="182" key="GridCell.Tab.0.bottom" timestamp="1598634372353">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598633121458" />
-    <state width="1493" height="239" key="GridCell.Tab.0.left" timestamp="1598633121458">
+    <state width="1493" height="182" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598634372353" />
+    <state width="1493" height="182" key="GridCell.Tab.0.center" timestamp="1598634372353">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598633121458" />
-    <state width="1493" height="239" key="GridCell.Tab.0.right" timestamp="1598633121458">
+    <state width="1493" height="182" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598634372353" />
+    <state width="1493" height="182" key="GridCell.Tab.0.left" timestamp="1598634372352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="239" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598633121458" />
+    <state width="1493" height="182" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598634372352" />
+    <state width="1493" height="182" key="GridCell.Tab.0.right" timestamp="1598634372353">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="182" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598634372353" />
     <state width="1493" height="260" key="GridCell.Tab.1.bottom" timestamp="1598572517782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -265,6 +256,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="304" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1597505174547" />
+    <state x="360" y="32" key="new project wizard" timestamp="1598635554026">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="360" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1598635554026" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598537940251">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
