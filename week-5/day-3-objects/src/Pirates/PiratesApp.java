@@ -26,12 +26,10 @@ public class PiratesApp {
     System.out.println(pirate3);
 
     Ship ship1 = new Ship();
-    ship1.fillShip();
     System.out.println(ship1);
     ship1.reportStatus();
 
     Ship ship2 = new Ship();
-    ship2.fillShip();
     System.out.println(ship2);
     ship2.reportStatus();
 

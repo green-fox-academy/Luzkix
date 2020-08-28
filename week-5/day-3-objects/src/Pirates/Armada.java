@@ -10,10 +10,18 @@ public class Armada {
     ships.add(new Ship());
   }
 
+  public void addRandomShips () {
+    int randomNumber = (int) (Math.random()*11);
+    for (int i = 0; i < randomNumber; i++) {
+      addShip();
+    }
+  }
+
   public boolean war(Armada enemyArmada) {
     int indexOfThis = 0;
     int indexOfEnemy = 0;
     while (indexOfThis < ships.size() && indexOfEnemy < enemyArmada.ships.size()) {
+      System.out.println("War round: " + (int) (indexOfThis + indexOfEnemy + 1));
       boolean thisWins = ships.get(indexOfThis).battle(enemyArmada.ships.get(indexOfEnemy));
       if (thisWins) {
         indexOfEnemy++;

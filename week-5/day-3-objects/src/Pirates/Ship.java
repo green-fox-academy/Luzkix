@@ -53,7 +53,7 @@ public class Ship {
 
    public boolean battle (Ship enemyShip) {
     boolean thisShipWins = this.calculateScore() > enemyShip.calculateScore();
-    System.out.println(thisShipWins ? "Our ship won the battle!" : "Enemy ship won the battle!");
+    System.out.println(thisShipWins ? "Our ship won the individual battle!" : "Enemy ship won the individual battle!");
     if (thisShipWins) {
       int piratesToBeKilled = (int) (Math.random()*(enemyShip.calculateAlivePirates()+1));
       System.out.println("Pirates to be killed from enemy ship: " + piratesToBeKilled + "\n");
@@ -103,6 +103,13 @@ public class Ship {
     System.out.println("The number of not consumed drinks after the party finished (e.g. all pirates passed out) is: " + amountOfRumToDrink);
     System.out.println("The details about winning crew after the party finished:\n");
     System.out.println(this);
+
+    //resetting the passedOut pirates, otherwise they are passedOut forever
+    for (Pirate pirate: crew) {
+      if (pirate.getPassOutStatus() == true) {
+        pirate.sleep();
+      }
+    }
   }
 
   private int isDeadOrPassedOut() {
