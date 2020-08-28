@@ -8,6 +8,10 @@ public class Ship {
   List <Pirate> crew = new ArrayList<>();
   private Random random = new Random();
 
+  public Ship () {
+    this.fillShip();
+  }
+
   public void addPirate() {
     crew.add(new Pirate());
   }
@@ -81,7 +85,7 @@ public class Ship {
   }
 
   private void party() {
-    int amountOfRumToDrink = random.nextInt(400); //randomly selected limit of disposal rum (max XX)
+    int amountOfRumToDrink = random.nextInt(60); //randomly selected limit of disposal rum (max XX)
     System.out.println("Winning ship has a party!!! \nNumber of ready drinks for the party: " + amountOfRumToDrink);
     while ((amountOfRumToDrink > 0) && (crew.size() > isDeadOrPassedOut())) { //party ends when drinks are run out or every crew member is passed out (or dead)
       for (Pirate pirate : crew) {
@@ -97,7 +101,7 @@ public class Ship {
 
     }
     System.out.println("The number of not consumed drinks after the party finished (e.g. all pirates passed out) is: " + amountOfRumToDrink);
-    System.out.println("The details about winning crew is summarized below:\n");
+    System.out.println("The details about winning crew after the party finished:\n");
     System.out.println(this);
   }
 
