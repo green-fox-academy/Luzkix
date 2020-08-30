@@ -1,7 +1,6 @@
 public class StringsAgain {
   public static void main(String[] args) {
-    //Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars
-    // have been changed to 'y' chars.
+    //Given a string, compute recursively a new string where all the 'x' chars have been removed.
 
     String testString = "xxAhxXxxb";
     System.out.println(replaceX(testString));
