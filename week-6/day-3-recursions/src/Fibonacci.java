@@ -5,7 +5,7 @@ public class Fibonacci {
   public static void main(String[] args) {
 
     LocalDateTime start = LocalDateTime.now();
-    System.out.println(fib(45));
+    System.out.println(fib(50));
     LocalDateTime end = LocalDateTime.now();
     System.out.println(Duration.between(start, end).toMillis());
   }
