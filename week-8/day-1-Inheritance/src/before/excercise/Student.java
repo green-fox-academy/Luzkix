@@ -1,4 +1,4 @@
-package BeforeExcercise;
+package before.excercise;
 
 public class Student extends Person{
   private String previousOrganization;

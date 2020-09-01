@@ -1,4 +1,4 @@
-package BeforeExcercise;
+package before.excercise;
 
 public class Sponsor extends Person{
   private String company;

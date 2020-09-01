@@ -1,4 +1,4 @@
-package BeforeExcercise;
+package before.excercise;
 
 public class Mentor extends Person {
   private Level level;
