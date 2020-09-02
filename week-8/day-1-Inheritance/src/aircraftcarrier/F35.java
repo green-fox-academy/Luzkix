@@ -10,11 +10,6 @@ public class F35 extends Aircraft{
     return damage;
   }
 
-  /* public int maxAmmo () {
-    int maximumAmmo = this.maxAmmo;
-    return maximumAmmo;
-  } */
-
   public int ammoToRefill() {
     int ammoToRefill = this.maxAmmo - getAmmo();
     return ammoToRefill;

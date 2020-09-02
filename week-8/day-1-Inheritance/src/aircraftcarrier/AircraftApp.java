@@ -18,11 +18,14 @@ public class AircraftApp {
     carrier.add(f35_3);
     carrier.fill();
 
-    Carrier carrier2 = new Carrier(2300, 5000);
+    Carrier carrier2 = new Carrier(2300, 1000);
     carrier.fight(carrier2);
 
+    System.out.println("Carrier1:");
     System.out.println(carrier.getStatus());
 
+    System.out.println("Carrier2:");
+    System.out.println(carrier2.getStatus());
 
 
   }

@@ -39,11 +39,6 @@ public class Aircraft {
     return ammo;
   }
 
- /* public int maxAmmo () {
-    int maximumAmmo = this.maxAmmo;
-    return maximumAmmo;
-  } */
-
   public String getStatus () {
     return ("Type " + getClass().getSimpleName() + ", Ammo: " + ammo + specificDamage());
   }
@@ -59,7 +54,4 @@ public class Aircraft {
       return false;
     }
   }
-
-
-
 }
