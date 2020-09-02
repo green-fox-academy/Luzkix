@@ -1,7 +1,5 @@
 package aircraftcarrier;
 
-import greenfoxorganization.Carrier;
-
 public class AircraftApp {
   public static void main(String[] args) {
     Aircraft f16_1 = new F16();
