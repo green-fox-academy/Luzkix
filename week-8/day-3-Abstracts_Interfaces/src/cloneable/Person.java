@@ -1,9 +1,9 @@
-package greenfoxorganization;
+package cloneable;
 
 public class Person {
-  private String name;
-  private int age;
-  private String gender;
+  protected String name;
+  protected int age;
+  protected String gender;
 
   public Person () {
     this.name = "Jane Doe";
@@ -29,5 +29,11 @@ public class Person {
     System.out.println("My goal is: Live for the moment!");
   }
 
+  public void setAge(int age) {
+    this.age = age;
+  }
 
+  public int getAge() {
+    return age;
+  }
 }

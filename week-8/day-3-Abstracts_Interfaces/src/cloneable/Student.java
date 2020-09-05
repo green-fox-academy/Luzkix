@@ -1,6 +1,6 @@
-package greenfoxorganization;
+package cloneable;
 
-public class Student extends Person {
+public class Student extends Person implements Cloneable {
   private String previousOrganization;
   private int skippedDays;
 
@@ -27,5 +27,11 @@ public class Student extends Person {
   public String specificIntroduction () {
     return " from previous organization " + previousOrganization + " who skipped " + skippedDays
         + " days from the course already." ;
+  }
+
+  @Override
+  public Object clone() throws CloneNotSupportedException {
+    Student s = (Student)super.clone();
+    return s;
   }
 }
