@@ -6,7 +6,7 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Triangles {
+public class TrianglesTest {
 
   public static void mainDraw(Graphics graphics){
     Color lightGreen = new Color(144,238,144);
@@ -40,6 +40,7 @@ public class Triangles {
   }
 
   public static void drawTriangles (Graphics graphics, int x1, int x2, int x3, int y1, int y2, int y3, int level) {
+
     if (level == 0) {
       return;
     } else {

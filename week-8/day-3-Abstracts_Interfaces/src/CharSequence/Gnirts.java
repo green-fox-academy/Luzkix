@@ -2,7 +2,6 @@ package CharSequence;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Gnirts implements CharSequence {
   protected String text;
@@ -66,13 +65,5 @@ public class Gnirts implements CharSequence {
     return result;
   }
 
-  @Override
-  public IntStream chars() {
-    return null;
-  }
 
-  @Override
-  public IntStream codePoints() {
-    return null;
-  }
 }
