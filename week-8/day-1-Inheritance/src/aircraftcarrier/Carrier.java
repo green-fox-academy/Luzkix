@@ -35,7 +35,7 @@ public class Carrier {
             carrierAmmo = aircraft.refill(carrierAmmo);
           }
         }
-      } else if (carrierAmmo <= 0) {
+      } else if (carrierAmmo <= 0) { //condition cant happen (its dealt within the function itself) unless the carrier is set to have 0 ammo
         System.out.println("The carrier have no more ammo for filling the aircrafts!!!");
       }
     }
