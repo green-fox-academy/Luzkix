@@ -1,4 +1,4 @@
-package CharSequence;
+package charSequence;
 
 import java.util.ArrayList;
 import java.util.List;

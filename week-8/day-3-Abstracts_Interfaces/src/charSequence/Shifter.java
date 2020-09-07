@@ -1,4 +1,4 @@
-package CharSequence;
+package charSequence;
 
 public class Shifter implements CharSequence{
 private int shift;
