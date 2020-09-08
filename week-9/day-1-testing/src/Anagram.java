@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Anagram {
   public boolean isAnagram (String sentence1, String sentence2) {
