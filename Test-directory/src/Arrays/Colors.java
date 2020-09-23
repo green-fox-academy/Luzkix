@@ -1,5 +1,6 @@
-package Arrays;
-
+package arrays;
+import static arrays.A.staticNumber;
+import arrays.A;
 import java.util.Arrays;
 
 public class Colors {
@@ -11,6 +12,11 @@ public class Colors {
       }
       System.out.println();
     }
+
+    A a = new A();
+    int b = 3 * staticNumber;
+    System.out.println(b);
+
 
   }
 
