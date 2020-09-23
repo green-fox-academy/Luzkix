@@ -11,9 +11,9 @@ public class GuessTheNumber {
         int guessedNumber = scanner.nextInt();
 
         //toto if jsem vložil až nakonec, protože když by se číslo rovnou uhádlo, program skončí a nevypíše žádnou větu.
-        if (guessedNumber == definedNumber) {
+/*        if (guessedNumber == definedNumber) {
             System.out.println("You found the number: / Správně! Číslo je: " + definedNumber);
-        }
+        }*/
 
         while (guessedNumber != definedNumber) {
             if (guessedNumber < definedNumber) {
