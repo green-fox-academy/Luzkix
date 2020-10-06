@@ -1,14 +1,13 @@
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class Ex06 {
   public static void main(String[] args) {
     //Write a Stream Expression to find the uppercase characters in a string!
     String testString = "Ahoj JakSe máš? mám SE celKeM dobŘe";
 
-    //vrátím výsledek jako list of characters
+    //Var1: vrátím výsledek jako list of characters
     List<Character> uppercase1 = testString.chars()
         .mapToObj(letter -> (char) letter)
         .filter(a -> Character.isUpperCase(a))
@@ -17,7 +16,7 @@ public class Ex06 {
 
     System.out.println(uppercase1);
 
-    //vrátím výsledek jako slovo String
+    //Var2: vrátím výsledek jako slovo String
     String uppercase2 = testString.chars()
         .filter(Character::isUpperCase)
         .peek(System.out::println)
@@ -25,12 +24,10 @@ public class Ex06 {
             StringBuilder::new,
             StringBuilder::appendCodePoint, //převede z číslic na písmeno
             StringBuilder::append
-            )
-        .toString()
-        ;
+        )
+        .toString();
 
     System.out.println(uppercase2);
-
 
 
   }
