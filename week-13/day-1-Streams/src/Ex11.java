@@ -30,7 +30,7 @@ public class Ex11 {
 
     //Var1 - s využitím Stream() + FlatMap
     Map<String, Long> test = readFile("files/WikiArticle.txt").stream()
-        .flatMap(a -> Arrays.stream(a.split(" "))) //lines with text are split to words and streamed as String
+        .flatMap(a -> Arrays.stream(a.split("\\s+"))) //lines with text are split to words and streamed as String
         .map(a -> a.replaceAll("[^a-zA-Z/]", ""))
         .map(a -> a.strip()) //deleting all empty spaces
         .filter(a -> !a.isEmpty()) //deletes empty items (null words)
@@ -45,8 +45,8 @@ public class Ex11 {
         Stream.of(readFile("files/WikiArticle.txt")) //The List of Strings is being streamed as Stream<List<String>>
             .flatMap(Collection::stream) //each line with text is streamed individually as Stream<String>
             .filter(a -> !a.isEmpty()) //empty lines are omitted
-            .flatMap(str -> Arrays.stream(str.split(" "))) //split of the line into individual words
-            .map(a -> a.replaceAll("[^a-zA-Z/]", "")) //keeping just letters, numbers and '/'
+            .flatMap(str -> Arrays.stream(str.split("\\s+"))) //split of the line into individual words
+            .map(a -> a.replaceAll("[^a-zA-Z/ ]", "")) //keeping just letters, numbers and '/'
             .map(a -> a.strip()) //deleting all empty spaces
             .filter(a -> !a.isEmpty()) //deletes empty items (null words)
             .collect(Collectors.groupingBy(a -> a, Collectors.counting()));
