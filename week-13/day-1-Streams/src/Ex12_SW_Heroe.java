@@ -32,10 +32,6 @@ public class Ex12_SW_Heroe {
     return name;
   }
 
-  public String getHeight() {
-    return height;
-  }
-
   public float getMass() {
     if (mass.equals("unknown")) {
       return -1;
@@ -43,31 +39,21 @@ public class Ex12_SW_Heroe {
     return Float.parseFloat(mass.replaceAll("[^0-9.]", ""));
   }
 
-  public String getHair_color() {
-    return hair_color;
-  }
-
-  public String getSkin_color() {
-    return skin_color;
-  }
-
-  public String getEye_color() {
-    return eye_color;
-  }
-
-  public String getBirth_year() {
-    return birth_year;
-  }
-
   public String getGender() {
     return gender;
+  }
+
+  public int getHeight() {
+    if (height.equals("unknown")) {
+      return -1;
+    }
+    return Integer.parseInt(height.replaceAll("[^0-9.]", ""));
   }
 
   private static List<String> readFile(String filePath) {
     Path path = Paths.get(filePath);
     try {
-      List<String> lines = Files.readAllLines(path);
-      return lines;
+      return Files.readAllLines(path);
     } catch (IOException e) {
       throw new RuntimeException("file not accessible");
     }
@@ -78,15 +64,16 @@ public class Ex12_SW_Heroe {
     //into individual hero properties, which are then assigned to the Hero using Heroe´s constructor.
     List<Ex12_SW_Heroe> heroes = readFile(filePath).stream()
         .skip(1)
+        .map(a -> a.split(";"))
         .map(a -> new Ex12_SW_Heroe(
-            a.split(";")[0]
-            ,a.split(";")[1]
-            ,a.split(";")[2]
-            ,a.split(";")[3]
-            ,a.split(";")[4]
-            ,a.split(";")[5]
-            ,a.split(";")[6]
-            ,a.split(";")[7]))
+            a[0]
+            ,a[1]
+            ,a[2]
+            ,a[3]
+            ,a[4]
+            ,a[5]
+            ,a[6]
+            ,a[7]))
         .collect(Collectors.toList());
     return heroes;
   }
@@ -99,15 +86,24 @@ public class Ex12_SW_Heroe {
           //2.finding maximum value and assigning the key = name of Hero
 
     Map<String, Float> allHeroesWeight = createHeroesWithData("files/swcharacters.txt").stream()
+        .filter(hero -> hero.getMass() != -1)
         .collect(Collectors.toMap(Ex12_SW_Heroe::getName, Ex12_SW_Heroe::getMass));
 
     String mostHeavyHero = allHeroesWeight.entrySet().stream()
         .max(Map.Entry.comparingByValue())
         .map(Map.Entry::getKey)
-        .get();
-
+        .get(); //změna z optional na obyč. String
 
     System.out.println(mostHeavyHero);
+
+    //2: Print the average height of the male characters
+
+    Double maleAverageHeight = createHeroesWithData("files/swcharacters.txt").stream()
+        .filter(hero -> hero.getHeight() != -1)
+        .collect(Collectors.groupingBy(hero -> hero.getGender(), Collectors.averagingDouble(hero -> hero.getHeight())))
+        .get("male");
+
+    System.out.println(maleAverageHeight);
 
 
   }
