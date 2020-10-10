@@ -103,8 +103,16 @@ public class Ex12_SW_Heroe {
         .collect(Collectors.groupingBy(hero -> hero.getGender(), Collectors.averagingDouble(hero -> hero.getHeight())))
         .get("male");
 
-    System.out.println(maleAverageHeight);
+    System.out.println("male AVG height: " + maleAverageHeight);
 
+    //3: Print the average height of the female characters
+    Double femaleAverageHeight = createHeroesWithData("files/swcharacters.txt").stream()
+        .filter(hero -> hero.getHeight() != -1)
+        .collect(Collectors.groupingBy(hero -> hero.getGender(), Collectors.averagingDouble(hero -> hero.getHeight())))
+        .get("female");
+
+
+    System.out.println("female AVG height: " + femaleAverageHeight);
 
   }
 }
