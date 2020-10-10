@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #EBEBEB;
+    color: #585858;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding: 50px;
+}
+
+form {
+    display: block;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    width: 400px;
+    padding: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin: auto;
+}
+
+fheader {
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.username {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.username label {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#username {
+    border: 1px solid #EBEBEB;
+    border-radius: 3px;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    color: #585858;
+}
+#username:focus {
+    border: 2px solid #A6C5A1;
+    box-shadow: 1px 1px 5px gainsboro;
+}
+
+.password {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.password label {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#password {
+    border: 1px solid #EBEBEB;
+    border-radius: 3px;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    color: #585858;
+}
+
+#password:focus {
+    border: 2px solid #A6C5A1;
+    box-shadow: 1px 1px 5px gainsboro;
+}
+
+#forgot {
+    margin-top: 10px;
+    font-size: 10px;
+    text-align: right;
+}
+
+.pushButton {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.pushButton button{
+    width: 130px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    background-color: #333333;
+    color: white;
+}
