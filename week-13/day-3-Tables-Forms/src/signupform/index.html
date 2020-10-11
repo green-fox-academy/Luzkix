@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+<form action="https://newsletter-ws.herokuapp.com/register" method="post" class="loginForm">
+    <section class="leftColumn">
+        <fheader>Sign up</fheader>
+        <div class="inputfield">
+            <input type="text" id="name" class="inputs" name="name" placeholder="Username" required minlength="3">
+        </div>
+        <div class="inputfield">
+            <input type="email" id="email" class="inputs" name="email" placeholder="E-mail" required minlength="5">
+        </div>
+        <div class="inputfield">
+            <input type="password" id="password" class="inputs" name="password" placeholder="Password" required minlength="8">
+        </div>
+        <div class="inputfield">
+            <input type="password" id="passwordConfirmation" class="inputs" name="passwordConfirmation" placeholder="Retype password" required minlength="8">
+        </div>
+        <div class="pushButton">
+            <button>Sign me up</button>
+        </div>
+    </section>
+    <section class="centerColumn">
+        OR
+    </section>
+    <section class="rightColumn">
+        <div class="socialButtons", id="facebook" onclick="location.href='https://www.facebook.com/';">Log in with facebook</div>
+        <div class="socialButtons", id="twitter" onclick="location.href='https://www.twitter.com/';">Log in with Twitter</div>
+        <div class="socialButtons", id="google" onclick="location.href='https://www.google.com/';">Log in with Google</div>
+    </section>
+</form>
+
+</body>
+<script src="script.js"></script>
+</html>
