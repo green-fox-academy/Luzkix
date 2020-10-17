@@ -22,17 +22,24 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63dd1229-e561-47a3-8aef-8b164264808a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../BookLibrary/src/main/java/com/example/booklibrary/controllers/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookLibrary/src/main/java/com/example/booklibrary/controllers/BookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookLibrary/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookLibrary/src/main/resources/templates/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BookLibrary/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day-1-Spring/springstart/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../day-1-Spring/springstart/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/java/com/greenfoxacademy/springstart/controllers/FizzBuzzController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/java/com/greenfoxacademy/springstart/controllers/FizzBuzzController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/java/com/greenfoxacademy/springstart/controllers/HelloRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/java/com/greenfoxacademy/springstart/controllers/HelloRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/resources/templates/fizzBuzz.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../day-1-Spring/springstart/src/main/resources/templates/fizzBuzz.html" afterDir="false" />
+    <list default="true" id="7ee60a70-b0d5-47e9-bc13-c3dbad28ba54" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/src/main/java/com/example/demo/BankOfSimbaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bank of Simba/src/test/java/com/example/demo/BankOfSimbaApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +47,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$/../Bank of Simba">
+    <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
@@ -66,7 +73,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="1izyiuZ5yh2yeeEFFoOtiTU2t7m" />
+  <component name="ProjectId" id="1izzCtCbw0447EpYFoVGVjBzux2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -88,12 +95,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63dd1229-e561-47a3-8aef-8b164264808a" name="Default Changelist" comment="" />
-      <created>1602924845683</created>
+      <changelist id="7ee60a70-b0d5-47e9-bc13-c3dbad28ba54" name="Default Changelist" comment="" />
+      <created>1602925084049</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1602924845683</updated>
-      <workItem from="1602924847305" duration="20000" />
+      <updated>1602925084049</updated>
+      <workItem from="1602925085439" duration="7000" />
     </task>
     <servers />
   </component>
