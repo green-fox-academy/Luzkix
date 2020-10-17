@@ -7,7 +7,7 @@ body {
     background: #3E94EC;
     color: #686C86;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     padding: 50px;
 
 }
@@ -20,6 +20,7 @@ td, th, table{
 
 th {
     background-color: #1B1E24;
+    font-size: 20px;
     color: #BFC7CE;
     font-weight: normal;
     border: 2px solid #343A45;
@@ -44,5 +45,17 @@ tr:nth-child(odd) {
 
 .shiny {
     color: red;
+    font-size: 18px;
     text-transform: uppercase;
+}
+
+form {
+    text-align: center;
+    margin: 20px;
+    color: #FFFFFF;
+}
+
+button {
+    border-radius: 10px;
+    padding: 2px 15px 2px 15px;
 }

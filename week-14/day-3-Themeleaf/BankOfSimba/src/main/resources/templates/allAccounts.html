@@ -7,6 +7,14 @@
     <title>Show one account</title>
 </head>
 <body>
+<form action="/addMoney" method="post" class="add-money-form" >
+    <div>
+        <label for="name">Add money to your favourite hero!!!</label>
+        <input type="text" id="name" name="name">
+        <button>Add</button>
+    </div>
+</form>
+
 <table>
     <tr>
         <th>Name</th>
@@ -20,7 +28,7 @@
         <td th:text="${account.name}"/>
         <td th:text="${#numbers.formatDecimal(account.balance, 1, 2, 'POINT')} + ' Zebra'"/>
         <td th:text="${account.animalType}"/>
-        <td th:text="${accountStat.index}"/>
+        <td th:text="${accountStat.index}+1"/>
         <td th:text="${account.isKing} ? 'King' : 'Not a King'"/>
         <td th:switch="${account.isBadGuy}">
             <p th:case="true">is bad guy</p>

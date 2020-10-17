@@ -15,6 +15,10 @@ public class BankAccount {
     this.isBadGuy = isBadGuy;
   }
 
+  public void increaseBalance (int number) {
+    balance += number;
+  }
+
   public String getName() {
     return name;
   }
