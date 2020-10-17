@@ -2,16 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@350&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="style.css">
     <title>Show one account</title>
 </head>
 <body>
-    <ul th:each="account:${accounts}">
-        <li th:text="${account.name}"/>
-        <div th:text="${#numbers.formatDecimal(account.balance, 1, 2, 'POINT')} + ' Zebra'" />
-        <div th:text="${account.animalType}"/>
-    </ul>
-    <div>ahoj</div>
-
-
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Cash</th>
+        <th>Animal type</th>
+        <th>Animal index</th>
+        <th>King or not</th>
+        <th>Bad/Good Guy</th>
+    </tr>
+    <tr th:each="account:${accounts}" th:class="${account.isKing} ? 'shiny' : 'standard'">
+        <td th:text="${account.name}"/>
+        <td th:text="${#numbers.formatDecimal(account.balance, 1, 2, 'POINT')} + ' Zebra'"/>
+        <td th:text="${account.animalType}"/>
+        <td th:text="${accountStat.index}"/>
+        <td th:text="${account.isKing} ? 'King' : 'Not a King'"/>
+        <td th:switch="${account.isBadGuy}">
+            <p th:case="true">is bad guy</p>
+            <p th:case="false">law abiding animal</p>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

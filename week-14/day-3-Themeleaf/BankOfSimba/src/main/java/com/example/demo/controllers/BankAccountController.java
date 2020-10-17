@@ -11,7 +11,7 @@ public class BankAccountController {
 
   @GetMapping("/show")
   public String showOneAccount (Model model) {
-    BankAccount bankAccount = new BankAccount("Simba", 2000, "lion");
+    BankAccount bankAccount = new BankAccount("Simba", 2000, "lion", true, false);
     model.addAttribute("name", bankAccount.getName());
     model.addAttribute("balance", bankAccount.getBalance());
     model.addAttribute("animalType", bankAccount.getAnimalType());
@@ -21,16 +21,15 @@ public class BankAccountController {
   @GetMapping("/showMultiple")
   public String showMultipleAccounts (Model model) {
     List<BankAccount> accounts = new ArrayList<>();
-    accounts.add(new BankAccount("Bamba", 1000, "lion"));
-    accounts.add(new BankAccount("Samba", 1500, "monkey"));
-    accounts.add(new BankAccount("Rumba", 2000, "bird"));
-    accounts.add(new BankAccount("Lamba", 2500, "fish"));
-    accounts.add(new BankAccount("Mamba", 3000, "snake"));
+    accounts.add(new BankAccount("Samba", 1500, "monkey", false, true));
+    accounts.add(new BankAccount("Rumba", 2000, "bird", false, true));
+    accounts.add(new BankAccount("Lamba", 2500, "fish", false, false));
+    accounts.add(new BankAccount("Bamba", 1000, "lion", true, false));
+    accounts.add(new BankAccount("Mamba", 3000, "snake", false, false));
 
     model.addAttribute("accounts", accounts);
     return "showMultipleAccounts";
   }
-
 
   @GetMapping("/utext")
   public String utextDemo (Model model) {
