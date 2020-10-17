@@ -10,7 +10,7 @@ public class HelloRESTController {
   AtomicLong atomicLong = new AtomicLong();
 
   @GetMapping ({"/greeting", "/ahoj"}) //mohu zadat více linků
-  public Greeting greeting (@RequestParam String name) {
+  public Greeting greeting (@RequestParam (name = "name", required = false, defaultValue = "Default Zdenda") String name) {
     return new Greeting(atomicLong.incrementAndGet(),"Hello, " + name);
   }
 

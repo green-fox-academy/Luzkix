@@ -13,6 +13,12 @@ public class FizzBuzzController {
   @GetMapping(value = "/fizz")
   public String greeting(Model model, @RequestParam String name) {
     atomicLong.incrementAndGet();
+    model.addAttribute("name", name);
+    model.addAttribute("counter", counter());
+    return "fizzBuzz";
+  }
+
+  private String counter() {
     String counter = "";
     if(atomicLong.get() % 3 == 0 && atomicLong.get() % 5 == 0 && atomicLong.get() % 7 == 0) {
       counter += "<span style = 'color:red;font-size:72px'>FizzBuzzWoof</span>";
@@ -31,9 +37,7 @@ public class FizzBuzzController {
     } else {
       counter += atomicLong.get();
     }
-
-    model.addAttribute("name", name);
-    model.addAttribute("counter", counter);
-    return "fizzBuzz";
+    return counter;
   }
+
 }
