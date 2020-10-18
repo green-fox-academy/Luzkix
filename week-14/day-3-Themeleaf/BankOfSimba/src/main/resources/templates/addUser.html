@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new User</title>
+</head>
+<body>
+<form
+        action="#"
+        th:action="@{/addUser}"
+        th:object="${newAccount}"
+        method="post"
+        class="add-user-form"
+>
+    <h3>Create an account for new Hero!</h3>
+    <div class=column>
+        <label for="nameH">Give name to the Hero</label>
+        <input type="text" id="nameH" name="name" th:field="*{name}" required/>
+    </div>
+    <div class=column>
+        <label for="cashH">Add him/her some money:</label>
+        <input type="number" id="cashH" name="balance" th:field="*{balance}" required/>
+    </div>
+    <div class=column>
+        <label for="animalH">Define animal type of Hero</label>
+        <input type="text" id="animalH" name="animalType" th:field="*{animalType}"/>
+    </div>
+    <div class=column>
+        <fieldset>
+            <p>Is Hero a King?</p>
+            <div>
+                <label for="kingH">King</label>
+                <input type="radio" value="true" id="kingH" th:field="*{king}">
+                <!--th:checked="${newAccount.king == true} ? ${true}"-->
+                <label for="notkingH">Not King</label>
+                <input type="radio" value="false" id="notkingH" th:field="*{king}">
+                <!--th:checked="${newAccount.king == false} ? ${true}"-->
+            </div>
+        </fieldset>
+    </div>
+    <div class=column>
+        <fieldset>
+            <p>Is Hero a good/bad Guy?</p>
+            <div>
+                <label for="goodG">Good Guy</label>
+                <input type="radio" value="false" id="goodG" th:field="*{badGuy}">
+                <!--th:checked="${newAccount.badGuy == true} ? ${true}"-->
+                <label for="badG">Bad Guy</label>
+                <input type="radio" value="true" id="badG" th:field="*{badGuy}">
+                <!--th:checked="${newAccount.badGuy == false} ? ${true}"-->
+            </div>
+        </fieldset>
+    </div>
+    <div>
+        <button type="submit">Add new account</button>
+    </div>
+</form>
+</body>
+</html>

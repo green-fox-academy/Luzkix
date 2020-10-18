@@ -7,14 +7,16 @@
     <title>Show one account</title>
 </head>
 <body>
-<form action="/addMoney" method="post" class="add-money-form" >
+<form action="/addMoney" method="post" class="add-money-form">
     <div>
         <label for="name">Add money to your favourite hero!!!</label>
         <input type="text" id="name" name="name">
         <button>Add</button>
     </div>
+    <div class="newUser">
+        <a href="/addUser">Or add a new user!</a>
+    </div>
 </form>
-
 <table>
     <tr>
         <th>Name</th>
@@ -24,13 +26,13 @@
         <th>King or not</th>
         <th>Bad/Good Guy</th>
     </tr>
-    <tr th:each="account:${accounts}" th:class="${account.isKing} ? 'shiny' : 'standard'">
+    <tr th:each="account:${accounts}" th:class="${account.king} ? 'shiny' : 'standard'">
         <td th:text="${account.name}"/>
         <td th:text="${#numbers.formatDecimal(account.balance, 1, 2, 'POINT')} + ' Zebra'"/>
         <td th:text="${account.animalType}"/>
         <td th:text="${accountStat.index}+1"/>
-        <td th:text="${account.isKing} ? 'King' : 'Not a King'"/>
-        <td th:switch="${account.isBadGuy}">
+        <td th:text="${account.king} ? 'King' : 'Not a King'"/>
+        <td th:switch="${account.badGuy}">
             <p th:case="true">is bad guy</p>
             <p th:case="false">law abiding animal</p>
         </td>

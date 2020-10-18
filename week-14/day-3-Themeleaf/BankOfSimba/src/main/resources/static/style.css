@@ -59,3 +59,12 @@ button {
     border-radius: 10px;
     padding: 2px 15px 2px 15px;
 }
+
+.newUser {
+    margin: 10px;
+}
+
+a {
+    font-size: large;
+    color: gold;
+}

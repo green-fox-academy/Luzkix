@@ -60,7 +60,7 @@ public class BookController {
     return "details";
   }
 
-  @GetMapping("/books/add")
+    @GetMapping("/books/add")
   public String addBookForm(Model model, @ModelAttribute(name="book") Book book) {
     model.addAttribute("book", book);
     return "create";
