@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@350&display=swap" rel="stylesheet">
@@ -10,24 +10,25 @@
 <h3>Create an account for new Hero!</h3>
 <form
         action="#"
+        class="add-user-form"
+        method="post"
         th:action="@{/addUser}"
         th:object="${newAccount}"
-        method="post"
-        class="add-user-form"
 >
     <div class="formBody">
         <div class="textFields">
             <div class=column>
                 <div><label for="nameH">Give <strong>name</strong> to the Hero:</label></div>
-                <div><input type="text" id="nameH" name="name" th:field="*{name}" required/></div>
+                <div><input id="nameH" minlength="3" name="name" required th:field="*{name}" type="text"/></div>
             </div>
             <div class=column, id="middle">
                 <div><label for="cashH">Add him/her some <strong>money</strong>:</label></div>
-                <div><input type="number" id="cashH" name="balance" th:field="*{balance}" required/></div>
+                <div><input id="cashH" min="0" name="balance" required th:field="*{balance}" type="number"/></div>
             </div>
             <div class=column>
                 <div><label for="animalH">Define <strong>animal</strong> type of Hero:</label></div>
-                <div><input type="text" id="animalH" name="animalType" th:field="*{animalType}"/></div>
+                <div><input id="animalH" minlength="3" name="animalType" required th:field="*{animalType}" type="text"/>
+                </div>
             </div>
         </div>
         <div class=column>
@@ -35,12 +36,12 @@
                 <p>Is Hero a King?</p>
                 <div>
                     <section>
-                        <input type="radio" value="false" id="notkingH" th:field="*{king}" required>
+                        <input id="notkingH" required th:field="*{king}" type="radio" value="false">
                         <!--th:checked="${newAccount.king == false} ? ${true}"-->
                         <label for="notkingH">Not King</label>
                     </section>
                     <section>
-                        <input type="radio" value="true" id="kingH" th:field="*{king}" >
+                        <input id="kingH" th:field="*{king}" type="radio" value="true">
                         <!--th:checked="${newAccount.king == true} ? ${true}"-->
                         <label for="kingH">King</label>
                     </section>
@@ -52,12 +53,12 @@
                 <p>Is Hero a good/bad Guy?</p>
                 <div>
                     <section>
-                        <input type="radio" value="false" id="goodG" th:field="*{badGuy}" required>
+                        <input id="goodG" required th:field="*{badGuy}" type="radio" value="false">
                         <!--th:checked="${newAccount.badGuy == true} ? ${true}"-->
                         <label for="goodG">Good Guy</label>
                     </section>
                     <section>
-                        <input type="radio" value="true" id="badG" th:field="*{badGuy}">
+                        <input id="badG" th:field="*{badGuy}" type="radio" value="true">
                         <!--th:checked="${newAccount.badGuy == false} ? ${true}"-->
                         <label for="badG">Bad Guy</label>
                     </section>

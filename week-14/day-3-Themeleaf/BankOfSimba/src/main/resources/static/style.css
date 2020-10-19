@@ -29,9 +29,12 @@ th {
     width: auto;
 }
 
+#index {
+    text-align: center;
+}
+
 table {
     margin: auto;
-    width: 1000px;
     min-width: content-box;
     text-align: left;
 }

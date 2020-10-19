@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@350&display=swap" rel="stylesheet">
@@ -7,10 +7,12 @@
     <title>Show one account</title>
 </head>
 <body>
-<form action="/addMoney" method="post" class="add-money-form">
-    <div><label for="name">Add money to your favourite hero!!!<br>
+<form action="/addMoney" class="add-money-form" method="post">
+    <div>
+        <label for="name">Add money to your favourite hero!!!<br>
         (+10 - animal; +100 - King)</label></div>
-    <div><input type="text" id="name" name="name" placeholder="enter name of animal">
+    <div>
+        <input id="name" name="name" placeholder="enter name of animal" type="text">
         <button>Add money</button>
     </div>
     <div class="newUser">
@@ -27,11 +29,11 @@
         <th>King or not</th>
         <th>Bad/Good Guy</th>
     </tr>
-    <tr th:each="account:${accounts}" th:class="${account.king} ? 'shiny' : 'standard'">
+    <tr th:class="${account.king} ? 'shiny' : 'standard'" th:each="account:${accounts}">
         <td th:text="${account.name}"/>
         <td th:text="${#numbers.formatDecimal(account.balance, 1, 2, 'POINT')} + ' Zebra'"/>
         <td th:text="${account.animalType}"/>
-        <td th:text="${accountStat.index}+1"/>
+        <td th:text="${accountStat.index}+1" id="index"/>
         <td th:text="${account.king} ? 'King' : 'Not a King'"/>
         <td th:switch="${account.badGuy}">
             <p th:case="true">is bad guy</p>
