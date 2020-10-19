@@ -35,14 +35,14 @@
                 <p>Is Hero a King?</p>
                 <div>
                     <section>
-                        <input type="radio" value="true" id="kingH" th:field="*{king}">
-                        <!--th:checked="${newAccount.king == true} ? ${true}"-->
-                        <label for="kingH">King</label>
-                    </section>
-                    <section>
-                        <input type="radio" value="false" id="notkingH" th:field="*{king}">
+                        <input type="radio" value="false" id="notkingH" th:field="*{king}" required>
                         <!--th:checked="${newAccount.king == false} ? ${true}"-->
                         <label for="notkingH">Not King</label>
+                    </section>
+                    <section>
+                        <input type="radio" value="true" id="kingH" th:field="*{king}" >
+                        <!--th:checked="${newAccount.king == true} ? ${true}"-->
+                        <label for="kingH">King</label>
                     </section>
                 </div>
             </fieldset>
@@ -52,7 +52,7 @@
                 <p>Is Hero a good/bad Guy?</p>
                 <div>
                     <section>
-                        <input type="radio" value="false" id="goodG" th:field="*{badGuy}">
+                        <input type="radio" value="false" id="goodG" th:field="*{badGuy}" required>
                         <!--th:checked="${newAccount.badGuy == true} ? ${true}"-->
                         <label for="goodG">Good Guy</label>
                     </section>

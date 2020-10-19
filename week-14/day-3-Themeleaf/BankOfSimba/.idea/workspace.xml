@@ -23,51 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ee60a70-b0d5-47e9-bc13-c3dbad28ba54" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/styleUser.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/day-1-Streams.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/files/Nový List Microsoft Excelu.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/files/WikiArticle.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/files/swcharacters.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex02.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex03.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex04.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex05.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex06.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex07.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex08.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex09.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex10_Foxes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex11.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-1-Streams/src/Ex12_SW_Heroe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/checkstyle-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/day-3-Tables-Forms.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/loginform/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/loginform/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/newsletter/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/signupform/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/signupform/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/signupform/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/tables/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../week-13/day-3-Tables-Forms/src/tables/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/allAccounts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/allAccounts.html" afterDir="false" />
     </list>
@@ -180,7 +136,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602925084049</updated>
       <workItem from="1602925085439" duration="4685000" />
-      <workItem from="1602929898964" duration="57777000" />
+      <workItem from="1602929898964" duration="59549000" />
     </task>
     <servers />
   </component>
@@ -212,38 +168,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="326" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603058763196" />
-    <state width="1493" height="120" key="GridCell.Tab.0.bottom" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.0.bottom" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.0.center" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
+    <state width="1493" height="120" key="GridCell.Tab.0.center" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.0.left" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
+    <state width="1493" height="120" key="GridCell.Tab.0.left" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.0.right" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
+    <state width="1493" height="120" key="GridCell.Tab.0.right" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.1.bottom" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
+    <state width="1493" height="120" key="GridCell.Tab.1.bottom" timestamp="1603110365944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.1.center" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603110365944" />
+    <state width="1493" height="120" key="GridCell.Tab.1.center" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.1.left" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
+    <state width="1493" height="120" key="GridCell.Tab.1.left" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
-    <state width="1493" height="120" key="GridCell.Tab.1.right" timestamp="1603105452070">
+    <state width="1493" height="120" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
+    <state width="1493" height="120" key="GridCell.Tab.1.right" timestamp="1603110365943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="120" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603105452070" />
+    <state width="1493" height="120" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603110365943" />
     <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1603041426593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
