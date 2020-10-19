@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background: #3E94EC;
     color: #686C86;
@@ -12,10 +13,10 @@ body {
 
 }
 
-td, th, table{
+td, th, table {
     border: 2px solid #C1C3D0;
     border-collapse: collapse;
-    padding: 20px;
+    padding: 12px;
 }
 
 th {
@@ -45,26 +46,49 @@ tr:nth-child(odd) {
 
 .shiny {
     color: red;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
 form {
-    text-align: center;
+    display: flex;
+    justify-content: center; /*  main axis  */
+    align-items: center; /*  cross axis  */
     margin: 20px;
     color: #FFFFFF;
+    border-bottom: 1px dashed whitesmoke;
+    padding-bottom: 10px;
+}
+
+form div {
+    margin: 0px 10px 0px 10px;
+    text-align: center;
 }
 
 button {
     border-radius: 10px;
-    padding: 2px 15px 2px 15px;
+    padding: 3px 15px 3px 15px;
+    color: #686C86;
+    background-color: whitesmoke;
+    border: 1px #686C86;
+    font-weight: bold;
+    -webkit-appearance: none;
 }
 
 .newUser {
-    margin: 10px;
+    margin-left: 50px;
+    text-align: center;
 }
 
 a {
     font-size: large;
     color: gold;
+}
+
+input {
+    color: #686C86;
+    border-radius: 4px;
+    border: 0 #686C86;
+    box-shadow: 0 1px 3px #686C86;
+    padding: 3px;
 }

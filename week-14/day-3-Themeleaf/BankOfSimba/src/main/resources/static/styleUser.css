@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #3E94EC;
+    color: #686C86;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 50px 10px;
+    text-align: center;
+
+}
+
+form {
+    display: inline-block;
+    background-color: whitesmoke;
+    border-radius: 6px;
+    min-width: 800px;
+    padding: 40px;
+
+    box-shadow: 0px 3px 4px darkblue;
+}
+
+.formBody {
+    display: flex;
+    justify-content: space-between; /*  main axis  */
+    align-items: center; /*  cross axis  */
+    margin-bottom: 20px;
+}
+
+.column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*  cross axis  */
+}
+
+.column input {
+    margin-left: 10px;
+}
+
+#middle {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: whitesmoke;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset p {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+fieldset div {
+    display: block;
+    text-align: left;
+}
+
+button {
+    border-radius: 10px;
+    border-color: #3E94EC;
+    padding: 3px 15px 3px 15px;
+    background: #3E94EC;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.textFields input {
+    color: #686C86;
+    border-radius: 4px;
+    border: 0 #686C86;
+    box-shadow: 0 1px 3px #686C86;
+    padding: 3px;
+}
