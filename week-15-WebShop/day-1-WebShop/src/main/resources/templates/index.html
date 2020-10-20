@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="/styleIndex.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Navigation & Header</title>
+</head>
+<body>
+<header>
+    <div class="headerText">
+        <h1>My Shop</h1>
+    </div>
+    <div class="headerButtons">
+        <a class="btn btn-primary" href="#" role="button">Only available</a>
+        <a class="btn btn-primary" href="#" role="button">Cheapest first</a>
+        <a class="btn btn-primary" href="#" role="button">Contains Nike</a>
+        <a class="btn btn-primary" href="#" role="button">Average stock</a>
+        <a class="btn btn-primary" href="#" role="button">Most expensive available</a>
+    </div>
+</header>
+<div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity of stock</th>
+        </tr>
+        <tr th:each="item:${items}">
+            <td th:text="${item.name}"/>
+            <td th:text="${item.description}" style="font-size: 14px"/>
+            <td th:text="${#numbers.formatDecimal(item.price, 1, 1, 'POINT')} + ' Kč'" style="font-size: 24px;text-align: center;"/>
+            <td th:text="${item.quantityOfStock}" style="font-size: 24px;text-align: center;"/>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

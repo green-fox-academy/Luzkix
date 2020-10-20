@@ -65,7 +65,7 @@ form {
     align-items: center; /*  cross axis  */
     margin: 20px;
     color: #FFFFFF;
-    border-bottom: 1px dashed whitesmoke;
+    /*border-bottom: 1px dashed whitesmoke;*/
     padding-bottom: 10px;
 }
 
