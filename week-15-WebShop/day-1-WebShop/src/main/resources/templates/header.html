@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html" lang="en">
+<body>
+<header th:fragment="standardHeader">
+    <div class="headerText">
+        <h1>
+            <a href="/index">My Shop</a>
+            <a href="/index">More >></a>
+        </h1>
+    </div>
+    <div class="headerButtons">
+        <a class="btn btn-primary" href="/only-available" role="button">Only available</a>
+        <a class="btn btn-primary" href="/cheapest-first" role="button">Cheapest first</a>
+        <a class="btn btn-primary" href="/contains-nike" role="button">Contains Nike</a>
+        <a class="btn btn-primary" href="/average-stock" role="button">Average stock</a>
+        <a class="btn btn-primary" href="/most-expensive" role="button">Most expensive available</a>
+    </div>
+    <div class="headerButtons secondLine">
+        <a class="btn btn-primary" href="/euro" value="EUR" role="button">Euro</a>
+        <a class="btn btn-primary" href="/original-currency" value="CZK" role="button">Original Currency</a>
+    </div>
+</header>
+
+<header th:fragment="extendedHeader">
+    <div class="headerText">
+        <h1>
+            <a href="/index">My Shop</a>
+            <a href="/index">Less <<</a>
+        </h1>
+    </div>
+    <div class="headerButtons">
+        <a class="btn btn-primary" href="/only-available" role="button">Clothes and shoes</a>
+        <a class="btn btn-primary" href="/cheapest-first" role="button">Electronics</a>
+        <a class="btn btn-primary" href="/contains-nike" role="button">Beverages and snacks</a>
+        <a class="btn btn-primary" href="/euro" role="button">Euro</a>
+        <a class="btn btn-primary" href="/original-currency" role="button">Original Currency</a>
+    </div>
+</header>
+
+</body>
+</html>

@@ -8,9 +8,9 @@
     <title>Navigation & Header</title>
 </head>
 <body>
-<header th:replace="~{header :: standardHeader}"></header>
+<header th:replace="header :: standardHeader"></header>
 <form th:replace="~{search-bar :: searchBar}"></form>
-<table th:replace="~{table::dataTable}"></table>
+<div th:text="${sentence}" id="stockSentence"></div>
 
 </body>
 </html>

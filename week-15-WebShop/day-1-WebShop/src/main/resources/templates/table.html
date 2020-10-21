@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<div th:fragment="dataTable">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Quantity of stock</th>
+        </tr>
+        <tr th:each="item:${items}">
+            <td th:text="${item.name}"/>
+            <td th:text="${item.description}" style="font-size: 14px"/>
+            <td th:text="${item.getPriceInSelectedCurrency()}" style="font-size: 24px;text-align: center;"/>
+            <td th:text="${item.quantityOfStock}" style="font-size: 24px;text-align: center;"/>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

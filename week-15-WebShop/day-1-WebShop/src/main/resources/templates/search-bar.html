@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<form th:fragment="searchBar" action="/search" method="post">
+    <div class="searchLabel">
+       <label for="searchBar">Search for</label>
+    </div>
+    <div class="inputs">
+        <input type="text" id="searchBar" name="searchString" required>
+        <button type="submit">Search</button>
+    </div>
+</form>
+</body>
+</html>

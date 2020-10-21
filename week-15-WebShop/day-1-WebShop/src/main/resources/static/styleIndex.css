@@ -19,6 +19,8 @@ header {
 h1 {
     color: #0069D9;
     font-weight: bolder;
+    display: flex;
+    justify-content: space-between; /*  main axis  */
 }
 
 .btn {
@@ -32,6 +34,12 @@ h1 {
 .headerButtons {
     display: flex;
     justify-content: space-between; /*  main axis  */
+}
+.secondLine {
+    display: inline-block;
+    text-align: right;
+    margin-top: 10px;
+    margin-left: 30px;
 }
 
 table {
@@ -66,4 +74,9 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: #FFFFFF;
+}
+
+#stockSentence {
+    font-size: 36px;
+
 }

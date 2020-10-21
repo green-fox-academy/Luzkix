@@ -1,5 +1,7 @@
 package com.example.webshop.models;
 
+import com.example.webshop.controllers.ShopItemController;
+
 public class ShopItem {
   private String name;
   private String description;
@@ -30,6 +32,14 @@ public class ShopItem {
 
   public int getQuantityOfStock() {
     return quantityOfStock;
+  }
+
+  public String getPriceInSelectedCurrency () {
+    if (ShopItemController.selectedCurrency.equals("CZK")) {
+      return String.format("%.0f", price) + " Kč";
+    } else if (ShopItemController.selectedCurrency.equals("EUR")) {
+      return String.format("%.1f", price*CurrencyExchangeRate.eur)  + " €";
+    } else return price + " Kč";
   }
 }
 
