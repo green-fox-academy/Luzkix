@@ -4,6 +4,7 @@ import com.example.webshop.controllers.ShopItemController;
 
 public class ShopItem {
   private String name;
+  private String type;
   private String description;
   private float price;
   private int quantityOfStock;
@@ -11,8 +12,9 @@ public class ShopItem {
   public ShopItem (){
   }
 
-  public ShopItem(String name, String description, float price, int quantityOfStock) {
+  public ShopItem(String name, String type, String description, float price, int quantityOfStock) {
     this.name = name;
+    this.type = type;
     this.description = description;
     this.price = price;
     this.quantityOfStock = quantityOfStock;
@@ -20,6 +22,10 @@ public class ShopItem {
 
   public String getName() {
     return name;
+  }
+
+  public String getType() {
+    return type;
   }
 
   public String getDescription() {

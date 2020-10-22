@@ -18,11 +18,25 @@ public class ShopItemController {
   public static String selectedCurrency = "CZK";
 
   ShopItemController () {
-    items.addAll(Arrays.asList(new ShopItem("Running shoes","Nike running shoes for every day sport",1000f,5),
-        new ShopItem("Printer","Some HP printer that will print pages",3000f,2),
-        new ShopItem("Coca cola","0.5l standard coke",25f,0),
-        new ShopItem("Wokin","Chicken with fried rice and WOKIN sauce",119f,100),
-        new ShopItem("T-shirt","Blue with a corgi on a bike",300f,1)
+    items.addAll(Arrays.asList(
+        new ShopItem("adidas", "running", "running shoes", 100, 10),
+        new ShopItem("adidas", "lifestyle", "formula 1 jacket", 200, 11),
+        new ShopItem("adidas", "basketball", "shirt", 300, 0),
+        new ShopItem("adidas", "football", "shoes", 555, 14),
+        new ShopItem("nike", "running", "shirt", 150, 15),
+        new ShopItem("nike", "basketball", "shoes", 2020, 16),
+        new ShopItem("nike", "lifestyle","shoes", 180, 0),
+        new ShopItem("nike", "lifestyle","jacket", 1280, 7),
+        new ShopItem("nike", "baseball", "jacket", 199, 6),
+        new ShopItem("puma", "lifestyle","jacket", 228, 5),
+        new ShopItem("puma", "football", "shirt", 315, 44),
+        new ShopItem("oakley", "lifestyle","backpack", 404, 22),
+        new ShopItem("oakley", "lifestyle","glasses", 379, 6),
+        new ShopItem("adidas", "cycling", "glasses", 820, 8),
+        new ShopItem("hugo boss", "lifestyle","jacket", 555, 0),
+        new ShopItem("hugo boss","lifestyle", "trousers", 1150, 2),
+        new ShopItem("puma", "running", "shoes", 555, 0),
+        new ShopItem("adidas", "golf", "shirt", 580, 3)
     ));
   }
 
@@ -32,10 +46,20 @@ public class ShopItemController {
     return "index";
   }
 
+  @GetMapping("/index-extended")
+  public String showExtendedMenu(Model model) {
+    model.addAttribute("items", items);
+    model.addAttribute("hideStandardMenu", true);
+    model.addAttribute("hideSearchBar", true);
+    return "index";
+  }
+
   @GetMapping("/euro")
   public String pricesToEur(Model model) {
     selectedCurrency = "EUR";
     model.addAttribute("items", items);
+    model.addAttribute("hideStandardMenu", true);
+    model.addAttribute("hideSearchBar", true);
     return "index";
   }
 
@@ -43,6 +67,8 @@ public class ShopItemController {
   public String pricesToCZK(Model model) {
     selectedCurrency = "CZK";
     model.addAttribute("items", items);
+    model.addAttribute("hideStandardMenu", true);
+    model.addAttribute("hideSearchBar", true);
     return "index";
   }
 
@@ -71,7 +97,8 @@ public class ShopItemController {
   @GetMapping("/contains-nike")
   public String containsNike(Model model) {
     List<ShopItem> containsNike= items.stream()
-        .filter(item -> item.getDescription().toLowerCase().contains("nike"))
+        .filter(item -> item.getDescription().toLowerCase().contains("nike") ||
+         item.getName().toLowerCase().contains("nike"))
         .collect(Collectors.toList());
 
     model.addAttribute("items", containsNike);
@@ -85,9 +112,12 @@ public class ShopItemController {
         .average()
         .getAsDouble();
 
-    String sentence = "Average stock: " + String.format("%.1f", averageStock);
+    String sentence = "Average stock: " + String.format("%.1f", averageStock) + " pieces.";
+
     model.addAttribute("sentence", sentence);
-    return "average-expensive-stock";
+    model.addAttribute("hideMainTable", true);
+    model.addAttribute("showItemDetail", true);
+    return "index";
   }
 
   @GetMapping("/most-expensive")
@@ -98,9 +128,13 @@ public class ShopItemController {
         .sorted(cheapestFirst.reversed())
         .collect(Collectors.toList());
 
-    String sentence = "Most expensive stock: " + orderedItems.get(0).getName();
+    String sentence = "Most expensive item: " + orderedItems.get(0).getName() + ", "
+        + orderedItems.get(0).getDescription() + ", " + orderedItems.get(0).getPriceInSelectedCurrency();
+
     model.addAttribute("sentence", sentence);
-    return "average-expensive-stock";
+    model.addAttribute("hideMainTable", true);
+    model.addAttribute("showItemDetail", true);
+    return "index";
   }
 
   @PostMapping("/search")
@@ -113,4 +147,33 @@ public class ShopItemController {
     model.addAttribute("items", filteredItems);
     return "index";
   }
+
+  @GetMapping("/filter-by-type/sport")
+  public String filterTypeSport (Model model) {
+    List<ShopItem> sport = items.stream()
+        .filter(a -> a.getType().toLowerCase().contains("running") ||
+                a.getType().toLowerCase().contains("basketball") ||
+                a.getType().toLowerCase().contains("football") ||
+                a.getType().toLowerCase().contains("baseball") ||
+                a.getType().toLowerCase().contains("cycling") ||
+                a.getType().toLowerCase().contains("golf"))
+        .collect(Collectors.toList());
+    model.addAttribute("items", sport);
+    model.addAttribute("hideStandardMenu", true);
+    model.addAttribute("hideSearchBar", true);
+    return "index";
+  }
+
+  @GetMapping("/filter-by-type/lifestyle")
+  public String filterTypeLifestyle (Model model) {
+    List<ShopItem> lifestyle = items.stream()
+        .filter(a -> a.getType().toLowerCase().contains("lifestyle"))
+        .collect(Collectors.toList());
+    model.addAttribute("items", lifestyle);
+    model.addAttribute("hideStandardMenu", true);
+    model.addAttribute("hideSearchBar", true);
+    return "index";
+  }
+
+
 }

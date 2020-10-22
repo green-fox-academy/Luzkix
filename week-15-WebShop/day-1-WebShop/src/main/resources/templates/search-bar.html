@@ -3,12 +3,25 @@
 <body>
 <form th:fragment="searchBar" action="/search" method="post">
     <div class="searchLabel">
-       <label for="searchBar">Search for</label>
+       <label for="searchBar">Search for:</label>
     </div>
     <div class="inputs">
         <input type="text" id="searchBar" name="searchString" required>
         <button type="submit">Search</button>
     </div>
 </form>
+
+<form th:fragment="filterByPrice" action="/filter-by-price" method="post">
+    <div class="searchLabel">
+        <label for="filterByPrice">Filter by price:</label>
+    </div>
+    <div class="inputs">
+        <input type="number" id="filterByPrice" name="filterNumber" required>
+        <button type="submit">Above</button>
+        <button type="submit">Below</button>
+        <button type="submit">Exactly</button>
+    </div>
+</form>
+
 </body>
 </html>

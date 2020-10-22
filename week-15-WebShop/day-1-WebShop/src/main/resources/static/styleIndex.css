@@ -29,17 +29,16 @@ h1 {
     font-weight: bold;
     border-radius: 10px;
     border-color: #F44336;
+    min-width: 15%;
 }
 
 .headerButtons {
     display: flex;
     justify-content: space-between; /*  main axis  */
 }
-.secondLine {
-    display: inline-block;
-    text-align: right;
-    margin-top: 10px;
-    margin-left: 30px;
+
+.headerButtons2 {
+    justify-content: space-around;
 }
 
 table {

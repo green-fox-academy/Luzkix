@@ -8,9 +8,27 @@
     <title>Navigation & Header</title>
 </head>
 <body>
-<header th:replace="~{header :: standardHeader}"></header>
-<form th:replace="~{search-bar :: searchBar}"></form>
-<table th:replace="~{table::dataTable}"></table>
+
+<div th:unless="${hideStandardMenu == true}">
+    <header th:replace="~{header :: standardHeader}"></header>
+</div>
+<div th:if="${hideStandardMenu == true}">
+    <header th:replace="~{header :: extendedHeader}"></header>
+</div>
+
+<div th:unless="${hideSearchBar == true}">
+    <form th:replace="~{search-bar :: searchBar}"></form>
+</div>
+<div th:if="${hideSearchBar == true}">
+    <form th:replace="~{search-bar :: filterByPrice}"></form>
+</div>
+
+
+<div th:unless="${hideMainTable == true}">
+    <table th:replace="~{table::dataTable}"></table>
+</div>
+
+<div th:if="${showItemDetail == true}" th:text="${sentence}" id="stockSentence"></div>
 
 </body>
 </html>
