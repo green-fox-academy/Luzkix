@@ -1,0 +1,14 @@
+body {
+    background-color: lightblue;
+}
+form {
+    width: 600px;
+}
+.inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inputField {
+    display: block;
+}
