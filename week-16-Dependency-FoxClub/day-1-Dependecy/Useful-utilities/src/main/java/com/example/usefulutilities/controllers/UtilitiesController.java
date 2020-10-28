@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UtilitiesController {
 
   @Autowired
-  UtilityService randomColor;
+  UtilityService utilityService;
 
 
   @GetMapping("/useful")
@@ -22,24 +22,39 @@ public class UtilitiesController {
 
   @GetMapping("/useful/colored")
   public String colored (Model model) {
-    /*int randomNum = (int) (Math.random()*10);
-    List<String> colors = new ArrayList<>();
-    colors.addAll(Arrays.asList("lightblue", "white", "whitesmoke", "chocolate",
-        "black", "darkblue", "cornflowerblue", "snow", "gold", "red"));
-    String randomColor = colors.get(randomNum);*/
-    model.addAttribute("fullColor", "background-color: " + randomColor.randomColor() + ";");
+    model.addAttribute("fullColor", "background-color: " + utilityService.randomColor() + ";");
     return "colored";
   }
 
+  @PostMapping("/useful/email")
+  public String emailValidation (Model model, @RequestParam String emailInput) {
+    String textResponse = "";
+    String formatResponse = "";
+
+    if(utilityService.validateEmail(emailInput)) {
+      textResponse="<p style='color:green;'>"+emailInput+" is a valid email address</p>";
+      formatResponse="background-color:green";
+    } else {
+      textResponse="<p style='color:red;'>"+emailInput+" is not a valid email address!</p>";
+      formatResponse="background-color:red";
+    }
+    model.addAttribute("EmailFormatStyle", formatResponse);
+    model.addAttribute("EmailFormatResponse", textResponse);
+    return "useful";
+  }
+
   @PostMapping("/useful/encode")
-  public String encode (@RequestParam String word, @RequestParam Integer ciphre ) {
+  public String encode (@RequestParam String word, @RequestParam Integer ciphre, Model model) {
+    String textResponse = utilityService.caesar(word, ciphre);
+    model.addAttribute("cipherResult", "Encoded word/sentence is: <strong>"+textResponse+"</strong>");
 
     return "useful";
   }
 
   @PostMapping("/useful/decode")
-  public String decode (@RequestParam String word, @RequestParam Integer ciphre ) {
-
+  public String decode (@RequestParam String word, @RequestParam Integer ciphre, Model model) {
+    String textResponse = utilityService.caesar(word, ciphre*(-1));
+    model.addAttribute("cipherResult", "Decoded word/sentence is: <strong>"+textResponse+"</strong>");
     return "useful";
   }
 

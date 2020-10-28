@@ -6,9 +6,17 @@
     <meta charset="UTF-8" />
 </head>
 <body>
-<a href="/useful/colored">Colored Background</a>
-<a href="/useful/email?email=is@this.valid">Email validator</a>
-<a>Caesar encoding</a>
+
+<h2><a href="/useful/colored">Colored Background</a></h2>
+
+<form action="/useful/email" method="post">
+    <h1>Email validator</h1>
+    <div>
+        <input type="text" name="emailInput" placeholder="enter some email">
+        <button type="submit" th:style="${EmailFormatStyle}">Verify email</button>
+    </div>
+    <p th:utext="${EmailFormatResponse}"></p>
+</form>
 
 <form action="" method="post">
     <h1>Caesar encoder/decoder</h1>
@@ -18,14 +26,15 @@
             <input type="text" placeholder="word/sentece" id="inputfield" name="word" required>
         </div>
         <div class="inputField">
-            <label for="cipher">Enter the Caesar ciphre number</label>
-            <input type="number" placeholder="1" id="cipher" name="ciphre">
+            <label for="cipher">Enter the Caesar number (it shifts letters by ?)</label>
+            <input type="number" placeholder="caesar number" id="cipher" name="ciphre" required>
         </div>
     </div>
     <div class="submit">
         <button type="submit" formaction="/useful/encode" name="encoderButton">Encoder</button>
         <button type="submit" formaction="/useful/decode" name="decoderButton">Decoder</button>
     </div>
+    <p th:utext="${cipherResult}"></p>
 </form>
 
 </body>
