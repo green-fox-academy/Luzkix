@@ -6,11 +6,12 @@
     <meta charset="UTF-8" />
 </head>
 <body>
-
+<header th:utext="'Actual count of students in Green Fox: ' + ${counter}"></header>
 <h1>Actions to be performed over GreenFox Academy students</h1>
 <ul>
     <li><a href="/gfa/list">List all students</a></li>
     <li><a href="/gfa/add">Add new student</a></li>
+    <li><a href="/gfa/check">Check the student, if he is already in the database</a></li>
 </ul>
 
 </body>

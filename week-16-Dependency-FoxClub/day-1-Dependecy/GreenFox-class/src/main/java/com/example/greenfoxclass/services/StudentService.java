@@ -1,4 +1,4 @@
-package com.example.greenfoxclass.service;
+package com.example.greenfoxclass.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,4 +22,6 @@ public class StudentService {
   public void save(String student) {
     names.add(student);
   }
+
+  public int count() { return names.size(); }
 }
