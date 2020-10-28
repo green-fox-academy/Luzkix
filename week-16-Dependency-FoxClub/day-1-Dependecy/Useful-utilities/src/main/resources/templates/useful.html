@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <link href="/static/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <meta charset="UTF-8" />
 </head>
 <body>
@@ -30,7 +30,7 @@
             <input type="number" placeholder="caesar number" id="cipher" name="ciphre" required>
         </div>
     </div>
-    <div class="submit">
+    <div class="submit" id="buttons">
         <button type="submit" formaction="/useful/encode" name="encoderButton">Encoder</button>
         <button type="submit" formaction="/useful/decode" name="decoderButton">Decoder</button>
     </div>

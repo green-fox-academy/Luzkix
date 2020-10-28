@@ -1,14 +1,17 @@
 body {
-    background-color: lightblue;
+    background-color: mistyrose;
 }
+
 form {
-    width: 600px;
+    width: 500px;
 }
-.inputs {
+
+.inputField {
     display: flex;
     justify-content: space-between;
 }
 
-.inputField {
-    display: block;
+#buttons {
+    text-align: right;
+    margin-top: 10px;
 }
