@@ -8,5 +8,15 @@
 <body>
 <h3><a href="/gfa">Return to homepage</a></h3>
 
+<form action="/gfa/add" method="post">
+    <div>
+        <label for="name">Enter the name of the new student:</label>
+        <input type="text" id="name" name="name">
+    </div>
+    <button type="submit">ADD student</button>
+</form>
+<p th:utext="${studentConfirmation}"></p>
+<a th:utext="${checkStudDTB}" href="/gfa/list"></a>
+
 </body>
 </html>
