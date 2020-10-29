@@ -8,7 +8,7 @@
     <title>Navigation & Header</title>
 </head>
 <body>
-
+<!--Top Menu with buttons-->
 <div th:unless="${hideStandardMenu == true}">
     <header th:replace="~{header :: standardHeader}"></header>
 </div>
@@ -16,6 +16,7 @@
     <header th:replace="~{header :: extendedHeader}"></header>
 </div>
 
+<!--Search bars-->
 <div th:unless="${hideSearchBar == true}">
     <form th:replace="~{search-bar :: searchBar}"></form>
 </div>
@@ -23,11 +24,12 @@
     <form th:replace="~{search-bar :: filterByPrice}"></form>
 </div>
 
-
+<!--Main table with data-->
 <div th:unless="${hideMainTable == true}">
     <table th:replace="~{table::dataTable}"></table>
 </div>
 
+<!--Specific block related to buttons Avg. Stock && Most Exp. Stock-->
 <div th:if="${showItemDetail == true}" th:text="${sentence}" id="stockSentence"></div>
 
 </body>
