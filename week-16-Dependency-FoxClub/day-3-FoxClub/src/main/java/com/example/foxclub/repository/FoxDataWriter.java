@@ -1,6 +1,6 @@
 package com.example.foxclub.repository;
 
-import com.example.foxclub.configurations.FilesConfiguration;
+import com.example.foxclub.configurations.Configurations;
 import com.example.foxclub.models.Fox;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FoxDataWriter {
-  private FilesConfiguration configuration;
+  private Configurations configuration;
   @Autowired
-  public FoxDataWriter (FilesConfiguration configuration) {
+  public FoxDataWriter (Configurations configuration) {
     this.configuration = configuration;
   }
 

@@ -3,7 +3,7 @@ package com.example.foxclub.repository;
 import static java.util.Collections.emptyList;
 
 
-import com.example.foxclub.configurations.FilesConfiguration;
+import com.example.foxclub.configurations.Configurations;
 import com.example.foxclub.models.Fox;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,9 +18,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FoxDataReader {
-  private static FilesConfiguration configuration;
+  private static Configurations configuration;
   @Autowired
-  public FoxDataReader (FilesConfiguration configuration) {
+  public FoxDataReader (Configurations configuration) {
     this.configuration = configuration;
   }
 

@@ -1,5 +1,6 @@
 package com.example.foxclub.controllers;
 
+import com.example.foxclub.configurations.Configurations;
 import com.example.foxclub.services.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,13 @@ public class MainController {
     this.foxService = foxService;
   }
 
+  public static String getLoggedUser() {
+    return loggedUser;
+  }
+
+  public FoxService getFoxService() {
+    return foxService;
+  }
 
   public static void setCheckedName(String nameToCheck) {
     checkedName = nameToCheck;
@@ -72,15 +80,28 @@ public class MainController {
   @PostMapping("/signup")
   public String signUpPage(@RequestParam String name, Model model) {
     if (foxService.checkFox(name)) {
+      model.addAttribute("successfullSign", false);
       model.addAttribute("existingUser", "The name you have provided - <strong>" + name
           + "</strong> - is already taken as a name: <strong>" + checkedName + "</strong>. Please try a new one.");
       return "signup";
     } else {
-      foxService.addFox(name);
       loggedUser=name;
-      return "redirect:/";
+      model.addAttribute("successfullSign", true);
+      model.addAttribute("name", name);
+      model.addAttribute("favouriteFood", Configurations.Food.values());
+      model.addAttribute("favouriteDrink", Configurations.Drinks.values());
+      model.addAttribute("favouriteTrick", Configurations.Tricks.values());
+      return "signup";
     }
   }
+
+  @PostMapping("/signup2")
+  public String signUpPage2(@RequestParam String foodString, @RequestParam String drinkString, @RequestParam String trickString, Model model) {
+    foxService.addFox(loggedUser,foodString, drinkString, trickString);
+    return "redirect:/";
+  }
+
+
 
   @GetMapping("/logout")
   public String logOut() {
