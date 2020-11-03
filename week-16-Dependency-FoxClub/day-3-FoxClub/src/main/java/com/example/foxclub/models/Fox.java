@@ -56,6 +56,6 @@ public class Fox {
 
   @Override
   public String toString() {
-    return this.lastChange.toString() + ";" + this.name ;
+    return this.name;
   }
 }

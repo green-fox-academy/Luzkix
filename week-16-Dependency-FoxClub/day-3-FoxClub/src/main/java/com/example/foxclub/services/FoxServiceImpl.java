@@ -38,6 +38,18 @@ public class FoxServiceImpl implements FoxService {
   }
 
   @Override
+  public Fox getFoxByName(String foxName) {
+    for (Fox fox : Foxes.getAllFoxes()) {
+      if (removeDiacritic(fox.getName().toLowerCase())
+          .equals(removeDiacritic(foxName.toLowerCase()))) {
+        return fox;
+      }
+    }
+    return null;
+  }
+
+
+  @Override
   public void addFox(String foxName) {
     Foxes.addFoxToListOfFoxes(new Fox(foxName));
   }

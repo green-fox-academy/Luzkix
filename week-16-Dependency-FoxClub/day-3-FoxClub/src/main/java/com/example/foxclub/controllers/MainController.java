@@ -37,8 +37,6 @@ public class MainController {
     if (loggedUser.isEmpty()) {
       return "index_notLogged";
     } else {
-      model.addAttribute("foxName",
-          "<strong style='color: red'>" + loggedUser.toUpperCase() + "</strong>");
       return "redirect:/index";
     }
   }
@@ -49,7 +47,11 @@ public class MainController {
       return "index_notLogged";
     } else {
       model.addAttribute("foxName",
-          "<strong style='color: red'>" + loggedUser.toUpperCase() + "</strong>");
+          loggedUser.toUpperCase());
+      model.addAttribute("foxFood", foxService.getFoxByName(loggedUser).getFood());
+      model.addAttribute("foxDrink", foxService.getFoxByName(loggedUser).getDrink());
+      model.addAttribute("foxTrick", foxService.getFoxByName(loggedUser).getTricks().size());
+      model.addAttribute("tricks",foxService.getFoxByName(loggedUser).getTricks());
       return "index";
     }
   }

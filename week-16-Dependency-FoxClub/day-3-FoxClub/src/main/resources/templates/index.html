@@ -16,14 +16,13 @@
 
 <div>
     <img src="/files/greenfox.png" alt="GreenFox icon" id="greenFoxIcon">
-    <p>This is <span th:utext="${foxName}">Mr. TESTNAME</span>. Currently living on pizza and lemonade. The fox knows 2 tricks.</p>
+    <p th:inline="text">This is <strong style="color: red;">[[${foxName}]].</strong> Currently living on <strong>[[${foxFood}]]</strong> and <strong>[[${foxDrink}]]</strong>. The fox knows <strong>[[${foxTrick}]]</strong> trick(s).</p>
 </div>
 
 <div>
     <h1>Known tricks</h1>
-    <ul>
-        <li>write HTML</li>
-        <li>code in Java</li>
+    <ul th:each="trick:${tricks}">
+        <li th:text="${trick}">write HTML</li>
     </ul>
 </div>
 
