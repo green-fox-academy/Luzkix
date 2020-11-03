@@ -55,13 +55,16 @@ public class FoxServiceImpl implements FoxService {
 
   @Override
   public void deleteFox(String foxName) {
-    List<Fox> newListOfFoxes = Foxes.getAllFoxes();
-    for (Fox fox : newListOfFoxes) {
+    List<Fox> originalListOfFoxes = Foxes.getAllFoxes();
+    List<Fox> newListOfFoxes = originalListOfFoxes;
+    for (Fox fox : originalListOfFoxes) {
       if (fox.getName().equals(foxName)) {
         newListOfFoxes.remove(fox);
+        break;
       }
     }
     Foxes.setNewListOfFoxes(newListOfFoxes);
   }
 
 }
+

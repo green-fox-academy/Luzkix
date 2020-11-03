@@ -89,21 +89,26 @@ public class MainController {
   }
 
   @GetMapping("/save")
-  public String saveProgress(Model model) {
+  public String saveProgress() {
     foxService.saveAllFoxes();
     return "save";
   }
 
   @GetMapping("/delete")
-  public String deleteFox() {
+  public String deleteFoxPage(Model model) {
+    model.addAttribute("delete",false);
+    if(!loggedUser.isEmpty()){
+      model.addAttribute("name",loggedUser);
+      model.addAttribute("loggedIn",true);
+    }
     return "delete";
   }
 
-  @GetMapping("/deleteConfirm")
+  @PostMapping("/deleteConfirm")
   public String deleteFox(Model model) {
     foxService.deleteFox(loggedUser);
     loggedUser="";
     model.addAttribute("delete",true);
-    return "delete";
+    return "redirect:/delete";
   }
 }

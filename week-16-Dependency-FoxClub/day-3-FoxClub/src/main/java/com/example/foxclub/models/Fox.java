@@ -7,8 +7,9 @@ public class Fox {
   private String name;
   private String food;
   private String drink;
-  private List<Trick> tricks;
   private LocalDateTime lastChange;
+  private List<Trick> tricks;
+
 
   public Fox (String name) {
     this.name = name;
