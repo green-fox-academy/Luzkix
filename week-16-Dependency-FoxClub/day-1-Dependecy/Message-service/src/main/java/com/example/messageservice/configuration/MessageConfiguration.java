@@ -7,11 +7,11 @@ import org.springframework.context.annotation.Configuration;
 public class MessageConfiguration {
 
   @Bean
-  EmailService emailService(){
+  EmailService emailService() {
     return new EmailService();
   }
 
-  TwitterService twitterService(){
+  TwitterService twitterService() {
     return new TwitterService();
   }
 }

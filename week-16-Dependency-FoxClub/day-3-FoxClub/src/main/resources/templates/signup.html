@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<h1>Welcome to SignUp page!</h1>
+<p>If you already have a login, please use it in the LogIn page.</p>
+<p>Otherwise provide a unique name, so we can associate it with your new pet!</p>
+<form action="/signup" method="post">
+    <label for="petname">Name</label>
+    <input type="text" id="petname" name="name" required>
+    <button type="submit">SIGNUP new Fox!</button>
+</form>
+<p th:utext="${existingUser}" style="color: red;"></p>
+</body>
+</html>

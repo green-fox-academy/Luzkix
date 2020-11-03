@@ -1,5 +1,8 @@
 package com.example.messageservice.service;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
+
 public class EmailService implements MessageService{
 
   @Override

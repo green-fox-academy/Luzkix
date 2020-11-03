@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Programmer Fox Club</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div>
+    <ul>
+        <li><a href="/">Information</a></li>
+    </ul>
+</div>
+
+<div>
+    <img src="/files/greenfox.png" alt="GreenFox icon" id="greenFoxIcon">
+    <p>This is <span th:utext="${foxName}">Mr. TESTNAME</span>. Currently living on pizza and lemonade. The fox knows 2 tricks.</p>
+</div>
+
+<div>
+    <h1>Known tricks</h1>
+    <ul>
+        <li>write HTML</li>
+        <li>code in Java</li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>

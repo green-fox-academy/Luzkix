@@ -1,5 +1,7 @@
 package com.example.messageservice.service;
 
+import org.springframework.stereotype.Service;
+
 public class TwitterService implements MessageService{
 
   @Override

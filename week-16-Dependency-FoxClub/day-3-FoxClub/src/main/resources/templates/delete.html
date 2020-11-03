@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Programmer Fox Club</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div th:if="${delete == true}">
+    <p id="progres" >Your account was successfully deleted!</p>
+</div>
+
+
+</body>
+</html>

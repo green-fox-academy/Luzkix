@@ -1,8 +1,10 @@
 package com.example.messageservice.service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Service;
 @Service
 public class MessageProceeder {
+
   MessageService messageService;
 
   @Autowired

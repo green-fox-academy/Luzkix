@@ -19,7 +19,6 @@ public class MessageserviceApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    //messageProceeder.processMessage("Hi Barba, How are you?", "office@greenfox.com");
     System.out.println(messageProceeder.processMessage("Hi Barba, How are you?", "office@greenfox.com"));
   }
 }
