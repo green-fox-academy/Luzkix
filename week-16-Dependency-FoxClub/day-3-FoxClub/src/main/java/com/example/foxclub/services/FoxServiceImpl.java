@@ -48,20 +48,9 @@ public class FoxServiceImpl implements FoxService {
     return null;
   }
 
-
-  @Override
-  public void addFox(String foxName) {
-    Foxes.addFoxToListOfFoxes(new Fox(foxName));
-  }
-
   @Override
   public void addFox(String foxName, String food, String drink, List<String> tricks) {
     Foxes.addFoxToListOfFoxes(new Fox(foxName, food, drink, tricks));
-  }
-
-  @Override
-  public List<String[]> returnAllfoxProperties() {
-    return foxRepository.returnAllfoxProperties();
   }
 
   @Override

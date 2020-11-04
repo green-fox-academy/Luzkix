@@ -9,8 +9,11 @@
 <header th:replace="~{fragments::standardHeader}"></header>
 <h1>Welcome to Nutrition Store!</h1>
 <div th:unless="${successfulSign == true}">
-<p>Unfortunately, You are currently <span style="font-size: larger; color: red; font-weight: bold;">Not Logged In!</span> Therefore you can not edit any properties of your fox! <br>
-    If you already have a registered name, please use it in the <a href="/login" style="font-size: larger; font-weight: bold;">LogIn</a> page. Otherwise <a href="/signup" style="font-size: larger; font-weight: bold;">SignUp</a>!</p>
+    <p>Unfortunately, You are currently <span style="font-size: larger; color: red; font-weight: bold;">Not Logged In!</span> Therefore you can not edit any properties of your fox!</p>
+    <ul>
+        <li>If you already have a registered name, please use it in the <a href="/login" style="font-size: larger; font-weight: bold;">LogIn</a> page</li>
+        <li>Otherwise simply <a href="/signup" style="font-size: larger; font-weight: bold;">SignUp!</a></li>
+    </ul>
 </div>
 
 <div th:if="${successfulSign == true}">

@@ -56,6 +56,14 @@ public class Fox {
     return tricks;
   }
 
+  public void addTrick(String trick) {
+    tricks.add(trick);
+  }
+
+  public void setTricks(List<String> tricks) {
+    this.tricks = tricks;
+  }
+
   public static List<String> getRandomTricks() {
     int randomNumber = (int)(Math.random()*Configurations.getMaxNumberOfRandomTricks());
     List<String> originalListOfTricks = Arrays.stream(Configurations.Tricks.values())
@@ -75,7 +83,7 @@ public class Fox {
       return selectedTricks;
     }
 
-    else return tricks;
+    return tricks;
   }
 
   public LocalDateTime getLastChange() {

@@ -48,7 +48,7 @@ public class MainController {
     if (loggedUser.isEmpty()) {
       return "index_notLogged";
     } else {
-      model.addAttribute("foxName", loggedUser.toUpperCase());
+      model.addAttribute("foxName", loggedUser);
       model.addAttribute("foxFood", foxService.getFoxByName(loggedUser).getFood());
       model.addAttribute("foxDrink", foxService.getFoxByName(loggedUser).getDrink());
       model.addAttribute("foxTrick", foxService.getFoxByName(loggedUser).getTricks().size());
@@ -107,7 +107,7 @@ public class MainController {
   public String signUpPage2(@RequestParam String foodString, @RequestParam String drinkString, Model model) {
     foxService.addFox(loggedUser,foodString, drinkString, Fox.getRandomTricks());
 
-    return "redirect:/";
+    return "redirect:/index";
   }
 
 
@@ -115,7 +115,7 @@ public class MainController {
   @GetMapping("/logout")
   public String logOut() {
     loggedUser="";
-    return "redirect:/";
+    return "redirect:/index";
   }
 
   @GetMapping("/save")
@@ -139,6 +139,6 @@ public class MainController {
     foxService.deleteFox(loggedUser);
     loggedUser="";
     model.addAttribute("delete",true);
-    return "redirect:/delete";
+    return "delete";
   }
 }
