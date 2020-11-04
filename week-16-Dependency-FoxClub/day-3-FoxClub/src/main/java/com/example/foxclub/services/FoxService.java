@@ -9,7 +9,7 @@ public interface FoxService {
   boolean checkFox (String foxName);
 
   void addFox(String foxName);
-  void addFox(String foxName, String food, String drink, String trick);
+  void addFox(String foxName, String food, String drink, List<String> trick);
   List<String[]> returnAllfoxProperties();
   static List<Fox> loadAllSavedFoxes(){
     return FoxRepository.loadAllSavedFoxes();

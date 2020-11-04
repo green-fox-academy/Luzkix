@@ -19,11 +19,16 @@
     <p th:inline="text">This is <strong style="color: red;">[[${foxName}]].</strong> Currently living on <strong>[[${foxFood}]]</strong> and <strong>[[${foxDrink}]]</strong>. The fox knows <strong>[[${foxTrick}]]</strong> trick(s).</p>
 </div>
 
-<div>
+<div th:unless="${noKnownTricks == true}">
     <h1>Known tricks</h1>
     <ul th:each="trick:${tricks}">
         <li th:text="${trick}">write HTML</li>
     </ul>
+</div>
+
+<div th:if="${noKnownTricks == true}">
+    <h1>Known tricks</h1>
+    <p th:inline="text">Unfortunately, <strong>[[${foxName}]]</strong> does not know any tricks yet. Go and learn some!</p>
 </div>
 
 

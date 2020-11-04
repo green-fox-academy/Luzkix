@@ -21,7 +21,7 @@
 
 <div th:if="${successfullSign == true}">
     <p th:inline="text">Great! You just created your new fox with the name <strong style="color:red;">[[${name}]]!</strong><br>
-        Lets now select what your fox eats/drinks and can do!</p>
+        Lets now select what your fox eats and drinks! The fox will be randomly assigned the tricks it can do...</p>
 
     <form action="/signup2" method="post">
 
@@ -39,12 +39,12 @@
         </select>
         <br>
 
-        <label type="text">Favourite trick:</label><br>
+        <!--<label type="text">Favourite trick:</label><br>
         <select name="trickString" id="trickString" required>
             <option th:each="element:${favouriteTrick}" th:value="${element.name()}"
                     th:text="${element.name().toLowerCase()}"></option>
         </select>
-        <br>
+        <br>-->
 
         <button type="submit">Add the properties!</button>
 

@@ -4,17 +4,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Configurations {
-  public String filename = "src/main/resources/static/files/savedData/foxes.txt";
+  private static String foxesSaveFile = "src/main/resources/static/files/savedData/foxes.txt";
+  private static int maxNumberOfRandomTricks = 4;
+  public enum Drinks {WATER, JUICE, COLA, FANTA, SPRITE, TONIC, NONALCOHOLIC, ALCOHOLIC, LIQUID}
+  public enum Food {PIZZA, PASTA, STEAK, CHICKEN, SOUP, SOUVLAKI, POTATOES, DOG}
+  public enum Tricks {JAVA, HTML, SPRINGBOOT, GITHUB, CSS, SQL, WATCHTV}
 
-  public enum Drinks {
-    WATER, JUICE, COLA, FANTA, SPRITE, TONIC, NONALCOHOLIC, ALCOHOLIC, LIQUID
+  public static String getFoxesSaveFile() {
+    return foxesSaveFile;
   }
 
-  public enum Food {
-    PIZZA, PASTA, STEAK, CHICKEN, SOUP, SOUVLAKI, POTATOES, DOG
+  public static int getMaxNumberOfRandomTricks() {
+    return maxNumberOfRandomTricks;
   }
 
-  public enum Tricks {
-    JAVA, HTML, SPRINGBOOT, GITHUB, CSS, SQL, WATCHTV
-  }
 }

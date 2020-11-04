@@ -1,7 +1,9 @@
 package com.example.foxclub.controllers;
 
 import com.example.foxclub.configurations.Configurations;
+import com.example.foxclub.models.Fox;
 import com.example.foxclub.services.FoxService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,12 +48,16 @@ public class MainController {
     if (loggedUser.isEmpty()) {
       return "index_notLogged";
     } else {
-      model.addAttribute("foxName",
-          loggedUser.toUpperCase());
+      model.addAttribute("foxName", loggedUser.toUpperCase());
       model.addAttribute("foxFood", foxService.getFoxByName(loggedUser).getFood());
       model.addAttribute("foxDrink", foxService.getFoxByName(loggedUser).getDrink());
       model.addAttribute("foxTrick", foxService.getFoxByName(loggedUser).getTricks().size());
       model.addAttribute("tricks",foxService.getFoxByName(loggedUser).getTricks());
+
+      if (foxService.getFoxByName(loggedUser).getTricks().size() == 0){
+        model.addAttribute("noKnownTricks", true);
+      } else model.addAttribute("noKnownTricks", false);
+
       return "index";
     }
   }
@@ -92,14 +98,15 @@ public class MainController {
       model.addAttribute("name", name);
       model.addAttribute("favouriteFood", Configurations.Food.values());
       model.addAttribute("favouriteDrink", Configurations.Drinks.values());
-      model.addAttribute("favouriteTrick", Configurations.Tricks.values());
+      //model.addAttribute("favouriteTrick", Configurations.Tricks.values());
       return "signup";
     }
   }
 
   @PostMapping("/signup2")
-  public String signUpPage2(@RequestParam String foodString, @RequestParam String drinkString, @RequestParam String trickString, Model model) {
-    foxService.addFox(loggedUser,foodString, drinkString, trickString);
+  public String signUpPage2(@RequestParam String foodString, @RequestParam String drinkString, Model model) {
+    foxService.addFox(loggedUser,foodString, drinkString, Fox.getRandomTricks());
+
     return "redirect:/";
   }
 

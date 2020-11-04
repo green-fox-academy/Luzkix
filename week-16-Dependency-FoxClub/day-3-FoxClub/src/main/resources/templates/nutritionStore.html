@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<h1>Welcome to Nutrition Store!</h1>
+<div th:unless="${successfulSign == true}">
+<p>Unfortunately, You are currently <span style="font-size: larger; color: red; font-weight: bold;">Not Logged In!</span> Therefore you can not edit any properties of your fox! <br>
+    If you already have a registered name, please use it in the <a href="/login" style="font-size: larger; font-weight: bold;">LogIn</a> page. Otherwise <a href="/signup" style="font-size: larger; font-weight: bold;">SignUp</a>!</p>
+</div>
+
+<div th:if="${successfulSign == true}">
+    <p th:inline="text">In this page you can change food and drink preferences of your fox <strong style="color:red;">[[${name}]]!</strong> Great!</p>
+    <p th:inline="text">Actually, [[${name}]] eats [[${foxFood}]] and drinks [[${foxDrink}]]</p>
+
+    <form action="/nutrition" method="post">
+
+        <label type="text">Select new favourite food!</label><br>
+        <select name="foodString" id="foodString" required>
+            <option th:each="element:${favouriteFood}" th:value="${element}"
+                    th:text="${element.toLowerCase()}"></option>
+        </select>
+        <br>
+
+        <label type="text">Select new favourite drink!</label><br>
+        <select name="drinkString" id="drinkString" required>
+            <option th:each="element:${favouriteDrink}" th:value="${element}"
+                    th:text="${element.toLowerCase()}"></option>
+        </select>
+        <br>
+
+        <button type="submit">Set new nutritions!</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
