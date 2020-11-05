@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Programmer Fox Club</title>
     <link href="/style.css" rel="stylesheet">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <header th:replace="~{fragments::standardHeader}"></header>
 
 <div>
-    <img src="/files/greenfox.png" alt="GreenFox icon" id="greenFoxIcon">
-    <p th:inline="text">This is <strong style="color: red; text-transform: uppercase;">[[${foxName}]].</strong> Currently living on <strong>[[${foxFood}]]</strong> and <strong>[[${foxDrink}]]</strong>. The fox knows <strong>[[${foxTrick}]]</strong> trick(s).</p>
+    <img alt="GreenFox icon" id="greenFoxIcon" src="/files/greenfox.png">
+    <p th:inline="text">This is <strong style="color: red; text-transform: uppercase;">[[${foxName}]].</strong>
+        Currently living on <strong>[[${foxFood}]]</strong> and <strong>[[${foxDrink}]]</strong>. The fox knows <strong>[[${foxTrick}]]</strong>
+        trick(s).</p>
 </div>
 
 <div th:unless="${noKnownTricks == true}">
@@ -22,9 +24,9 @@
 
 <div th:if="${noKnownTricks == true}">
     <h1>Known tricks</h1>
-    <p th:inline="text">Unfortunately, <strong>[[${foxName}]]</strong> does not know any tricks yet. Go and learn some!</p>
+    <p th:inline="text">Unfortunately, <strong>[[${foxName}]]</strong> does not know any tricks yet. Go and learn some!
+    </p>
 </div>
-
 
 
 </body>

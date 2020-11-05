@@ -3,7 +3,6 @@ package com.example.foxclub.controllers;
 import com.example.foxclub.configurations.Configurations;
 import com.example.foxclub.models.Fox;
 import com.example.foxclub.services.FoxService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +23,6 @@ public class MainController {
 
   public static String getLoggedUser() {
     return loggedUser;
-  }
-
-  public FoxService getFoxService() {
-    return foxService;
   }
 
   public static void setCheckedName(String nameToCheck) {
@@ -52,18 +47,25 @@ public class MainController {
       model.addAttribute("foxFood", foxService.getFoxByName(loggedUser).getFood());
       model.addAttribute("foxDrink", foxService.getFoxByName(loggedUser).getDrink());
       model.addAttribute("foxTrick", foxService.getFoxByName(loggedUser).getTricks().size());
-      model.addAttribute("tricks",foxService.getFoxByName(loggedUser).getTricks());
+      model.addAttribute("tricks", foxService.getFoxByName(loggedUser).getTricks());
 
-      if (foxService.getFoxByName(loggedUser).getTricks().size() == 0){
+      if (foxService.getFoxByName(loggedUser).getTricks().size() == 0) {
         model.addAttribute("noKnownTricks", true);
-      } else model.addAttribute("noKnownTricks", false);
+      } else {
+        model.addAttribute("noKnownTricks", false);
+      }
 
       return "index";
     }
   }
 
   @GetMapping("/login")
-  public String loginPage() {
+  public String loginPage(Model model) {
+    if (!loggedUser.isEmpty()) {
+      model.addAttribute("userIsLoggedIn", true);
+      model.addAttribute("loggedName", loggedUser);
+      return "login";
+    }
     return "login";
   }
 
@@ -73,6 +75,10 @@ public class MainController {
       loggedUser = checkedName;
       return "redirect:index";
     } else {
+      if (!loggedUser.isEmpty()) {
+        model.addAttribute("userIsLoggedIn", true);
+        model.addAttribute("loggedName", loggedUser);
+      }
       model.addAttribute("wrongUser", "The name you have provided - <strong>" + name
           + "</strong> - is not in our database!");
       model.addAttribute("wrongLogin", true);
@@ -81,19 +87,30 @@ public class MainController {
   }
 
   @GetMapping("/signup")
-  public String signUpPage() {
+  public String signUpPage(Model model) {
+    if (!loggedUser.isEmpty()) {
+      model.addAttribute("loggedIn", true);
+      model.addAttribute("loggedName", loggedUser);
+      return "signup";
+    }
     return "signup";
   }
 
   @PostMapping("/signup")
   public String signUpPage(@RequestParam String name, Model model) {
     if (foxService.checkFox(name)) {
+      if (!loggedUser.isEmpty()) {
+        model.addAttribute("loggedIn", true);
+        model.addAttribute("loggedName", loggedUser);
+      }
       model.addAttribute("successfullSign", false);
+
       model.addAttribute("existingUser", "The name you have provided - <strong>" + name
-          + "</strong> - is already taken as a name: <strong>" + checkedName + "</strong>. Please try a new one.");
+          + "</strong> - is already taken as a name: <strong>" + checkedName +
+          "</strong>. Please try a new one.");
       return "signup";
     } else {
-      loggedUser=name;
+      loggedUser = name;
       model.addAttribute("successfullSign", true);
       model.addAttribute("name", name);
       model.addAttribute("favouriteFood", Configurations.Food.values());
@@ -104,17 +121,17 @@ public class MainController {
   }
 
   @PostMapping("/signup2")
-  public String signUpPage2(@RequestParam String foodString, @RequestParam String drinkString, Model model) {
-    foxService.addFox(loggedUser,foodString, drinkString, Fox.getRandomTricks());
+  public String signUpPage2(@RequestParam String foodString, @RequestParam String drinkString,
+                            Model model) {
+    foxService.addFox(loggedUser, foodString, drinkString, Fox.getRandomTricks());
 
     return "redirect:/index";
   }
 
 
-
   @GetMapping("/logout")
   public String logOut() {
-    loggedUser="";
+    loggedUser = "";
     return "redirect:/index";
   }
 
@@ -126,10 +143,10 @@ public class MainController {
 
   @GetMapping("/delete")
   public String deleteFoxPage(Model model) {
-    model.addAttribute("delete",false);
-    if(!loggedUser.isEmpty()){
-      model.addAttribute("name",loggedUser);
-      model.addAttribute("loggedIn",true);
+    model.addAttribute("delete", false);
+    if (!loggedUser.isEmpty()) {
+      model.addAttribute("name", loggedUser);
+      model.addAttribute("loggedIn", true);
     }
     return "delete";
   }
@@ -137,8 +154,8 @@ public class MainController {
   @PostMapping("/deleteConfirm")
   public String deleteFox(Model model) {
     foxService.deleteFox(loggedUser);
-    loggedUser="";
-    model.addAttribute("delete",true);
+    loggedUser = "";
+    model.addAttribute("delete", true);
     return "delete";
   }
 }

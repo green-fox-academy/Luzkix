@@ -18,12 +18,12 @@ public class TrickCentre {
   private FoxService foxService;
 
   @Autowired
-  public TrickCentre (FoxService foxService) {
+  public TrickCentre(FoxService foxService) {
     this.foxService = foxService;
   }
 
   @GetMapping("/tricks")
-  public String trickCentrePage (Model model) {
+  public String trickCentrePage(Model model) {
     String loggedUser = MainController.getLoggedUser();
     Fox fox = foxService.getFoxByName(loggedUser);
     if (loggedUser.isEmpty()) {
@@ -32,11 +32,13 @@ public class TrickCentre {
     } else {
       model.addAttribute("successfulSign", true);
       model.addAttribute("name", loggedUser);
-      model.addAttribute("tricks",foxService.getFoxByName(loggedUser).getTricks());
+      model.addAttribute("tricks", foxService.getFoxByName(loggedUser).getTricks());
 
-      if (foxService.getFoxByName(loggedUser).getTricks().size() == 0){
+      if (foxService.getFoxByName(loggedUser).getTricks().size() == 0) {
         model.addAttribute("noKnownTricks", true);
-      } else model.addAttribute("noKnownTricks", false);
+      } else {
+        model.addAttribute("noKnownTricks", false);
+      }
 
       List<String> tricksToSelect = Arrays.stream(Configurations.Tricks.values())
           .map(a -> a.toString())
@@ -51,7 +53,7 @@ public class TrickCentre {
   }
 
   @PostMapping("/tricks")
-  public String learnTricks (@RequestParam String teachTricks, @RequestParam String forgetTricks) {
+  public String learnTricks(@RequestParam String teachTricks, @RequestParam String forgetTricks) {
     String loggedUser = MainController.getLoggedUser();
     Fox fox = foxService.getFoxByName(loggedUser);
 

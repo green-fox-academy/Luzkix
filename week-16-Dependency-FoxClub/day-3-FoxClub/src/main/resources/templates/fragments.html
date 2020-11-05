@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Programmer Fox Club</title>
     <link href="/style.css" rel="stylesheet">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
 </head>
 <body>
 <header th:fragment="standardHeader">
@@ -29,9 +29,24 @@
         <button class="headerButtons"><a href="/delete">DeleteFox</a></button>
     </div>
     <div>
-        <button class="headerButtons"><a href="/save">Save your progress!</a></button>
+        <button class="headerButtons"><a href="/save">Save Progress!</a></button>
+    </div>
+    <div>
+        <button class="headerButtons"><a href="/history">Action History!</a></button>
     </div>
 </header>
+
+<form action="/login" method="post" th:fragment="loginForm">
+    <label for="petname">Name</label>
+    <input id="petname" name="name" required type="text">
+    <button type="submit">LOGIN</button>
+</form>
+
+<form action="/signup" method="post" th:fragment="signUpForm">
+    <label for="petname">Name</label>
+    <input id="petname" name="name" required type="text">
+    <button type="submit">SIGNUP new fox!</button>
+</form>
 
 </body>
 </html>

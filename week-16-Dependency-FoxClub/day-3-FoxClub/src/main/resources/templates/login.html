@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Title</title>
     <link href="/style.css" rel="stylesheet">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
 </head>
 <body>
+<div th:if="${userIsLoggedIn == true}">
 <header th:replace="~{fragments::standardHeader}"></header>
+</div>
+
 <h1>Welcome to LogIn page!</h1>
-<p>Please provide a fox name, so we can find your pet!</p>
-<form action="/login" method="post">
-    <label for="petname">Name</label>
-    <input type="text" id="petname" name="name" required>
-    <button type="submit">LOGIN</button>
-</form>
+
+<div th:if="${userIsLoggedIn == true}">
+    <p>You are already logged in as <strong style="color: red; text-transform: uppercase;">[[${loggedName}]]!</strong></p>
+    <p>Logging as a different fox will automatically sign you out.</p>
+    <form th:replace="~{fragments::loginForm}"></form>
+</div>
+
+<div th:unless="${userIsLoggedIn == true}">
+    <p>Please provide a fox name, so we can find your pet!</p>
+    <p>If you dont have a login name yet, please create a new fox account in <a href="/signup">SignUp</a> page.</p>
+    <form th:replace="~{fragments::loginForm}"></form>
+</div>
+
 <p th:utext="${wrongUser}"></p>
 
 <div th:if="${wrongLogin == true}">

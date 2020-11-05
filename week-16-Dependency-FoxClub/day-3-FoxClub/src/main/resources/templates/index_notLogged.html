@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <title>Programmer Fox Club</title>
     <link href="/style.css" rel="stylesheet">
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
 </head>
 <body>
-<header th:replace="~{fragments::standardHeader}"></header>
+<!--<header th:replace="~{fragments::standardHeader}"></header>-->
 
 <h1>Welcome to Programmer Fox Club!</h1>
 
 <div>
-    <img src="/files/greenfox.png" alt="GreenFox icon" id="greenFoxIcon">
+    <img alt="GreenFox icon" id="greenFoxIcon" src="/files/greenfox.png">
     <p>You are currently not logged in, so there are no details about the fox available.</p>
     <h3><a href="/login" style="color: red;">Login HERE!</a></h3>
+    <p>or</p>
+    <h3><a href="/signup" style="color: red;">SignUP!</a></h3>
 </div>
 </body>
 </html>
