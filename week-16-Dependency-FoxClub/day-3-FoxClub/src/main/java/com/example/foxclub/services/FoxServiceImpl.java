@@ -12,12 +12,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class FoxServiceImpl implements FoxService {
   private final FoxRepository foxRepository;
-  private final Foxes foxes;
+
 
   @Autowired
-  public FoxServiceImpl(FoxRepository foxRepository, Foxes foxes) {
+  public FoxServiceImpl(FoxRepository foxRepository) {
     this.foxRepository = foxRepository;
-    this.foxes = foxes;
+
   }
 
   @Override

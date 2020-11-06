@@ -1,35 +1,43 @@
 package com.example.foxclub.models;
 
 import com.example.foxclub.configurations.Configurations;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Component;
 
 public class Fox {
   private String name;
   private String food = new String();
   private String drink = new String();
-  private LocalDateTime lastChange;
-  private List<String> tricks = new ArrayList<>();
+  private List<String> tricks = new ArrayList<>(); //tricks list contains name of the fox at position 0
+  private List<String> history = new ArrayList<>(); //history list contains name of the fox at position 0
 
   public Fox (String name) {
     this.name = name;
-    this.lastChange = LocalDateTime.now();
+    //this.lastChange = LocalDateTime.now();
+  }
+
+  public Fox (String name, String food, String drink) {
+    this.name = name;
+    this.food = food;
+    this.drink = drink;
   }
 
   public Fox (String name, String food, String drink, List<String> tricks) {
-    this.lastChange = LocalDateTime.now();
     this.name = name;
     this.food = food;
     this.drink = drink;
     this.tricks = tricks;
   }
-  //využití pro vyčítání souborů - potřeba pak opravit!
-  public Fox (LocalDateTime lastChange, String name) {
+
+  public Fox (String name, String food, String drink, List<String> tricks, List<String> history) {
     this.name = name;
-    this.lastChange=lastChange;
+    this.food = food;
+    this.drink = drink;
+    this.tricks = tricks;
+    this.history = history;
   }
 
   public String getName() {
@@ -53,6 +61,19 @@ public class Fox {
   }
 
   public List<String> getTricks() {
+    List<String> tricksToReturn = tricks;
+    System.out.println(tricks);
+
+    if(tricksToReturn.isEmpty()) {
+      return tricksToReturn;
+    } else if(tricksToReturn.get(0).equals(name)) {
+      tricksToReturn.remove(0);
+      return tricksToReturn;
+    } else
+      return tricksToReturn;
+  }
+
+  public List<String> getTricksForSaving() {
     return tricks;
   }
 
@@ -62,6 +83,29 @@ public class Fox {
 
   public void setTricks(List<String> tricks) {
     this.tricks = tricks;
+  }
+
+  public List<String> getHistory() {
+    List<String> historyToReturn = history;
+    if(historyToReturn.isEmpty()) {
+      return historyToReturn;
+    } else if(historyToReturn.get(0).equals(name)) {
+      historyToReturn.remove(0);
+      return historyToReturn;
+    } else
+      return historyToReturn;
+  }
+
+  public List<String> getHistoryForSaving() {
+    return history;
+  }
+
+  public void setHistory(List<String> history) {
+    this.history = history;
+  }
+
+  public void addHistory(String action) {
+    history.add(action);
   }
 
   public static List<String> getRandomTricks() {
@@ -85,15 +129,6 @@ public class Fox {
 
     return tricks;
   }
-
-  public LocalDateTime getLastChange() {
-    return lastChange;
-  }
-
-  public void setLastChange() {
-    this.lastChange = LocalDateTime.now();
-  }
-
 
   @Override
   public String toString() {
