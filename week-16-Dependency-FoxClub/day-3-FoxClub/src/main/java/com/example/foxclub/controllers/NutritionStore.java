@@ -54,6 +54,15 @@ public class NutritionStore {
   public String setNutritions (@RequestParam String foodString, @RequestParam String drinkString) {
     String loggedUser = MainController.getLoggedUser();
     Fox fox = foxService.getFoxByName(loggedUser);
+    if(!foodString.equals(fox.getFood())){
+      String log = loggedUser + " no longer eats " + fox.getFood().toLowerCase() + ", instead started eating " + foodString.toLowerCase();
+      foxService.addHistory(loggedUser,log);
+    }
+    if(!drinkString.equals(fox.getDrink())){
+      String log = loggedUser + " no longer drinks " + fox.getDrink().toLowerCase() + ", instead started drinking " + drinkString.toLowerCase();
+      foxService.addHistory(loggedUser,log);
+    }
+
     fox.setFood(foodString);
     fox.setDrink(drinkString);
     return "redirect:/";

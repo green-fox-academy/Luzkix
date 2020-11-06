@@ -15,19 +15,31 @@
         trick(s).</p>
 </div>
 
-<div th:unless="${noKnownTricks == true}">
-    <h1>Known tricks</h1>
-    <ul th:each="trick:${tricks}">
-        <li th:text="${trick}">write HTML</li>
-    </ul>
-</div>
+<div id="informationSection">
+    <div id="trickSection">
+        <div th:unless="${noKnownTricks == true}">
+            <h1>Known tricks</h1>
+            <ul th:each="trick:${tricks}">
+                <li th:text="${trick}">write HTML</li>
+            </ul>
+        </div>
 
-<div th:if="${noKnownTricks == true}">
-    <h1>Known tricks</h1>
-    <p th:inline="text">Unfortunately, <strong>[[${foxName}]]</strong> does not know any tricks yet. Go and learn some!
-    </p>
-</div>
+        <div th:if="${noKnownTricks == true}">
+            <h1>Known tricks</h1>
+            <p th:inline="text">Unfortunately, <strong>[[${foxName}]]</strong> does not know any tricks yet. Go and
+                learn
+                some!
+            </p>
+        </div>
+    </div>
 
+    <div id="logSection">
+        <h1>Last 5 logs</h1>
+        <ul th:each="action:${historyActions}">
+            <li th:text="${action}"></li>
+        </ul>
+    </div>
+</div>
 
 </body>
 </html>

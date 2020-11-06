@@ -5,6 +5,8 @@ import com.example.foxclub.models.Fox;
 import com.example.foxclub.models.Foxes;
 import com.example.foxclub.repository.FoxRepository;
 import java.text.Normalizer;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -55,9 +57,12 @@ public class FoxServiceImpl implements FoxService {
 
   @Override
   public void saveAllFoxes() {
-    System.out.println(Foxes.getAllFoxes());
+    for (Fox fox:Foxes.getAllFoxes()) {
+      String log = "The progress of " + fox.getName() + " was saved.";
+      addHistory(fox.getName(),log);
+    }
     foxRepository.saveAllFoxes(Foxes.getAllFoxes());
-  };
+  }
 
   @Override
   public void deleteFox(String foxName) {
@@ -72,5 +77,12 @@ public class FoxServiceImpl implements FoxService {
     Foxes.setNewListOfFoxes(newListOfFoxes);
   }
 
+  @Override
+  public void addHistory(String foxName, String history) {
+    getFoxByName(foxName).addHistory(LocalDateTime.now()
+        .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
+        + ":"
+        + history);
+  }
 }
 

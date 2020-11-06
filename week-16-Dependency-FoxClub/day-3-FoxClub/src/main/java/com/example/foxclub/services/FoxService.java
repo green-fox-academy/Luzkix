@@ -14,4 +14,5 @@ public interface FoxService {
   void saveAllFoxes();
   void deleteFox(String foxName);
   Fox getFoxByName(String foxName);
+  void addHistory (String foxName, String history);
 }

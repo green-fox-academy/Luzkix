@@ -1,6 +1,7 @@
 package com.example.foxclub.controllers;
 
 
+import com.example.foxclub.models.Fox;
 import com.example.foxclub.services.FoxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,9 +19,11 @@ public class HistoryCentre {
 
   @GetMapping("/history")
   public String historyPage(Model model) {
+    String loggedUser = MainController.getLoggedUser();
+    Fox fox = foxService.getFoxByName(loggedUser);
 
+    model.addAttribute("historyActions", fox.getHistory());
       return "history";
-
   }
 
 }

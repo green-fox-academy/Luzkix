@@ -58,10 +58,16 @@ public class TrickCentre {
     Fox fox = foxService.getFoxByName(loggedUser);
 
     if (!teachTricks.equals("-")) {
+      String log = loggedUser + " just learned a new trick: " + teachTricks.toLowerCase();
+      foxService.addHistory(loggedUser,log);
+
       fox.addTrick(teachTricks);
     }
 
     if (!forgetTricks.equals("-")) {
+      String log = loggedUser + " just forgot following trick: " + forgetTricks.toLowerCase();
+      foxService.addHistory(loggedUser,log);
+
       List<String> tricksAfterForget = fox.getTricks();
       tricksAfterForget.remove(forgetTricks);
       fox.setTricks(tricksAfterForget);

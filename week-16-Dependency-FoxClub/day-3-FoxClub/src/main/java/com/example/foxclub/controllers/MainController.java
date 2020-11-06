@@ -3,6 +3,7 @@ package com.example.foxclub.controllers;
 import com.example.foxclub.configurations.Configurations;
 import com.example.foxclub.models.Fox;
 import com.example.foxclub.services.FoxService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,6 +50,9 @@ public class MainController {
       model.addAttribute("foxTrick", foxService.getFoxByName(loggedUser).getTricks().size());
       model.addAttribute("tricks", foxService.getFoxByName(loggedUser).getTricks());
 
+      List<String> history = foxService.getFoxByName(loggedUser).getHistory();
+      model.addAttribute("historyActions", history.subList(history.size()-5,history.size()));
+
       if (foxService.getFoxByName(loggedUser).getTricks().size() == 0) {
         model.addAttribute("noKnownTricks", true);
       } else {
@@ -73,6 +77,8 @@ public class MainController {
   public String loginPage(@RequestParam String name, Model model) {
     if (foxService.checkFox(name)) {
       loggedUser = checkedName;
+      String log = loggedUser + " logged in.";
+      foxService.addHistory(loggedUser,log);
       return "redirect:index";
     } else {
       if (!loggedUser.isEmpty()) {
@@ -115,7 +121,7 @@ public class MainController {
       model.addAttribute("name", name);
       model.addAttribute("favouriteFood", Configurations.Food.values());
       model.addAttribute("favouriteDrink", Configurations.Drinks.values());
-      //model.addAttribute("favouriteTrick", Configurations.Tricks.values());
+
       return "signup";
     }
   }
@@ -125,12 +131,19 @@ public class MainController {
                             Model model) {
     foxService.addFox(loggedUser, foodString, drinkString, Fox.getRandomTricks());
 
+    String log = "A new fox " + loggedUser + " just sign-UP! He/she likes eating "
+        + foodString + " and drinks " + drinkString;
+    foxService.addHistory(loggedUser,log);
+
     return "redirect:/index";
   }
 
 
   @GetMapping("/logout")
   public String logOut() {
+    String log = "The fox " + loggedUser + " logedOut.";
+    foxService.addHistory(loggedUser,log);
+
     loggedUser = "";
     return "redirect:/index";
   }
