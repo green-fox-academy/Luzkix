@@ -17,11 +17,13 @@
             <td>Done</td>
         </tr>
     </th>
-    <tr class="tableRow" th:each="todo:${todos}" th:object="${todo}">
+    <tr class="tableRow" th:each="todo:${#lists.sort(todos)}" th:object="${todo}">
         <td th:text="*{id}"></td>
         <td th:text="*{title}"></td>
         <td th:text="*{urgent}"></td>
         <td th:text="*{done}"></td>
+        <td><a th:href="@{'/'+ ${todo.id}+'/delete'}">delete</a></td>
+        <td><a th:href="@{'/'+ ${todo.id}+'/edit'}">edit</a></td>
     </tr>
 
 </table>

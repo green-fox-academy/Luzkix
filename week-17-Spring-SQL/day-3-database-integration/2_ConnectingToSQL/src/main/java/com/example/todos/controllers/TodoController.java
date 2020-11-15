@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 //@RequestMapping("/todo")
@@ -41,9 +43,27 @@ public class TodoController {
   }
 
   @PostMapping("/addTask")
-  public String addTaskSubmit(@ModelAttribute Todo newTask, Model model){
-    repository.save(newTask);
+  public String addTaskSubmit(@ModelAttribute Todo newTodo){
+    repository.save(newTodo);
     return "redirect:/";
   }
 
+  @GetMapping("/{id}/delete")
+  public String deleteTask(@PathVariable long id, Model model) {
+    repository.delete(repository.getOne(id));
+    return "redirect:/";
+  }
+
+  @GetMapping("/{id}/edit")
+  public String editTaskForm(@PathVariable long id, Model model) {
+    model.addAttribute("editedTask", repository.getOne(id));
+    return "editTask";
+  }
+
+  @PostMapping("/{id}/edit")
+  public String editTaskSave(@ModelAttribute Todo updatedTodo, @PathVariable long id){
+    updatedTodo.setId(id);
+    repository.save(updatedTodo);
+    return "redirect:/";
+  }
 }

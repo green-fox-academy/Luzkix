@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Todo {
+public class Todo implements Comparable<Todo>{
   @Id @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
   private String title;
@@ -52,4 +52,10 @@ public class Todo {
   public void setDone(boolean done) {
     this.done = done;
   }
+
+  @Override
+  public int compareTo(Todo other) {
+    return (int)(id - other.getId());
+  }
+
 }
