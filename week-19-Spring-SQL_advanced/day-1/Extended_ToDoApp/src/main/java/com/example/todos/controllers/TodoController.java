@@ -65,4 +65,11 @@ public class TodoController {
     repository.save(updatedTodo);
     return "redirect:/";
   }
+
+  @PostMapping("/search")
+  public String searchTodo(@RequestParam String search, Model model){
+
+    model.addAttribute("todos", repository.findTodoByString(search));
+    return "todos";
+  }
 }

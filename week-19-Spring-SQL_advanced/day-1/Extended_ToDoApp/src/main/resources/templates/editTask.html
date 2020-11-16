@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<h1>Edit the Task:</h1>
+<form action="#" th:action="@{'/'+ ${editedTask.id}+'/edit'}" th:object="${editedTask}" method="post">
+    <p>Update Todo Title:
+        <input type="text" th:field="*{title}"/>
+    </p>
+    <p>Update Todo Content:
+        <input type="text" th:field="*{content}"/>
+    </p>
+    <p>Update Todo Description:
+        <input type="text" th:field="*{description}"/>
+    </p>
+    <p>Is it urgent? </br>
+        Urgent<input type="radio" th:field="*{urgent}" th:value=true/>
+        Not Urgent<input type="radio" th:field="*{urgent}" th:value=false />
+    </p>
+    <p>Is the task done? (YES = checked)
+        <input type="checkbox" th:field="*{done}"/>
+    </p>
+    <p>
+        <button type="submit">Update the task</button>
+        <button type="reset">Reset</button>
+    </p>
+</form>
+
+</body>
+</html>

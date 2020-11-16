@@ -1,0 +1,14 @@
+body {
+    max-width: 500px;
+    margin: auto;
+}
+
+.tableHeader {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.tableRow td {
+    border: darkgrey solid 1px;
+}
