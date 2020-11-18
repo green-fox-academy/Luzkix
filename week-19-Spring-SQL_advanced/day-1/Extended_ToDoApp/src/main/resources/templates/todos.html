@@ -8,27 +8,39 @@
 <body>
 <header th:replace="~{fragments::standardHeader}"></header>
 
-<form action="/search" method="post">
-    <p>Find todos!</p>
-    <input type="text" name="search" required placeholder="enter key words">
-    <button type="submit">Search</button>
-</form>
+<div id="searchForms">
+    <form action="/searchByText" method="post">
+        <p>Find todos based on text description!</p>
+        <input type="text" name="search" required placeholder="enter key words">
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="/searchByDate" method="post">
+        <p>Find todos based on creation/due date!</p>
+        <input type="date" name="date" required>
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 <h1>Todos for today:</h1>
 <table >
     <th>
         <tr class="tableHeader">
+            <td>Creation Date</td>
             <td>Id</td>
             <td>Action</td>
             <td>Urgent</td>
             <td>Done</td>
+            <td>Due Date</td>
         </tr>
     </th>
     <tr class="tableRow" th:each="todo:${#lists.sort(todos)}" th:object="${todo}">
+        <td th:text="*{creationDate}"></td>
         <td th:text="*{id}"></td>
         <td th:text="*{title}"></td>
         <td th:text="*{urgent}"></td>
         <td th:text="*{done}"></td>
+        <td th:text="*{dueDate}"></td>
         <td><a th:href="@{'/'+ ${todo.id}+'/delete'}">delete</a></td>
         <td><a th:href="@{'/'+ ${todo.id}+'/edit'}">edit</a></td>
     </tr>

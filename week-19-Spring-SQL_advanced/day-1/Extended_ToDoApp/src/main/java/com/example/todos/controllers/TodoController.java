@@ -2,6 +2,11 @@ package com.example.todos.controllers;
 
 import com.example.todos.models.Todo;
 import com.example.todos.repositories.TodoRepository;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,14 +67,22 @@ public class TodoController {
   @PostMapping("/{id}/edit")
   public String editTaskSave(@ModelAttribute Todo updatedTodo, @PathVariable long id){
     updatedTodo.setId(id);
+    updatedTodo.setCreationDate(repository.findById(id).get().getCreationDate());
     repository.save(updatedTodo);
     return "redirect:/";
   }
 
-  @PostMapping("/search")
-  public String searchTodo(@RequestParam String search, Model model){
+  @PostMapping("/searchByText")
+  public String searchTodoByText(@RequestParam String search, Model model){
 
     model.addAttribute("todos", repository.findTodoByString(search));
+    return "todos";
+  }
+
+  @PostMapping("/searchByDate")
+  public String searchTodoByDate(@RequestParam String date, Model model){
+    LocalDate selectDate = LocalDate.parse(date);
+    model.addAttribute("todos", repository.findTodoByDate(selectDate));
     return "todos";
   }
 }

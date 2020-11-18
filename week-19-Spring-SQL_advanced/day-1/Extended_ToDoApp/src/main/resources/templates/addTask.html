@@ -12,9 +12,18 @@
     <p>Todo description:
         <input type="text" th:field="*{title}" required/>
     </p>
+    <p>Todo Content:
+        <input type="text" th:field="*{content}" required/>
+    </p>
+    <p>Todo Description:
+        <input type="text" th:field="*{description}" required/>
+    </p>
     <p>Is it urgent? </br>
         Urgent<input type="radio" th:field="*{urgent}" th:value=true/>
         Not Urgent<input type="radio" th:field="*{urgent}" th:value=false />
+    </p>
+    <p>Set Due Date (if needed):
+        <input type="date" th:field="*{dueDate}"/>
     </p>
     <p>
         <button type="submit">Submit new task</button>

@@ -22,6 +22,12 @@
         Urgent<input type="radio" th:field="*{urgent}" th:value=true/>
         Not Urgent<input type="radio" th:field="*{urgent}" th:value=false />
     </p>
+<!--    <p>Todo was created at:
+        <input type="datetime-local" th:field="*{creationDate}" readonly/>
+    </p>-->
+    <p>Update Due Date (if needed):
+        <input type="date" th:field="*{dueDate}"/>
+    </p>
     <p>Is the task done? (YES = checked)
         <input type="checkbox" th:field="*{done}"/>
     </p>
