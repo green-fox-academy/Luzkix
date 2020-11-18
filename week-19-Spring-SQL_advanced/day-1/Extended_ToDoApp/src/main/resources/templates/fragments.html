@@ -5,15 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<header th:fragment="standardHeader">
-    <form action="/" method="get">
-        <button type="submit">All tasks</button>
-        <button type="submit" name="isActive" value=true >Active tasks</button>
-        <button type="submit" name="isActive" value=false >Completed tasks</button>
-    </form>
-    <form action="/addTask" method="get">
-        <button type="submit">Add New Task</button>
-    </form>
+<header th:fragment="standardHeader" id="headerButtons">
+    <div id="taskButtons">
+        <form action="/" method="get">
+            <button type="submit">All tasks</button>
+            <button type="submit" name="isActive" value=true >Active tasks</button>
+            <button type="submit" name="isActive" value=false >Completed tasks</button>
+        </form>
+        <form action="/addTask" method="get">
+            <button type="submit">Add New Task</button>
+        </form>
+    </div>
+    <div id="assigneeButtons">
+        <form action="/assignees/" method="get">
+            <button type="submit">All Assignees</button>
+        </form>
+        <form action="/addAssignee" method="get">
+            <button type="submit">Add Assignee</button>
+        </form>
+    </div>
+
 </header>
 </body>
 </html>

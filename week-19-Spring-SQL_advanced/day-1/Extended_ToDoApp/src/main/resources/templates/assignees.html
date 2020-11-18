@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<h1>List of Assignees:</h1>
+
+<p th:if="${emptyList == true}">There are no Assignees defined yet. You can add few <a href="/addAssignee">HERE!</a></p>
+
+<table th:unless="${emptyList == true}" >
+    <th>
+        <tr class="tableHeader">
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+        </tr>
+    </th>
+    <tr class="tableRow" th:each="assignee:${#lists.sort(assignees)}" th:object="${assignee}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{email}"></td>
+        <td><a th:href="@{'/'+ ${assignee.id}+'/editAssignee'}">edit</a></td>
+        <td><a th:href="@{'/'+ ${assignee.id}+'/deleteAssignee'}">delete</a></td>
+    </tr>
+
+</table>
+</body>
+</html>

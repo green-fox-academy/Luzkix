@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<h1>Edit Assignee:</h1>
+<form action="#" th:action="@{'/'+ ${editedAssignee.id}+'/editAssignee'}" th:object="${editedAssignee}" method="post">
+    <p>Update name:
+        <input type="text" th:field="*{name}"/>
+    </p>
+    <p>Update email:
+        <input type="email" th:field="*{email}"/>
+    </p>
+        <button type="submit">Update the task</button>
+        <button type="reset">Reset</button>
+    </p>
+</form>
+
+</body>
+</html>

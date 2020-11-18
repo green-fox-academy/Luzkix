@@ -17,3 +17,13 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
+#headerButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#assigneeButtons {
+    display: flex;
+    justify-content: right;
+}

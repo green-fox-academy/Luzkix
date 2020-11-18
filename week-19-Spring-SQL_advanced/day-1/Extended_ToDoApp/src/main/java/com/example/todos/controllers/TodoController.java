@@ -2,11 +2,7 @@ package com.example.todos.controllers;
 
 import com.example.todos.models.Todo;
 import com.example.todos.repositories.TodoRepository;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

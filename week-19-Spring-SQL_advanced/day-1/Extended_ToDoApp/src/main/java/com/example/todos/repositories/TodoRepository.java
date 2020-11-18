@@ -1,5 +1,6 @@
 package com.example.todos.repositories;
 
+import com.example.todos.models.Assignee;
 import com.example.todos.models.Todo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
