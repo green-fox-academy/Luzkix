@@ -69,4 +69,18 @@ public class AssigneeController {
     return "redirect:/assignees";
   }
 
+  @GetMapping ("/{id}/todosByAssignee")
+  public String todosByAssigneeForm (@PathVariable Long id, Model model) {
+    model.addAttribute("todosByAssignee", assigneeRepo.getOne(id).getTodos());
+    model.addAttribute("assignee", assigneeRepo.getOne(id));
+    return "todosByAssignee";
+  }
+
+  @PostMapping ("/{id}/todosByAssignee")
+  public String todosByAssigneeSubmit (@PathVariable Long id, @ModelAttribute Assignee updatedAssignee) {
+    updatedAssignee.setId(id);
+    assigneeRepo.save(updatedAssignee);
+    return "redirect:/assignees";
+  }
+
 }

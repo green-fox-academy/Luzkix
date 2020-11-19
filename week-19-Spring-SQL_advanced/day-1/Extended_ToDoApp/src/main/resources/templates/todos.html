@@ -32,6 +32,10 @@
             <td>Urgent</td>
             <td>Done</td>
             <td>Due Date</td>
+            <td>Assignee</td>
+            <td>Edit Todo</td>
+            <td>Delete Todo</td>
+
         </tr>
     </th>
     <tr class="tableRow" th:each="todo:${#lists.sort(todos)}" th:object="${todo}">
@@ -41,8 +45,11 @@
         <td th:text="*{urgent}"></td>
         <td th:text="*{done}"></td>
         <td th:text="*{dueDate}"></td>
-        <td><a th:href="@{'/'+ ${todo.id}+'/delete'}">delete</a></td>
-        <td><a th:href="@{'/'+ ${todo.id}+'/edit'}">edit</a></td>
+        <td>
+            <a th:if="${todo.assignee} != null" th:href="@{/{id}/todosByAssignee (id=${todo.assignee.getId()})}" th:text="*{assignee} == null ? '' : *{assignee.getName()}"></a>
+        </td>
+        <td><a th:href="@{/{id}/edit (id=${todo.id})}">edit</a></td>
+        <td><a th:href="@{'/'+ ${todo.id}+'/delete'}">!delete!</a></td>
     </tr>
 
 </table>

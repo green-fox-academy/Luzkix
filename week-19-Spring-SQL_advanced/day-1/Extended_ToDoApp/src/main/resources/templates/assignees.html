@@ -18,14 +18,18 @@
             <td>Id</td>
             <td>Name</td>
             <td>Email</td>
+            <td>Edit </br>Assignee</td>
+            <td>Delete </br>Assignee</td>
         </tr>
     </th>
     <tr class="tableRow" th:each="assignee:${#lists.sort(assignees)}" th:object="${assignee}">
         <td th:text="*{id}"></td>
-        <td th:text="*{name}"></td>
+        <td>
+            <a th:href="@{/{id}/todosByAssignee (id=${assignee.id})}" th:text="*{name}"></a>
+        </td>
         <td th:text="*{email}"></td>
         <td><a th:href="@{'/'+ ${assignee.id}+'/editAssignee'}">edit</a></td>
-        <td><a th:href="@{'/'+ ${assignee.id}+'/deleteAssignee'}">delete</a></td>
+        <td><a th:href="@{'/'+ ${assignee.id}+'/deleteAssignee'}">!delete!</a></td>
     </tr>
 
 </table>

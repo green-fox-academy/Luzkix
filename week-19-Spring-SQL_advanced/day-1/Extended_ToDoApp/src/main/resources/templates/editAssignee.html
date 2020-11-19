@@ -7,6 +7,7 @@
 </head>
 <body>
 <header th:replace="~{fragments::standardHeader}"></header>
+
 <h1>Edit Assignee:</h1>
 <form action="#" th:action="@{'/'+ ${editedAssignee.id}+'/editAssignee'}" th:object="${editedAssignee}" method="post">
     <p>Update name:
@@ -15,7 +16,7 @@
     <p>Update email:
         <input type="email" th:field="*{email}"/>
     </p>
-        <button type="submit">Update the task</button>
+        <button type="submit">Update assignee</button>
         <button type="reset">Reset</button>
     </p>
 </form>

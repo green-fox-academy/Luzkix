@@ -1,6 +1,8 @@
 package com.example.todos.controllers;
 
+import com.example.todos.models.Assignee;
 import com.example.todos.models.Todo;
+import com.example.todos.repositories.AssigneeRepository;
 import com.example.todos.repositories.TodoRepository;
 import java.time.LocalDate;
 import java.util.stream.Collectors;
@@ -17,19 +19,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 //@RequestMapping("/todo")
 public class TodoController {
   private TodoRepository repository;
+  private AssigneeRepository assigneeRepo;
   @Autowired
-  public TodoController (TodoRepository repository) {
+  public TodoController (TodoRepository repository, AssigneeRepository assigneeRepo) {
     this.repository = repository;
+    this.assigneeRepo = assigneeRepo;
   }
 
 
   @GetMapping({ "/", "/list" })
   public String list(@RequestParam(value = "isActive", required = false) Boolean isActive, Model model) {
     if(isActive == null) {
+      //System.out.println(repository.findAll().get(0).getAssignee().getName());
       model.addAttribute("todos", repository.findAll());
     } else if (isActive) {
+      //System.out.println(repository.findAll().get(0).getAssignee().getName());
       model.addAttribute("todos", repository.findAll().stream().filter(task-> !task.isDone()).collect(Collectors.toList()));
     } else if (!isActive) {
+      //System.out.println(repository.findAll().get(0).getAssignee().getName());
       model.addAttribute("todos", repository.findAll().stream().filter(task-> task.isDone()).collect(Collectors.toList()));
     } else {
     }
@@ -57,11 +64,17 @@ public class TodoController {
   @GetMapping("/{id}/edit")
   public String editTaskForm(@PathVariable long id, Model model) {
     model.addAttribute("editedTask", repository.getOne(id));
+    model.addAttribute("assignees", assigneeRepo.findAll());
     return "editTask";
   }
 
   @PostMapping("/{id}/edit")
-  public String editTaskSave(@ModelAttribute Todo updatedTodo, @PathVariable long id){
+  public String editTaskSave(@ModelAttribute Todo updatedTodo, @PathVariable long id, @RequestParam (required = false)
+      Long assignee ){
+    if (assignee == 0) {
+      updatedTodo.setAssignee(null);
+    } else {updatedTodo.setAssignee(assigneeRepo.getOne(assignee));}
+
     updatedTodo.setId(id);
     updatedTodo.setCreationDate(repository.findById(id).get().getCreationDate());
     repository.save(updatedTodo);

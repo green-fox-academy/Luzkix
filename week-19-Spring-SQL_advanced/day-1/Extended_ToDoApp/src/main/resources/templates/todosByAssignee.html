@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div th:object="${assignee}">
+    <h1 th:text="'Todos for '+${assignee.name}"></h1>
+    <p th:utext="${assignee.name} + ' has following email: '+${assignee.email}+'.'"></p>
+    <p>You can edit his/her personal details on following <a th:href="@{/{id}/editAssignee (id=${assignee.id})}">LINK.</a></p>
+    <strong><p th:text="${assignee.name}+' is assigned '+${assignee.todos.size()}+' todos!'"></p></strong>
+    <table >
+        <th>
+            <tr class="tableHeader">
+                <td>Creation Date</td>
+                <td>ToDo Id</td>
+                <td>Action</td>
+                <td>Urgent</td>
+                <td>Done</td>
+                <td>Due Date</td>
+                <td>Edit Todo</td>
+                <td>Delete Todo</td>
+            </tr>
+        </th>
+        <tr class="tableRow" th:each="todo:${todosByAssignee}" th:object="${todo}">
+            <td th:text="*{creationDate}"></td>
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{urgent}"></td>
+            <td th:text="*{done}"></td>
+            <td th:text="*{dueDate}"></td>
+            <td><a th:href="@{/{id}/edit (id=${todo.id})}">edit</a></td>
+            <td><a th:href="@{'/'+ ${todo.id}+'/delete'}">!delete!</a></td>
+        </tr>
+
+    </table>
+</div>
+
+</body>
+</html>
