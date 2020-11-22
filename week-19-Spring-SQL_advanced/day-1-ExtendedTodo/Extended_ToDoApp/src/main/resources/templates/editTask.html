@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:assignee="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<h1>Edit the Task:</h1>
+<form action="#" th:action="@{'/'+ ${editedTask.id}+'/edit'}" th:object="${editedTask}" method="post">
+    <p>Update Todo Title:
+        <input type="text" th:field="*{title}" hidden/>
+    </p>
+    <p>Update Todo Content:
+        <input type="text" th:field="*{content}"/>
+    </p>
+    <p>Update Todo Description:
+        <input type="text" th:field="*{description}"/>
+    </p>
+    <p>Is it urgent? </br>
+        Urgent<input type="radio" th:field="*{urgent}" th:value=true/>
+        Not Urgent<input type="radio" th:field="*{urgent}" th:value=false />
+    </p>
+<!--    <p>Todo was created at:
+        <input type="datetime-local" th:field="*{creationDate}" readonly/>
+    </p>-->
+    <p>Update Due Date (if needed):
+        <input type="date" th:field="*{dueDate}"/>
+    </p>
+    <p>Is the task done? (YES = checked)
+        <input type="checkbox" th:field="*{done}"/>
+    </p>
+    <p>Assign Task to:
+        <select name="assignee">
+            <option th:value="0"> -- no one --</option>
+            <option th:each="element:${assignees}" th:value="${element.id}"
+                th:text="${element.name}"></option>
+        </select>
+    </p>
+    <p>
+        <button type="submit">Update the task</button>
+        <button type="reset">Reset</button>
+    </p>
+</form>
+
+</body>
+</html>

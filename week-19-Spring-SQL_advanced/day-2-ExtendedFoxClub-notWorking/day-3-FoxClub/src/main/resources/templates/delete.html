@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Programmer Fox Club</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div th:if="${delete == false}">
+    <div th:unless="${loggedIn == true}">
+        <p>You are currently not logged in, so we can not delete your account!</p>
+        <h3><a href="/login" style="color: red;">Please login first HERE!</a></h3>
+    </div>
+    <div th:if="${loggedIn == true}">
+        <p th:inline="text">You are currently logged in as <strong style="color:red;">[[${name}]]</strong>. Are you sure to delete this account from the server?</p>
+        <form action="/deleteConfirm" method="post">
+            <button type="submit">YES - DELETE</button>
+        </form>
+    </div>
+</div>
+
+<div th:if="${delete == true}">
+    <p id="progres" >Your account was successfully deleted!</p>
+</div>
+
+
+</body>
+</html>

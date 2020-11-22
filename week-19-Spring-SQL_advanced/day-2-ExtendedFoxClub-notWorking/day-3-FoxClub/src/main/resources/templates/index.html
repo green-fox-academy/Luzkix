@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Programmer Fox Club</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div>
+    <img alt="GreenFox icon" id="greenFoxIcon" src="/files/greenfox.png">
+    <p th:inline="text">This is <strong style="color: red; text-transform: uppercase;">[[${foxName}]].</strong>
+        Currently living on <strong>[[${foxFood}]]</strong> and <strong>[[${foxDrink}]]</strong>. The fox knows <strong>[[${foxTrick}]]</strong>
+        trick(s).</p>
+</div>
+
+<div id="informationSection">
+    <div id="trickSection">
+        <div th:unless="${noKnownTricks == true}">
+            <h1>Known tricks</h1>
+            <ul th:each="trick:${tricks}">
+                <li th:text="${trick}">write HTML</li>
+            </ul>
+        </div>
+
+        <div th:if="${noKnownTricks == true}">
+            <h1>Known tricks</h1>
+            <p th:inline="text">Unfortunately, <strong>[[${foxName}]]</strong> does not know any tricks yet. Go and
+                learn
+                some!
+            </p>
+        </div>
+    </div>
+
+    <div id="logSection">
+        <h1>Last 5 logs</h1>
+        <ul th:each="action:${historyActions}">
+            <li th:text="${action}"></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

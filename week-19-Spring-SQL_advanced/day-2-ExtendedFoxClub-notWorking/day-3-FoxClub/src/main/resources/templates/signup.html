@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div th:if="${loggedIn == true}">
+    <header th:replace="~{fragments::standardHeader}"></header>
+</div>
+
+<h1>Welcome to SignUp page!</h1>
+
+<div th:if="${loggedIn == true}">
+    <p>You are actually logged in as <strong style="color: red; text-transform: uppercase;">[[${loggedName}]]!</strong>
+    </p>
+    <p>If you are still willing to create new fox, you will be automatically sign out and logged in as a new fox.</p>
+    <p>To create a new fox, provide us with a unique name, so we can associate it with your new pet!</p>
+    <form th:replace="~{fragments::signUpForm}"></form>
+    <p style="color: red;" th:utext="${existingUser}"></p>
+</div>
+
+<div th:unless="${loggedIn == true}">
+    <div th:unless="${successfullSign == true}">
+        <p>If you already have a login name, please use it in the <a href="/login">LogIn</a> page.</p>
+        <p>Otherwise provide a unique name, so we can associate it with your new pet!</p>
+        <form th:replace="~{fragments::signUpForm}"></form>
+        <p style="color: red;" th:utext="${existingUser}"></p>
+    </div>
+</div>
+
+<div th:if="${successfullSign == true}">
+    <p th:inline="text">Great! You just created your new fox with the name <strong
+            style="color:red; text-transform: uppercase">[[${name}]]!</strong><br>
+        Lets now select what your fox eats and drinks! The fox will be <strong>randomly assigned some tricks</strong> it
+        can do...</p>
+
+    <form action="/signup2" method="post">
+
+        <label type="text">Favourite food, pick one:</label><br>
+        <select id="foodString" name="foodString" required>
+            <option th:each="element:${favouriteFood}" th:text="${element.name().toLowerCase()}"
+                    th:value="${element.name()}"></option>
+        </select>
+        <br>
+
+        <label type="text">Favourite drink:</label><br>
+        <select id="drinkString" name="drinkString" required>
+            <option th:each="element:${favouriteDrink}" th:text="${element.name().toLowerCase()}"
+                    th:value="${element.name()}"></option>
+        </select>
+        <br>
+
+        <button type="submit">Add the properties!</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
