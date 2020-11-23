@@ -7,4 +7,6 @@ public interface UserService {
   User loggedUser();
   boolean tryAddNewUser(String name, String email, String password);
   void logout();
+  void saveUser(User user);
+  boolean saveEditedAccountOfUser(User updatedUser);
 }

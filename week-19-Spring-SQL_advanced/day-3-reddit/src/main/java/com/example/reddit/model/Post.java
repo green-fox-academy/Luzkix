@@ -1,6 +1,6 @@
 package com.example.reddit.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="posts")
@@ -26,17 +27,23 @@ public class Post {
   private Long postId;
   private String title;
   private String postDesc;
-  private Long likes;
+  private Long likes = 0l;
   @ManyToOne
   @JoinColumn(name="postOwner_ID")
   private User owner;
   @OneToMany(mappedBy = "votedPost")
   private List<Vote> votes = new ArrayList<>();
-
-  private LocalDate creationDate;
+  //@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private LocalDateTime creationDate;
 
   public Post () {
-    creationDate = LocalDate.now();
+    creationDate = LocalDateTime.now();
+  }
+
+  public Post (String title, String postDesc) {
+    this.title = title;
+    this.postDesc = postDesc;
+    creationDate = LocalDateTime.now();
   }
 
 }

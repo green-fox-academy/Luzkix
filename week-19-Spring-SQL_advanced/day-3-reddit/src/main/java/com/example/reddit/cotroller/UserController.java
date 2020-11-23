@@ -1,11 +1,13 @@
 package com.example.reddit.cotroller;
 
+import com.example.reddit.model.User;
 import com.example.reddit.service.UserService;
 import com.example.reddit.service.VoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -58,8 +60,40 @@ public class UserController {
     return "login";
   }
 
+  @GetMapping ("/account")
+  String showAccountDetails (Model model) {
+    if(userService.loggedUser() == null){
+      return "login";
+    }
+    model.addAttribute("loggedUser", userService.loggedUser().getUserName());
+    model.addAttribute("actualAccount", userService.loggedUser());
+    return "account";
+  }
 
+  @GetMapping ("/editAccount")
+  String editAccountDetails (Model model) {
+    if(userService.loggedUser() == null){
+      return "login";
+    }
+    model.addAttribute("loggedUser", userService.loggedUser().getUserName());
+    model.addAttribute("actualAccount", userService.loggedUser());
+    model.addAttribute("wrongEditAccount", false);
+    return "editAccount";
+  }
 
+  @PostMapping ("/editAccount")
+  String editedAccountDetailsSubmit (@ModelAttribute User updatedUser, Model model) {
+    model.addAttribute("loggedUser", userService.loggedUser().getUserName());
+
+    if(userService.saveEditedAccountOfUser(updatedUser)){
+      return "redirect:/";
+    } else {
+      model.addAttribute("loggedUser", userService.loggedUser().getUserName());
+      model.addAttribute("actualAccount", userService.loggedUser());
+      model.addAttribute("wrongEditAccount", true);
+      return "editAccount";
+    }
+  }
 
 
 }

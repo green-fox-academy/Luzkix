@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Getter
 @Setter
 public class UserServiceImp implements UserService {
-  private User loggedUser;
+  public static User loggedUser;
   private UserRepository userRepository;
   @Autowired
   public UserServiceImp(UserRepository userRepository) {
@@ -52,4 +52,25 @@ public class UserServiceImp implements UserService {
   public void logout() {
     loggedUser = null;
   }
+
+  @Override
+  public void saveUser(User user) {
+    loggedUser=user;
+    userRepository.save(user);
+  }
+
+  @Override
+  public boolean saveEditedAccountOfUser(User updatedUser) {
+    //updated email cant be email, which is already assigned to another user (different from loggedUser)
+    User emailAlreadyUsed = userRepository.findByUserEmail(updatedUser.getUserEmail());
+    if (emailAlreadyUsed != null && emailAlreadyUsed.getUserId() != loggedUser.getUserId()) {
+      return false;
+    } else {
+      loggedUser=updatedUser;
+      userRepository.save(updatedUser);
+      return true;
+    }
+  }
+
+
 }

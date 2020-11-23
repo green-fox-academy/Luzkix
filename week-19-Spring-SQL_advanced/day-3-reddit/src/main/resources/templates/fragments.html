@@ -14,7 +14,7 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Zdenda´s Reddit WebApp</a>
+                <a class="navbar-brand" href="/" th:inline="text">[[${loggedUser}]]´s Reddit WebApp</a>
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -25,7 +25,7 @@
             </div>
             <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="/addNewPost">Submit New Post</a></li>
+                <li><a href="/addPost">Submit New Post</a></li>
                 <li><a href="/myPosts">My posts</a></li>
                 <li><a href="/myLikes">My likes</a></li>
                 <li><a href="/account">My Account</a></li>
