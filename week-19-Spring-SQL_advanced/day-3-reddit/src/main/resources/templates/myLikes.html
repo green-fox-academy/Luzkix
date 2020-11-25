@@ -14,26 +14,24 @@
 
 
 <div class="container">
-    <h2>Trending posts</h2>
+    <h2>My likes/dislikes</h2>
     <table class="table table-hover">
         <thead>
         <tr>
             <th>Total Likes</th>
-            <th>Like</th>
-            <th>Dislike</th>
             <th>Post Title</th>
-            <th>Created By</th>
-            <th>Creation Date</th>
+            <th>My like/dislike</th>
+            <th>Voted date</th>
+            <th>Post created by</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="post:${postsToBeDisplayed}">
-            <td th:text="${post.likes}"></td>
-            <td><a th:href="@{/like/{id} (id=${post.postId})}">+</a></td>
-            <td><a th:href="@{/dislike/{id} (id=${post.postId})}">-</a></td>
-            <td><a th:href="@{/post/{id} (id=${post.postId})}" th:text="${post.title}"></a></td>
-            <td th:text="${post.ownerName}"></td>
-            <td th:text="*{#temporals.format(post.creationDate,'dd-MM-yyyy HH:mm')}"></td>
+            <td th:text="${post.get(0)}"></td>
+            <td th:text="${post.get(1)}"></td>
+            <td th:text="${post.get(2)}"></td>
+            <td th:text="${post.get(3)}"></td>
+            <td th:text="${post.get(4)}"></td>
         </tr>
         </tbody>
     </table>

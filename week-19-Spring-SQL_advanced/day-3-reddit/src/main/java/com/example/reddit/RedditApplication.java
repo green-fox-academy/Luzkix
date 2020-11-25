@@ -25,7 +25,7 @@ public class RedditApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     //postService.savePost(new Post());
-    userService.tryAddNewUser("Zdeněk", "luzkix@seznam.cz", "Heslo");
-    userService.tryAddNewUser("Petr", "petr@seznam.cz", "HESLO");
+    //userService.tryAddNewUser("Zdeněk", "luzkix@seznam.cz", "Heslo");
+    //userService.tryAddNewUser("Petr", "petr@seznam.cz", "HESLO");
   }
 }

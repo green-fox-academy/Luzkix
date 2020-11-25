@@ -1,20 +1,16 @@
 package com.example.reddit.model;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="posts")
@@ -31,10 +27,10 @@ public class Post {
   @ManyToOne
   @JoinColumn(name="postOwner_ID")
   private User owner;
-  @OneToMany(mappedBy = "votedPost")
-  private List<Vote> votes = new ArrayList<>();
-  //@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+  private String ownerName;
   private LocalDateTime creationDate;
+  /*@OneToMany(mappedBy = "votedPost")
+  private List<Vote> votes = new ArrayList<>();*/
 
   public Post () {
     creationDate = LocalDateTime.now();
@@ -44,6 +40,14 @@ public class Post {
     this.title = title;
     this.postDesc = postDesc;
     creationDate = LocalDateTime.now();
+  }
+
+  public void like () {
+    this.likes++;
+  }
+
+  public void dislike () {
+    this.likes--;
   }
 
 }

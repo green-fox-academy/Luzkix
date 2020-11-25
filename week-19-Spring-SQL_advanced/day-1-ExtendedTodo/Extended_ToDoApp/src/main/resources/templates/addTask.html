@@ -9,7 +9,7 @@
 <header th:replace="~{fragments::standardHeader}"></header>
 <h1>Add a New Task:</h1>
 <form action="#" th:action="@{/addTask}" th:object="${newTask}" method="post">
-    <p>Todo description:
+    <p>Todo Title:
         <input type="text" th:field="*{title}" required/>
     </p>
     <p>Todo Content:

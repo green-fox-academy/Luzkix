@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepository extends JpaRepository <User, Long> {
 
-  @Query("SELECT c FROM User c WHERE LOWER(c.userEmail) LIKE LOWER(?1) AND c.userPassword = ?2")
+  @Query("SELECT c FROM User c WHERE LOWER(c.userEmail) = LOWER(?1) AND c.userPassword = ?2")
   User returnUserByEmailAndPssw (String email, String password);
 
-  @Query("SELECT c FROM User c WHERE LOWER(c.userEmail) LIKE LOWER(?1)")
+  @Query("SELECT c FROM User c WHERE LOWER(c.userEmail) = LOWER(?1)")
   User findByUserEmail(String email);
 }

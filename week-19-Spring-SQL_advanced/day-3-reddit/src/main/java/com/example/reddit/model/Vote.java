@@ -1,6 +1,7 @@
 package com.example.reddit.model;
 
 import java.time.LocalDateTime;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,8 @@ public class Vote {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long voteId;
-  private boolean upvote;
+  @Column(nullable = true, columnDefinition = "boolean default null")
+  private int upvote = 0; //1 = upVote, 0 = not voted, -1 = downVote
   private LocalDateTime votedDateTime;
   @ManyToOne
   @JoinColumn(name="voter_ID")
@@ -31,4 +33,8 @@ public class Vote {
   @ManyToOne
   @JoinColumn(name="post_ID")
   private Post votedPost;
+
+  public void setUpvote(int i) {
+    this.upvote = i;
+  }
 }

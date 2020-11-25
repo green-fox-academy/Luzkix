@@ -10,7 +10,7 @@
 <h1>Edit the Task:</h1>
 <form action="#" th:action="@{'/'+ ${editedTask.id}+'/edit'}" th:object="${editedTask}" method="post">
     <p>Update Todo Title:
-        <input type="text" th:field="*{title}" hidden/>
+        <input type="text" th:field="*{title}"/>
     </p>
     <p>Update Todo Content:
         <input type="text" th:field="*{content}"/>
