@@ -1,5 +1,6 @@
 package com.example.frontend.services;
 
+import com.example.frontend.models.AppendA;
 import com.example.frontend.models.Error;
 import com.example.frontend.models.DoubleObject;
 import com.example.frontend.models.Greeter;
@@ -81,4 +82,17 @@ public class MainServiceImp implements MainService {
       return greeter;
     }
   }
+
+  @Override
+  public AppendA appendA(String appendable) {
+    AppendA append = new AppendA();
+    append.setAppended(appendable + "a");
+    return append;
+  }
+
+
+
+
+
+
 }

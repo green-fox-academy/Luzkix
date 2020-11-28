@@ -1,5 +1,6 @@
 package com.example.frontend.services;
 
+import com.example.frontend.models.AppendA;
 import com.example.frontend.models.Error;
 import com.example.frontend.models.DoubleObject;
 import com.example.frontend.models.Greeter;
@@ -12,4 +13,5 @@ public interface MainService {
   boolean greetingNotNull(String name, String title);
   Greeter greetingV2(String name, String title);
 
+  AppendA appendA(String appendable);
 }
