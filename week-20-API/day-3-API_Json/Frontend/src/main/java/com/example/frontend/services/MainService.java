@@ -1,12 +1,15 @@
 package com.example.frontend.services;
 
-import com.example.frontend.models.DoubleErrorObject;
+import com.example.frontend.models.Error;
 import com.example.frontend.models.DoubleObject;
-import org.springframework.stereotype.Service;
+import com.example.frontend.models.Greeter;
 
 public interface MainService {
   DoubleObject doubleValueV1(Integer valueToBeDoubled);
   DoubleObject doubleValueV2(Integer valueToBeDoubled);
-  DoubleErrorObject doubleError();
+  Error doubleError();
+  Greeter greetingV1(String name, String title, Greeter greeter);
+  boolean greetingNotNull(String name, String title);
+  Greeter greetingV2(String name, String title);
 
 }
