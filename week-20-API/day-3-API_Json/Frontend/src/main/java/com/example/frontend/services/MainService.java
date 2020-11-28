@@ -1,6 +1,8 @@
 package com.example.frontend.services;
 
 import com.example.frontend.models.AppendA;
+import com.example.frontend.models.ArrayHandler;
+import com.example.frontend.models.ArrayHandlerResult;
 import com.example.frontend.models.DoUntil;
 import com.example.frontend.models.DoUntilResult;
 import com.example.frontend.models.ErrorObject;
@@ -18,4 +20,6 @@ public interface MainService {
   AppendA appendA(String appendable);
 
   DoUntilResult doUntilResult(String action, DoUntil input);
+
+  ArrayHandlerResult arrayResult(ArrayHandler input);
 }
