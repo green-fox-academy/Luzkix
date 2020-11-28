@@ -1,7 +1,9 @@
 package com.example.frontend.services;
 
 import com.example.frontend.models.AppendA;
-import com.example.frontend.models.Error;
+import com.example.frontend.models.DoUntil;
+import com.example.frontend.models.DoUntilResult;
+import com.example.frontend.models.ErrorObject;
 import com.example.frontend.models.DoubleObject;
 import com.example.frontend.models.Greeter;
 import org.springframework.stereotype.Service;
@@ -37,8 +39,15 @@ public class MainServiceImp implements MainService {
   }
 
   @Override
-  public Error doubleError() {
-    return new Error();
+  public ErrorObject doubleError() {
+    return new ErrorObject();
+  }
+
+  @Override
+  public ErrorObject setError(String errorMessage) {
+    ErrorObject errorObject = new ErrorObject();
+    errorObject.setError(errorMessage);
+    return errorObject;
   }
 
   @Override
@@ -90,9 +99,24 @@ public class MainServiceImp implements MainService {
     return append;
   }
 
+  @Override
+  public DoUntilResult doUntilResult(String action, DoUntil input) {
+    DoUntilResult result = new DoUntilResult();
 
-
-
-
-
+    if (action.equals("sum")){
+      Long calculatedNumber = 0L;
+      for(int i=0; i< input.getUntil(); i++) {
+        calculatedNumber = calculatedNumber+i+1;
+      }
+      result.setResult(calculatedNumber);
+      return result;
+    } else if (action.equals("factor")) {
+      Long calculatedNumber = 1L;
+      for (int i = 1; i < input.getUntil()+1; i++) {
+        calculatedNumber = calculatedNumber * i;
+      }
+      result.setResult(calculatedNumber);
+      return result;
+    } else return null;
+  }
 }

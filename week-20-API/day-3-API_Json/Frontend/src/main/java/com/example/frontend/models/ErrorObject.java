@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Error {
-  String error = "Please provide an input!";
+public class ErrorObject {
+  String error;
 }

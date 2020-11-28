@@ -1,7 +1,10 @@
 package com.example.frontend.controllers;
 
 import com.example.frontend.models.AppendA;
+import com.example.frontend.models.DoUntil;
+import com.example.frontend.models.DoUntilResult;
 import com.example.frontend.models.DoubleObject;
+import com.example.frontend.models.ErrorObject;
 import com.example.frontend.models.Greeter;
 import com.example.frontend.services.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -86,6 +91,23 @@ public class MainController {
     AppendA appended = mainService.appendA(appendable);
     return ResponseEntity.ok().body(appended);
   }
+
+  @ResponseBody
+  @PostMapping ("/dountil/{action}")
+  ResponseEntity<?> doUntil(@PathVariable(required = false) String action, @RequestBody DoUntil input) {
+    DoUntilResult result = mainService.doUntilResult(action, input);
+
+    if (action == null || input.getUntil() == null || result == null) {
+      ErrorObject error = mainService.setError("Please provide a number!");
+      return ResponseEntity.status(400).body(error);
+    }
+    return ResponseEntity.ok().body(result);
+  }
+
+
+
+
+
 
 
 }
