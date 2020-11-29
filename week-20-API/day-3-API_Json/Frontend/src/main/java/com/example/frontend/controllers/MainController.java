@@ -12,7 +12,9 @@ import com.example.frontend.models.LogEntry;
 import com.example.frontend.models.LogEntryOutput;
 import com.example.frontend.repository.LogRepository;
 import com.example.frontend.services.MainService;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -143,17 +145,49 @@ public class MainController {
 
   @ResponseBody
   @GetMapping("/log")
-  ResponseEntity<?> getLogs() {
+  ResponseEntity<?> getLogs(@RequestParam(required = false) Integer count, @RequestParam(required = false) Integer page) {
     List<LogEntry> logs = logRepository.findAll();
+    List<LogEntry> logsFiltered = new ArrayList<>();
 
     if(logs.isEmpty() || logs == null) {
       ErrorObject error=mainService.setError("No logs yet");
       return ResponseEntity.status(400).body(error);
-    } else {
+    } else if (count == null && page == null){
       LogEntryOutput output = new LogEntryOutput();
       output.setEntries(logs);
       output.setEntry_count(logs.size());
       return ResponseEntity.ok().body(output);
+    } else if (page != null && page > 0) {
+      if (logs.size() < 10) {
+        logsFiltered = logs;
+      }else if(page*10 <= logs.size()) {
+        for(int i = page*10 - 10; i < page*10; i++) {
+          logsFiltered.add(logs.get(i));
+        }
+      } else {
+        for (int i = logs.size()-logs.size()%10; i < logs.size(); i++) {
+          logsFiltered.add(logs.get(i));
+        }
+      }
+      LogEntryOutput output = new LogEntryOutput();
+      output.setEntries(logsFiltered);
+      output.setEntry_count(logs.size());
+      return ResponseEntity.ok().body(output);
+    } else if (count != null && count > 0) {
+      if (count >= logs.size()) {
+        logsFiltered = logs;
+      } else {
+        for (int i = logs.size()-1; i > logs.size() - count-1; i--) {
+          logsFiltered.add(logs.get(i));
+        }
+      }
+      LogEntryOutput output = new LogEntryOutput();
+      output.setEntries(logsFiltered);
+      output.setEntry_count(logs.size());
+      return ResponseEntity.ok().body(output);
+    } else {
+      ErrorObject error=mainService.setError("Unknown error, probably wrong parameters defined");
+      return ResponseEntity.status(400).body(error);
     }
   }
 
