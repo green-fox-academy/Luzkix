@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Own CSS -->
+    <link href="/style.css" rel="stylesheet">
+
+    <title>List of all Todos!</title>
+
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div class="container mb-3">
+    <div class="row justify-content-between">
+        <div class="col col-4">
+            <form action="/searchByText" method="post">
+                <div class="form-group">
+                    <label class="text-center" for="searchtext">Find todos based on text description!</label>
+                    <div class="row">
+                        <div class="col col-8">
+                            <input class="form-control" id="searchtext" name="search" placeholder="enter key words"
+                                   required
+                                   type="text">
+                        </div>
+                        <div class="col col-4">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col col-4 d-flex justify-content-end">
+            <form action="/searchByDate" method="post">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col justify-content-center">
+                            <label class="text-center" for="searchdate">Find todos based on creation/due date!</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-8">
+                            <input class="form-control" id="searchdate" name="date" required type="date">
+                        </div>
+                        <div class="col col-4">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h1>Todos for today:</h1>
+
+    <table class="table table-hover">
+        <th>Creation Date</th>
+        <th>Id</th>
+        <th>Action</th>
+        <th>Urgent</th>
+        <th>Done</th>
+        <th>Due Date</th>
+        <th>Assignee</th>
+        <th class="text-center">Edit Todo</th>
+        <th class="text-center">Delete Todo</th>
+        <tr class="tableRow" th:each="todo:${#lists.sort(todos)}" th:object="${todo}">
+            <td th:text="*{creationDate}"></td>
+            <td th:text="*{id}"></td>
+            <td th:text="*{title}"></td>
+            <td th:text="*{urgent}"></td>
+            <td th:text="*{done}"></td>
+            <td th:text="*{dueDate}"></td>
+            <td>
+                <a class="btn btn-link" th:href="@{/{id}/todosByAssignee (id=${todo.assignee.getId()})}"
+                   th:if="${todo.assignee} != null"
+                   th:text="*{assignee} == null ? '' : *{assignee.getName()}"></a>
+            </td>
+            <td><a class="btn btn-outline-dark btn-sm d-flex justify-content-center" th:href="@{/{id}/edit (id=${todo.id})}">edit</a></td>
+            <td><a class="btn btn-danger btn-sm d-flex justify-content-center" th:href="@{'/'+ ${todo.id}+'/delete'}">!delete!</a></td>
+        </tr>
+
+    </table>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>

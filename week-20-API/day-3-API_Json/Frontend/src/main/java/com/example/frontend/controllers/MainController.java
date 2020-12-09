@@ -12,11 +12,14 @@ import com.example.frontend.models.LogEntry;
 import com.example.frontend.models.LogEntryOutput;
 import com.example.frontend.repository.LogRepository;
 import com.example.frontend.services.MainService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -116,36 +119,68 @@ public class MainController {
 
   @ResponseBody
   @PostMapping ("/dountil/{action}")
-  ResponseEntity<?> doUntil(@PathVariable(required = false) String action, @RequestBody DoUntil input) {
-    LogEntry logEntry = new LogEntry("/dountil/"+action, "{'until': "+input.getUntil()+"}");
+  ResponseEntity<?> doUntil(@PathVariable(required = false) String action, @RequestBody (required = false) DoUntil input) {
+    ObjectMapper mapper = new ObjectMapper();
+    String jsonText;
+    try {
+      jsonText = mapper.writeValueAsString(input);
+    } catch (JsonProcessingException e) {
+      jsonText = "null json object";
+    }
+
+    LogEntry logEntry = new LogEntry("/dountil/"+action, jsonText);
     logRepository.save(logEntry);
 
-    DoUntilResult result = mainService.doUntilResult(action, input);
+    try {
+      DoUntilResult result = mainService.doUntilResult(action, input);
+      return ResponseEntity.ok().body(result);
+    }catch (NullPointerException e) {
+      ErrorObject error = mainService.setError("Please provide a number!");
+      return ResponseEntity.status(400).body(error);
+    }
+    /*DoUntilResult result = mainService.doUntilResult(action, input);
 
     if (action == null || input.getUntil() == null || result == null) {
       ErrorObject error = mainService.setError("Please provide a number!");
       return ResponseEntity.status(400).body(error);
     }
-    return ResponseEntity.ok().body(result);
+    return ResponseEntity.ok().body(result);*/
   }
 
   @ResponseBody
   @PostMapping ("/arrays")
-  ResponseEntity<?> arrayHandler(@RequestBody ArrayHandler input) {
-    LogEntry logEntry = new LogEntry("/arrays", input.toString());
+  ResponseEntity<?> arrayHandler(@RequestBody(required = false) ArrayHandler input) {
+    ObjectMapper mapper = new ObjectMapper();
+    String jsonText;
+    try {
+      jsonText = mapper.writeValueAsString(input);
+    } catch (JsonProcessingException e) {
+      jsonText = "null json object";
+    }
+
+    LogEntry logEntry = new LogEntry("/arrays", jsonText);
     logRepository.save(logEntry);
 
-    ArrayHandlerResult result = mainService.arrayResult(input);
-
-    if (input == null || result == null) {
+    try {
+      ArrayHandlerResult result = mainService.arrayResult(input);
+      return ResponseEntity.ok().body(result);
+    } catch (NullPointerException e) {
       ErrorObject error = mainService.setError("Please provide what to do with the numbers!");
       return ResponseEntity.status(400).body(error);
-    } else return ResponseEntity.ok().body(result);
+    }
+
+
+    /*if (input == null || result == null) {
+      ErrorObject error = mainService.setError("Please provide what to do with the numbers!");
+      return ResponseEntity.status(400).body(error);
+    } else return ResponseEntity.ok().body(result);*/
   }
 
   @ResponseBody
   @GetMapping("/log")
   ResponseEntity<?> getLogs(@RequestParam(required = false) Integer count, @RequestParam(required = false) Integer page) {
+
+
     List<LogEntry> logs = logRepository.findAll();
     List<LogEntry> logsFiltered = new ArrayList<>();
 

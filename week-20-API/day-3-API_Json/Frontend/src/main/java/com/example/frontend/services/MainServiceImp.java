@@ -105,7 +105,7 @@ public class MainServiceImp implements MainService {
   }
 
   @Override
-  public DoUntilResult doUntilResult(String action, DoUntil input) {
+  public DoUntilResult doUntilResult(String action, DoUntil input) throws NullPointerException {
     DoUntilResult result = new DoUntilResult();
 
     if (action.equals("sum")) {
@@ -123,19 +123,19 @@ public class MainServiceImp implements MainService {
       result.setResult(calculatedNumber);
       return result;
     } else {
-      return null;
+      throw new NullPointerException();
     }
   }
 
   @Override
-  public ArrayHandlerResult arrayResult(ArrayHandler input) {
+  public ArrayHandlerResult arrayResult(ArrayHandler input) throws NullPointerException {
     ArrayHandlerResult result = new ArrayHandlerResult();
     List<String> allowedValues = new ArrayList<>();
     allowedValues.addAll(Arrays.asList("sum", "multiply", "double"));
 
     if (input.getNumbers() == null || input.getWhat() == null ||
         !allowedValues.contains(input.getWhat())) {
-      return null;
+      throw new NullPointerException();
     } else if (input.getWhat().equals("sum")) {
       result.setResult((int) Arrays.stream(input.getNumbers()).sum());
       return result;
@@ -151,7 +151,7 @@ public class MainServiceImp implements MainService {
       result.setResultArray(doubledArray);
       return result;
     } else {
-      return null;
+      throw new NullPointerException();
     }
   }
 }

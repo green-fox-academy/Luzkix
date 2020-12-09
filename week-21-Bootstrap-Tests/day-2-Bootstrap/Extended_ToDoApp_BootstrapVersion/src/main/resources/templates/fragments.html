@@ -1,0 +1,62 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Own CSS -->
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Title of the page!</title>
+
+</head>
+<body>
+<header th:fragment="standardHeader" id="headerButtons">
+    <div class="container mt-1 mb-3">
+        <div class="row ">
+            <div class="col col-6">
+                <form action="/" method="get">
+                    <button class="btn btn-warning my-1" type="submit">All tasks</button>
+                    <button class="btn btn-warning my-1" type="submit" name="isActive" value=true >Active tasks</button>
+                    <button class="btn btn-warning my-1" type="submit" name="isActive" value=false >Completed tasks</button>
+                    <button class="btn btn-warning my-1" formaction="/addTask" type="submit">Add New Task</button>
+                </form>
+            </div>
+            <div class="col col-6 d-flex justify-content-end text-right">
+                    <form action="#" method="get">
+                        <div class="justify-content-end">
+                        <button class="btn btn-info my-1" formaction="/assignees" type="submit">All Assignees</button>
+                        <button class="btn btn-info my-1" formaction="/addAssignee" type="submit">Add Assignee</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--<div id="taskButtons">
+        <form action="/" method="get">
+            <button type="submit">All tasks</button>
+            <button type="submit" name="isActive" value=true >Active tasks</button>
+            <button type="submit" name="isActive" value=false >Completed tasks</button>
+        </form>
+        <form action="/addTask" method="get">
+            <button type="submit">Add New Task</button>
+        </form>
+    </div>
+    <div id="assigneeButtons">
+        <form action="/assignees/" method="get">
+            <button type="submit">All Assignees</button>
+        </form>
+        <form action="/addAssignee" method="get">
+            <button type="submit">Add Assignee</button>
+        </form>
+    </div>-->
+
+</header>
+</body>
+</html>

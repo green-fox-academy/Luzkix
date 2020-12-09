@@ -1,0 +1,42 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Own CSS -->
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Title of the page!</title>
+
+</head>
+
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<div class="container">
+    <h1>Add a New Assignee:</h1>
+    <form action="#" th:action="@{/addAssignee}" th:object="${newAssignee}" method="post">
+        <p>Assignee name:
+            <input class="form-control" type="text" th:field="*{name}" required/>
+        </p>
+        <p>Assignee email:
+            <input class="form-control" type="email" th:field="*{email}" required/>
+        </p>
+        <button class="btn btn-primary" type="submit">Create new Assignee</button>
+        <button class="btn btn-danger" type="reset">Reset</button>
+        </p>
+    </form>
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>

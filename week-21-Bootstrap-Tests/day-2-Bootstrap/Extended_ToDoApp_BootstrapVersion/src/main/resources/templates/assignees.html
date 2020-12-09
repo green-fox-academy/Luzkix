@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Own CSS -->
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Title of the page!</title>
+
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div class="container">
+
+    <h1>List of Assignees:</h1>
+
+    <p th:if="${emptyList == true}">There are no Assignees defined yet. You can add few <a href="/addAssignee">HERE!</a>
+    </p>
+
+    <table class="table table-hover" th:unless="${emptyList == true}">
+
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th class="text-center">Edit </br>Assignee</th>
+        <th class="text-center">Delete </br>Assignee</th>
+
+        <tr class="tableRow" th:each="assignee:${#lists.sort(assignees)}" th:object="${assignee}">
+            <td th:text="*{id}"></td>
+            <td>
+                <a th:href="@{/{id}/todosByAssignee (id=${assignee.id})}" th:text="*{name}"></a>
+            </td>
+            <td th:text="*{email}"></td>
+            <td><a class="btn btn-outline-dark btn-sm d-flex justify-content-center" th:href="@{'/'+ ${assignee.id}+'/editAssignee'}">edit</a></td>
+            <td><a class="btn btn-danger btn-sm d-flex justify-content-center" th:href="@{'/'+ ${assignee.id}+'/deleteAssignee'}">!delete!</a></td>
+        </tr>
+
+    </table>
+
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>

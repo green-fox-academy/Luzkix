@@ -1,0 +1,65 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Own CSS -->
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Edit task!</title>
+
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+<div class="container">
+    <h1>Edit the Task:</h1>
+    <form action="#" th:action="@{'/'+ ${editedTask.id}+'/edit'}" th:object="${editedTask}" method="post">
+        <p>Update Todo Title:
+            <input class="form-control" type="text" th:field="*{title}"/>
+        </p>
+        <p>Update Todo Content:
+            <input class="form-control" type="text" th:field="*{content}"/>
+        </p>
+        <p>Update Todo Description:
+            <input class="form-control" type="text" th:field="*{description}"/>
+        </p>
+        <p>Is it urgent? </br>
+            Urgent<input type="radio" th:field="*{urgent}" th:value=true/>
+            Not Urgent<input type="radio" th:field="*{urgent}" th:value=false />
+        </p>
+        <!--    <p>Todo was created at:
+                <input type="datetime-local" th:field="*{creationDate}" readonly/>
+            </p>-->
+        <p>Update Due Date (if needed):
+            <input class="form-control w-auto" type="date" th:field="*{dueDate}"/>
+        </p>
+        <p>Is the task done? (YES = checked)
+            <input type="checkbox" th:field="*{done}"/>
+        </p>
+        <p>Assign Task to:
+            <select class="form-control w-auto" name="assignee">
+                <option th:value="0"> -- no one --</option>
+                <option th:each="element:${assignees}" th:value="${element.id}"
+                        th:text="${element.name}"></option>
+            </select>
+        </p>
+        <p>
+            <button class="btn btn-primary" type="submit">Update the task</button>
+            <button class="btn btn-danger" type="reset">Reset</button>
+        </p>
+    </form>
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>

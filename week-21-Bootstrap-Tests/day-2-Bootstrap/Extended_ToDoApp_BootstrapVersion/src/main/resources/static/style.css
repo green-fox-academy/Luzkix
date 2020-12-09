@@ -1,0 +1,27 @@
+/*body {
+    max-width: 700px;
+    margin: auto;
+}
+
+.tableRow td {
+    border: darkgrey solid 1px;
+}*/
+th {
+    text-transform: uppercase;
+    /*text-align: center;*/
+}
+
+#searchForms {
+    display: flex;
+    justify-content: space-around;
+}
+
+#headerButtons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#assigneeButtons {
+    display: flex;
+    justify-content: right;
+}

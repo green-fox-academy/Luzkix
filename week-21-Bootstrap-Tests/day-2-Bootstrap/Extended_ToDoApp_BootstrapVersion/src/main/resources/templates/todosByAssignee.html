@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <!-- Bootstrap CSS -->
+    <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Own CSS -->
+    <link href="/style.css" rel="stylesheet">
+
+    <title>Todos by Assignee!</title>
+
+</head>
+<body>
+<header th:replace="~{fragments::standardHeader}"></header>
+
+<div class="container">
+    <div th:object="${assignee}">
+        <h1 th:text="'Todos for '+${assignee.name}"></h1>
+        <p th:utext="${assignee.name} + ' has following email: '+${assignee.email}+'.'"></p>
+        <p>You can edit his/her personal details on following <a th:href="@{/{id}/editAssignee (id=${assignee.id})}">LINK.</a>
+        </p>
+        <strong><p th:text="${assignee.name}+' is assigned '+${assignee.todos.size()}+' todos!'"></p></strong>
+        <div class="container">
+            <table class="table table-hover">
+
+                <th>Creation Date</th>
+                <th>ToDo Id</th>
+                <th>Action</th>
+                <th>Urgent</th>
+                <th>Done</th>
+                <th>Due Date</th>
+                <th class="text-center">Edit Todo</th>
+                <th class="text-center">Delete Todo</th>
+
+                <tr class="tableRow" th:each="todo:${todosByAssignee}" th:object="${todo}">
+                    <td th:text="*{creationDate}"></td>
+                    <td th:text="*{id}"></td>
+                    <td th:text="*{title}"></td>
+                    <td th:text="*{urgent}"></td>
+                    <td th:text="*{done}"></td>
+                    <td th:text="*{dueDate}"></td>
+                    <td><a class="btn btn-outline-dark btn-sm d-flex justify-content-center" th:href="@{/{id}/edit (id=${todo.id})}">edit</a></td>
+                    <td><a class="btn btn-danger btn-sm d-flex justify-content-center" th:href="@{'/'+ ${todo.id}+'/delete'}">!delete!</a></td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.bundle.js"></script>
+</body>
+</html>
