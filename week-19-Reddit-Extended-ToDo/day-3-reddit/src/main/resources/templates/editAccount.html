@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="full-height" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Account</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="/style.css" rel="stylesheet">
+    <link th:href="style_login.css" rel="stylesheet">
+
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<div th:replace="~{fragments::header}"></div>
+
+<div class="wrapper fadeInDown">
+
+    <div th:unless="${wrongEditAccount}">
+        <h2 >Edit your account details!</h2>
+        <p>Edit your account details and save changes</p>
+    </div>
+    <div th:if="${wrongEditAccount}">
+        <h2 ><strong style="color: red">Edit not successfull!!!</strong></h2>
+        <p>Email address already used. Please try again or return to <a href="/">HomePage</a></p>
+    </div>
+
+    <div id="formContent">
+        <form action="/editAccount" method="post" th:object="${actualAccount}">
+            <input type="text" id="name" class="fadeIn second" name="userName" th:field="*{userName}" required>
+            <input type="email" id="login" class="fadeIn second" name="userEmail" th:field="*{userEmail}" required>
+            <input type="hidden" id="password" class="fadeIn third" name="password" th:field="*{userPassword}" readonly>
+            <input type="hidden" id="id" class="fadeIn second" name="userId" th:field="*{userId}" readonly>
+            <input type="hidden" id="creationDate" class="fadeIn second" name="userCreationDate" th:field="*{userCreationDate}" readonly>
+            <input type="submit" class="fadeIn fourth" value="Save Changes">
+        </form>
+
+            <div id="formFooter">
+                <a class="underlineHover" href="/">Dont want to Save Changes? Back to HOMEPAGE!</a>
+            </div>
+        </div>
+
+</div>
+
+</body>
+<script src="script.js"></script>
+</html>
