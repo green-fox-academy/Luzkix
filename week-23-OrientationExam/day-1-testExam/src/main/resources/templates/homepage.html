@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/style.css" rel="stylesheet">
+    <title>URL Aliaser</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div th:replace="~{fragments::header}"></div>
+</div>
+
+<h1>URL Aliaser</h1>
+<h2 th:if="${success}" th:utext="${successText}"></h2>
+<h2 th:if="${errorSavingAlias}" style="color: red">Your alias is already in use!</h2>
+
+<!--<h2 th:if="${unsuccessfulDocking}" th:text="${dockingReply}" style="color:red"></h2>
+<h2 th:if="${error}" style="color:red" th:text="${errorMessage}"></h2>-->
+
+<div class="container">
+    <form action="#" th:action="@{/save-link}" th:method="post" th:object="${newAlias}">
+        <input type="url" class="form-control" name="url" th:field="*{url}" placeholder="enter url" required>
+        <input type="text" class="form-control" name="alias" th:field="*{alias}" placeholder="enter url alias" required>
+        <p></p>
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-danger" type="reset">Reset</button>
+        </p>
+
+    </form>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

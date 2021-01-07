@@ -1,0 +1,61 @@
+Nové Todos
+{
+    "title": "Repair PC",
+    "content": "Reinstall Windows",
+    "urgent": false,
+    "dueDate": ""
+}
+
+{
+    "title": "Buy house",
+    "content": "Buy big house with 3 floors for good price",
+    "urgent": true,
+    "dueDate": "2021-08-20"
+}
+
+{
+    "title": "Call home",
+    "content": "Call your mother",
+    "urgent": false,
+    "dueDate": "2021-01-20"
+}
+
+{
+    "title": "Send a letter",
+    "content": "Marry christmas letter to Jack",
+    "urgent": true,
+    "dueDate": "2020-12-31"
+}
+
+
+Filtrace
+{
+    "method": "filter",
+    "filterBy": "completed",
+    "filterOperation": "equals",
+    "completed": false
+}
+
+Registrace/login
+{
+    "userName": "luzki",
+    "password": "12345678"
+}
+
+Update Todo
+{
+    "id": 30,
+    "title": "text",
+    "content": "text ",
+    "urgent": true/false,
+    "dueDate": "2021-01-20",
+    "completed": true/false,
+    "completitionDate": "2021-01-20",
+    "ownerId": 5
+}
+
+
+
+
+
+
