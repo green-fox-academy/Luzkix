@@ -1,8 +1,0 @@
-app.properties:
-spring.security.user.name=luzki
-spring.security.user.password=luzki
-
-build.gradle:
-implementation 'org.springframework.boot:spring-boot-starter-security'
-implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
-testImplementation 'org.springframework.security:spring-security-test'
