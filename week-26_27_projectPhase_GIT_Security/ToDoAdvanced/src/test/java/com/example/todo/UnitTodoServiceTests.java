@@ -1,11 +1,8 @@
 package com.example.todo;
 
-
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
-
-
 import com.example.todo.models.Role;
 import com.example.todo.models.Todo;
 import com.example.todo.models.TodoOwner;
@@ -15,28 +12,27 @@ import com.example.todo.repositories.TodoRepository;
 import com.example.todo.services.NoMatchingResultException;
 import com.example.todo.services.TodoServiceImp;
 import com.example.todo.services.UserService;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Assert;
-
 import org.junit.Test;
 import org.mockito.Mockito;
 
 public class UnitTodoServiceTests {
   Role role = new Role();
-  TodoOwner ownerPetr = new TodoOwner("petr","heslo",role);
-  TodoOwner ownerZdenek = new TodoOwner("zdenek","heslo",role);
-  Todo testTodoPetr = new Todo("todoPetr","todo",true,LocalDate.parse("2021-06-20"),ownerPetr);
-  Todo testTodoZdenek = new Todo("todoZdenek","todo",false,LocalDate.parse("2021-01-31"),ownerZdenek);
+  TodoOwner ownerPetr = new TodoOwner("petr", "heslo", role);
+  TodoOwner ownerZdenek = new TodoOwner("zdenek", "heslo", role);
+  Todo testTodoPetr = new Todo("todoPetr", "todo", true, LocalDate.parse("2021-06-20"), ownerPetr);
+  Todo testTodoZdenek =
+      new Todo("todoZdenek", "todo", false, LocalDate.parse("2021-01-31"), ownerZdenek);
 
   TodoRepository todoRepository = Mockito.mock(TodoRepository.class);
   UserService userService = Mockito.mock(UserService.class);
-  TodoServiceImp todoServiceImp = new TodoServiceImp(todoRepository,userService);
+  TodoServiceImp todoServiceImp = new TodoServiceImp(todoRepository, userService);
 
   @Test
-  public void createNewTodoShouldReturnCreatedTodo(){
+  public void createNewTodoShouldReturnCreatedTodo() {
     //arrange
     String title = "new todo";
     String content = "new";
@@ -45,7 +41,7 @@ public class UnitTodoServiceTests {
     String login = "petr";
 
     Role role = new Role();
-    TodoOwner todoOwnerTest = new TodoOwner("petr","heslo",role);
+    TodoOwner todoOwnerTest = new TodoOwner("petr", "heslo", role);
 
     Mockito.when(userService.findOwnerBasedOnUserName(login)).thenReturn(todoOwnerTest);
 
@@ -54,46 +50,40 @@ public class UnitTodoServiceTests {
         new Todo(title, content, urgent, dueDate, todoOwnerTest);
 
     //assert
-    Assert.assertEquals("new todo",newTodo.getTitle());
-    Assert.assertEquals("new",newTodo.getContent());
-    Assert.assertEquals(true,newTodo.getUrgent());
-    Assert.assertEquals(LocalDate.parse("2021-05-06"),newTodo.getDueDate());
-    Assert.assertEquals("petr",newTodo.getOwner().getLogin());
-    Assert.assertEquals("heslo",newTodo.getOwner().getPassword());
+    Assert.assertEquals("new todo", newTodo.getTitle());
+    Assert.assertEquals("new", newTodo.getContent());
+    Assert.assertEquals(true, newTodo.getUrgent());
+    Assert.assertEquals(LocalDate.parse("2021-05-06"), newTodo.getDueDate());
+    Assert.assertEquals("petr", newTodo.getOwner().getLogin());
+    Assert.assertEquals("heslo", newTodo.getOwner().getPassword());
   }
 
   @Test(expected = NullPointerException.class)
-  public void createNewTodoNullTitleShouldThrowNullPointerException(){
+  public void createNewTodoNullTitleShouldThrowNullPointerException() {
     //Arrange
-    String testToken = "token";
-    Todo testInput1 = new Todo(null,"content",true,null,null);
+    String login = "zdenek";
+    Todo testInput1 = new Todo(null, "content", true, null, null);
     boolean thrown = false;
 
     //Act
-    todoServiceImp.createTodo(testInput1,testToken);
-/*    try{
-
-      thrown = false;
-    }catch (NullPointerException e){
-      thrown = true;
-    }*/
+    todoServiceImp.createTodo(testInput1, login);
 
     //Assert
-    /*Assert.assertTrue(thrown);*/
+    /*Nothin necessary - method throws exception in Act part*/
   }
 
   @Test
-  public void createNewTodoNullContentShouldThrowNullPointerException(){
+  public void createNewTodoNullContentShouldThrowNullPointerException() {
     //Arrange
-    String testToken = "token";
-    Todo testInput2 = new Todo("title",null,true,null,null);
+    String login = "zdenek";
+    Todo testInput2 = new Todo("title", null, true, null, null);
     boolean thrown = false;
 
     //Act
-    try{
-      todoServiceImp.createTodo(testInput2,testToken);
+    try {
+      todoServiceImp.createTodo(testInput2, login);
       thrown = false;
-    }catch (NullPointerException e){
+    } catch (NullPointerException e) {
       thrown = true;
     }
 
@@ -102,14 +92,14 @@ public class UnitTodoServiceTests {
   }
 
   @Test
-  public void filter_All_ShouldReturnAllTodos(){
+  public void filter_All_ShouldReturnAllTodos() {
     //Arrange
     FilteredTodosResponseDTO replyDTO = new FilteredTodosResponseDTO();
     FilterTodoDTO dto = new FilterTodoDTO();
 
     dto.setMethod("all");
     List<Todo> allTodos = new ArrayList<>();
-    allTodos.addAll(List.of(testTodoZdenek,testTodoPetr));
+    allTodos.addAll(List.of(testTodoZdenek, testTodoPetr));
 
     Mockito.when(todoRepository.findAll()).thenReturn(allTodos);
 
@@ -130,7 +120,8 @@ public class UnitTodoServiceTests {
   }
 
   @Test
-  public void filter_Urgent_ShouldReturnUrgentTodos() throws NullPointerException,NoMatchingResultException {
+  public void filter_Urgent_ShouldReturnUrgentTodos()
+      throws NullPointerException, NoMatchingResultException {
     //Arrange
     FilteredTodosResponseDTO replyDTO = new FilteredTodosResponseDTO();
     FilterTodoDTO dto = new FilterTodoDTO();
