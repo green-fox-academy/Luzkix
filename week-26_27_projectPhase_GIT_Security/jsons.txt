@@ -1,0 +1,45 @@
+Nové Todos /newTodo
+{
+    "title": "Buy house",
+    "content": "Buy big house with 3 floors for good price",
+    "urgent": true,
+    "dueDate": "2021-08-20"
+}
+
+
+Filtration /listTodos
+{
+    "method": "all/filter",
+    "filterBy": "id/title/urgent/completed/dueDate/userName",
+    "filterOperation": "higher/lower/equals",
+    "id": 11,
+    "title": "text",
+    "urgent": true/false,
+    "completed": true/false,
+    "dueDate": "2021-06-30",
+    "userName": "text"
+}
+
+/registration /login
+{
+    "userName": "zdenek",
+    "password": "12345678"
+}
+
+Update Todo /updateTodo
+{
+    "id": 30,
+    "title": "text",
+    "content": "text ",
+    "urgent": true/false,
+    "dueDate": "2021-01-20",
+    "completed": true/false,
+    "completitionDate": "2021-01-20",
+    "ownerId": 5
+}
+
+
+
+
+
+

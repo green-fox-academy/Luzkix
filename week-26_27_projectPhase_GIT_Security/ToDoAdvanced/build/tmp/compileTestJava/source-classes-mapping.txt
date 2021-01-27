@@ -1,0 +1,8 @@
+com/example/todo/TodoApplicationTests.java
+ com.example.todo.TodoApplicationTests
+com/example/todo/configuration/TestNoSecurityConfig.java
+ com.example.todo.configuration.TestNoSecurityConfig
+com/example/todo/UnitTodoServiceTests.java
+ com.example.todo.UnitTodoServiceTests
+com/example/todo/IntegrationTodoServiceTests.java
+ com.example.todo.IntegrationTodoServiceTests

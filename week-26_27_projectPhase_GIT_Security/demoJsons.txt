@@ -1,0 +1,46 @@
+Demo 1 - Registration
+POST http://localhost:8080/registration
+
+{
+    "userName": "greenfox",
+    "password": "12345678"
+}
+
+Demo 2 - Login
+GET http://localhost:8080/login
+
+{
+    "userName": "greenfox",
+    "password": "12345678"
+}
+token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmVlbmZveCIsImV4cCI6MTYxMTk2MTIwMH0.yL8bxHslbQzx-l-EDvq6y2WpFUWaZBFjuJloCiGy1nJlEsDsLPGYUw2rstaLnNPTAyxNHA7BIQPAUZnA0XhLVQ
+
+Demo 3 - NewTodo
+POST http://localhost:8080/newTodo
+Authorization - Bearer token
+{
+    "title": "Become a programmer!",
+    "content": "Study hard and become java developer",
+    "urgent": true,
+    "dueDate": "2021-05-15"
+}
+
+Demo 4 - Filter Todo
+GET http://localhost:8080/listTodos
+Authorization - Bearer token
+{
+    "method": "filter",
+    "filterBy": "dueDate",
+    "filterOperation": "lower",
+    "dueDate": "2021-06-30"
+}
+
+Demo 5 - Update Todo
+PUT http://localhost:8080/updateTodo
+Authorization - Bearer token
+{
+    "id": XX,
+    "title": "Become a programmer - I DID IT!",
+    "completed": true,
+    "owner_id": 5
+}
