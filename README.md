@@ -9,5 +9,5 @@ https://github.com/green-fox-academy/Luzkix
 
 #**Note: Before I started with the full course I participated on a month lenght Green Fox coding camp which focused on html and basics of JavaSript :**
 
-https://github.com/Luzkix/luzkix.github.io - actually a web presentation of exercises completed within StayHome coding camp. You can directly access the presentation using this link: https://luzkix.github.io
+https://github.com/Luzkix/luzkix.github.io - actually a web presentation of exercises completed within StayHome coding camp. You can directly access the web presentation using this link: https://luzkix.github.io
 
