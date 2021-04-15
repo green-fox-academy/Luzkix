@@ -1,6 +1,6 @@
 #**Hello everyone, this is mine main Green Fox repository with various homeworks as i learned Java during Foundation and Orientation phases:**
 
-https://github.com/green-fox-academy/Luzkix
+https://github.com/Luzkix/Luzkix
 
 
 #**In Project phase it was all about teamwork and buildig a "big" RESTful application, with many endpoints, a lot of logic and implementations of new technologies, and of course testing...a lot of testing...:**
